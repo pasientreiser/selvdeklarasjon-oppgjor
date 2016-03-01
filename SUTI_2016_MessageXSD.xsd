@@ -1,0 +1,2300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2012 sp1 (http://www.altova.com) by Nils-Erik Eriksson (NT Sweden AB) -->
+<!--Created with Liquid XML Studio Developer Edition (Trial) 8.0.8.2044 (http://www.liquid-technologies.com)-->
+<xs:schema xmlns:suti="http://www.suti.se/schema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="idType">
+		<xs:annotation>
+			<xs:documentation>General type identification-element</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="src" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string"/>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="id" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string"/>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="unique" type="xs:boolean" use="optional" default="true"/>
+	</xs:complexType>
+	<xs:complexType name="idMsgRef">
+		<xs:annotation>
+			<xs:documentation>General type identification-element</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="src" type="xs:string" use="required"/>
+		<xs:attribute name="idOrder" type="xs:string"/>
+		<xs:attribute name="idMsg" type="xs:string" use="required"/>
+		<xs:attribute name="msgType" type="xs:string" use="required"/>
+		<xs:attribute name="unique" type="xs:boolean" use="optional" default="true"/>
+	</xs:complexType>
+	<xs:complexType name="idEkInfo">
+		<xs:annotation>
+			<xs:documentation>General type identification-element</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="src" use="required">
+			<xs:annotation>
+				<xs:documentation>Typ av Id. Example project, costcenter or innvoicenumber.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string"/>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="id" type="xs:string" use="required"/>
+		<xs:attribute name="unique" type="xs:boolean" use="optional" default="false"/>
+	</xs:complexType>
+	<xs:element name="SUTI">
+		<xs:annotation>
+			<xs:documentation>Root element for SUTI-messages</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="orgSender" type="orgType">
+					<xs:annotation>
+						<xs:documentation>Id of the sending side. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="orgReceiver" type="orgType">
+					<xs:annotation>
+						<xs:documentation>Id of the receiving side.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="msg" maxOccurs="unbounded">
+					<xs:complexType mixed="false">
+						<xs:complexContent>
+							<xs:extension base="msg"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="idVersion" type="idType" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="orgType">
+		<xs:annotation>
+			<xs:documentation>General type organization-element</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idOrg" type="idType"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="msg">
+		<xs:annotation>
+			<xs:documentation>One SUTI-message</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idMsg" type="idType">
+				<xs:annotation>
+					<xs:documentation>id = YYYYMMDDnnnnnnnn
+src = reference to the SUTI id of the part that is sending this message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="msgTimeStamp" type="timesType" minOccurs="0"/>
+			<xs:element name="infoTimeStamp" type="timesType" minOccurs="0"/>
+			<xs:element name="referencesTo" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>msgs: 1020, 1021, 1022, 1023, 1024, 1025, 2000, 2001, 2002, 2003, 2010, 2011, 2012, 2013, 2020, 2021, 2022, 2023, 2030, 2031, 2032, 2050, 2530, 2531, 2532, 2900, 2901, 2902, 3xxx, 4xxx, 5xxx, 6xxx, 7xxx, 8xxx</xs:documentation>
+				</xs:annotation>
+				<xs:complexType mixed="false">
+					<xs:complexContent>
+						<xs:extension base="referencesTo"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:choice minOccurs="0">
+				<xs:element name="order" type="order">
+					<xs:annotation>
+						<xs:documentation>msgs: 2000, 2531, 2900, 4001, 4020</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="orderReject">
+					<xs:annotation>
+						<xs:documentation>msgs: 2002</xs:documentation>
+					</xs:annotation>
+					<xs:complexType mixed="false">
+						<xs:complexContent>
+							<xs:extension base="orderReject"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="cancellationConsequence" type="cancellationConsequence">
+					<xs:annotation>
+						<xs:documentation>msgs: 2011, 2012, 2021, 2022</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="resourceDispatch" type="resourceType">
+					<xs:annotation>
+						<xs:documentation>msgs: 1020, 3000, 3001, 3003, 3004, 3013</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="addressLocation" type="addressType">
+					<xs:annotation>
+						<xs:documentation>msgs: 4003, 5021</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="manualDescriptionMsg">
+					<xs:annotation>
+						<xs:documentation>msgs: 1022, 1025, 5000, 5010</xs:documentation>
+					</xs:annotation>
+					<xs:complexType mixed="false">
+						<xs:complexContent>
+							<xs:extension base="manualDescriptionType"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="pickupConfirmation">
+					<xs:annotation>
+						<xs:documentation>msgs: 4010 pickupConfirmation</xs:documentation>
+					</xs:annotation>
+					<xs:complexType mixed="false">
+						<xs:complexContent>
+							<xs:extension base="pickupConfirmation"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="orderLink" type="orderLink">
+					<xs:annotation>
+						<xs:documentation>msg: 2040</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="locationRequest" type="locationRequest" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>msg 5020, if sequential addressLocations are required</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="orderReport" type="orderReport" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>msg 6001</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="nodeCancelation" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Msg 2020 Node Cancelation</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:complexContent>
+							<xs:extension base="nodeCancelationType"/>
+						</xs:complexContent>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="nodeCancellation" type="nodeCancellationType" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Msg 2020 Node Cancellation</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="authorizationAccept" type="authorizationAcceptType"/>
+				<xs:element name="deliveryNote" type="deliveryNote">
+					<xs:annotation>
+						<xs:documentation>Msg 6500</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="resourceAllocation" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Msg 1920</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="resourceOrderid" type="idType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Order number or other identifier of the task to which a resource is requested</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="resourceCapacity" type="resourceType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Capacity of the requested resource</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="resourceStarttime" type="timesType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Starttime for the requested resource</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="resourceEndtime" type="timesType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Endtime for the requested resource</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="resourceAddress" type="addressType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation>Address where the requested resource should be the resourceStarttime </xs:documentation>
+								</xs:annotation>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="orderTemplate" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Msg 2800, 2801</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="idOrderTemplate">
+								<xs:complexType>
+									<xs:complexContent>
+										<xs:extension base="idType">
+											<xs:attribute name="orderTemplateName" type="xs:string"/>
+										</xs:extension>
+									</xs:complexContent>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="orderTemplateCalendar" type="calendarType"/>
+							<xs:element name="orderTemplateAgreement" type="agreement" minOccurs="0"/>
+							<xs:element name="scheduleElements">
+								<xs:complexType>
+									<xs:sequence maxOccurs="unbounded">
+										<xs:element name="scheduleElement">
+											<xs:complexType>
+												<xs:sequence minOccurs="0">
+													<xs:element name="scheduleElementWeekday" type="weekdaysType" minOccurs="0"/>
+													<xs:element name="scheduleElementDate" type="date" minOccurs="0"/>
+													<xs:element name="scheduleElementReferencesTo" type="referencesTo" minOccurs="0"/>
+													<xs:element name="scheduleElementRoute" type="route" minOccurs="0"/>
+												</xs:sequence>
+												<xs:attribute name="scheduleElementSequenceNbr" type="xs:integer"/>
+												<xs:attribute name="scheduleElementFunction">
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="Insert"/>
+															<xs:enumeration value="Delete"/>
+															<xs:enumeration value="Update"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+												<xs:attribute name="scheduleElementResponse" type="xs:string">
+													<xs:annotation>
+														<xs:documentation>Returkod</xs:documentation>
+													</xs:annotation>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="scheduleElementOrderList" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Msg 2810</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="scheduleElementOrder">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="scheduleElementOrderReferencesTo" minOccurs="0">
+											<xs:complexType>
+												<xs:complexContent>
+													<xs:extension base="referencesTo"/>
+												</xs:complexContent>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="scheduledElementOrderDate" type="date"/>
+									</xs:sequence>
+									<xs:attribute name="orderListClosed" type="xs:boolean">
+										<xs:annotation>
+											<xs:documentation>Used to indicate that no more orders exist in the list.</xs:documentation>
+										</xs:annotation>
+									</xs:attribute>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="infoRequest" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Msg 15XX</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="requestItem" type="requestContentType"/>
+							<xs:element name="requestCalendar" type="calendarType" minOccurs="0"/>
+							<xs:element name="requestProduct" type="product" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="infoResponse" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Msg 16XX</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="responseList" type="node" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="responsePrice" type="price" minOccurs="0" maxOccurs="unbounded"/>
+							<xs:element name="responseOrg" type="organizationType" minOccurs="0" maxOccurs="unbounded"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="accounting" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Msg 8XXX</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="idAccounting" type="idType"/>
+							<xs:element name="tour" minOccurs="0" maxOccurs="unbounded">
+								<xs:annotation>
+									<xs:documentation>Summary of signle missions to be accounted for</xs:documentation>
+								</xs:annotation>
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="referencesToTour" type="referencesTo"/>
+										<xs:element name="statusTour">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="idActivity" type="idType">
+														<xs:annotation>
+															<xs:documentation>Indicates request for payment, accept payment, review payment etc</xs:documentation>
+														</xs:annotation>
+													</xs:element>
+													<xs:element name="statusTourError" type="errorType" minOccurs="0" maxOccurs="unbounded"/>
+													<xs:element name="manualDescriptionStatus" type="manualDescriptionType" minOccurs="0" maxOccurs="unbounded"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="suborderTour" type="suborderTourType" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="calculationsTour" minOccurs="0">
+											<xs:annotation>
+												<xs:documentation>Base for summary economics report</xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="calculationFare" type="calculationFareType" maxOccurs="unbounded"/>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+										<xs:element name="summaryReportTour" type="summaryReport" minOccurs="0"/>
+										<xs:element name="economyReportTour" type="economyReport" minOccurs="0" maxOccurs="unbounded"/>
+										<xs:element name="resourceTour" type="resourceType" minOccurs="0"/>
+										<xs:element name="eventTour" minOccurs="0" maxOccurs="unbounded">
+											<xs:annotation>
+												<xs:documentation>This is the element to place events that is not connected to a specific content (suborder). </xs:documentation>
+											</xs:annotation>
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="eventTourTime" type="time" minOccurs="0"/>
+													<xs:element name="tourGeographicLocation" type="geographicLocation" minOccurs="0"/>
+												</xs:sequence>
+												<xs:attribute name="eventVehicle" use="required">
+													<xs:annotation>
+														<xs:documentation>This is the element to place events that is not connected to a specific content (suborder). </xs:documentation>
+													</xs:annotation>
+													<xs:simpleType>
+														<xs:restriction base="xs:string">
+															<xs:enumeration value="1711"/>
+															<xs:enumeration value="dispatchconfirmationsent"/>
+															<xs:enumeration value="1714"/>
+															<xs:enumeration value="start"/>
+															<xs:enumeration value="1715"/>
+															<xs:enumeration value="stop"/>
+															<xs:enumeration value="1716"/>
+															<xs:enumeration value="acceptOrder"/>
+														</xs:restriction>
+													</xs:simpleType>
+												</xs:attribute>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="economyReportAccounting" type="economyReport"/>
+							<xs:element name="orgClient" type="organizationType"/>
+							<xs:element name="orgProvider" type="organizationType"/>
+						</xs:sequence>
+						<xs:attribute name="accountingType" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>To be descided later</xs:documentation>
+							</xs:annotation>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+			<xs:element name="ClientContactReference" type="contactInfosType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="msgType" use="required">
+			<xs:annotation>
+				<xs:documentation>SUTI number of this message.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1000"/>
+					<xs:enumeration value="1001"/>
+					<xs:enumeration value="1002"/>
+					<xs:enumeration value="1010"/>
+					<xs:enumeration value="1011"/>
+					<xs:enumeration value="1012"/>
+					<xs:enumeration value="1020"/>
+					<xs:enumeration value="1021"/>
+					<xs:enumeration value="1022"/>
+					<xs:enumeration value="1023"/>
+					<xs:enumeration value="1024"/>
+					<xs:enumeration value="1025"/>
+					<xs:enumeration value="1500"/>
+					<xs:enumeration value="1501"/>
+					<xs:enumeration value="1600"/>
+					<xs:enumeration value="1601"/>
+					<xs:enumeration value="1920"/>
+					<xs:enumeration value="1921"/>
+					<xs:enumeration value="1922"/>
+					<xs:enumeration value="2000"/>
+					<xs:enumeration value="2001"/>
+					<xs:enumeration value="2002"/>
+					<xs:enumeration value="2003"/>
+					<xs:enumeration value="2005"/>
+					<xs:enumeration value="2006"/>
+					<xs:enumeration value="2007"/>
+					<xs:enumeration value="2010"/>
+					<xs:enumeration value="2011"/>
+					<xs:enumeration value="2012"/>
+					<xs:enumeration value="2013"/>
+					<xs:enumeration value="2020"/>
+					<xs:enumeration value="2021"/>
+					<xs:enumeration value="2022"/>
+					<xs:enumeration value="2023"/>
+					<xs:enumeration value="2030"/>
+					<xs:enumeration value="2031"/>
+					<xs:enumeration value="2032"/>
+					<xs:enumeration value="2032"/>
+					<xs:enumeration value="2040"/>
+					<xs:enumeration value="2050"/>
+					<xs:enumeration value="2530"/>
+					<xs:enumeration value="2531"/>
+					<xs:enumeration value="2532"/>
+					<xs:enumeration value="2540"/>
+					<xs:enumeration value="2541"/>
+					<xs:enumeration value="2800"/>
+					<xs:enumeration value="2801"/>
+					<xs:enumeration value="2810"/>
+					<xs:enumeration value="2900"/>
+					<xs:enumeration value="2901"/>
+					<xs:enumeration value="2902"/>
+					<xs:enumeration value="3000"/>
+					<xs:enumeration value="3001"/>
+					<xs:enumeration value="3002"/>
+					<xs:enumeration value="3003"/>
+					<xs:enumeration value="3004"/>
+					<xs:enumeration value="4000"/>
+					<xs:enumeration value="4001"/>
+					<xs:enumeration value="4002"/>
+					<xs:enumeration value="4010"/>
+					<xs:enumeration value="4020"/>
+					<xs:enumeration value="4031"/>
+					<xs:enumeration value="5000"/>
+					<xs:enumeration value="5001"/>
+					<xs:enumeration value="5002"/>
+					<xs:enumeration value="5010"/>
+					<xs:enumeration value="5011"/>
+					<xs:enumeration value="5020"/>
+					<xs:enumeration value="5021"/>
+					<xs:enumeration value="5030"/>
+					<xs:enumeration value="6000"/>
+					<xs:enumeration value="6001"/>
+					<xs:enumeration value="6500"/>
+					<xs:enumeration value="6501"/>
+					<xs:enumeration value="6502"/>
+					<xs:enumeration value="6503"/>
+					<xs:enumeration value="6510"/>
+					<xs:enumeration value="6511"/>
+					<xs:enumeration value="6800"/>
+					<xs:enumeration value="6810"/>
+					<xs:enumeration value="7000"/>
+					<xs:enumeration value="7001"/>
+					<xs:enumeration value="7010"/>
+					<xs:enumeration value="7011"/>
+					<xs:enumeration value="7015"/>
+					<xs:enumeration value="7020"/>
+					<xs:enumeration value="7021"/>
+					<xs:enumeration value="7030"/>
+					<xs:enumeration value="7031"/>
+					<xs:enumeration value="7099"/>
+					<xs:enumeration value="8000"/>
+					<xs:enumeration value="8001"/>
+					<xs:enumeration value="8010"/>
+					<xs:enumeration value="8100"/>
+					<xs:enumeration value="8101"/>
+					<xs:enumeration value="8111"/>
+					<xs:enumeration value="8121"/>
+					<xs:enumeration value="8181"/>
+					<xs:enumeration value="8199"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="msgName" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>SUTI name of this message.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="referencesTo">
+		<xs:annotation>
+			<xs:documentation>Reference to earlier order and/or msg or reference to a resource at provider</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idOrder" type="idType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Must be eqivalents and should only be order ids from different systems. Should not be ids of suborders or partial orders</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="idMsg" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Reference to the message that this message answers.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="idVehicle" type="idType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Source (src) shall refer to the whole fleet of the provider och a uniquely defined group of the providers fleet.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="idDriver" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Source (src) shall refer to the providers staff of drivers och a uniquely defined group of the providers staff of drivers.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="idSuborder" type="idType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Must be eqivalents and should only be ids of suborders or partial orders</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="idNode" type="idType" minOccurs="0"/>
+			<xs:element name="idMsgRef" type="idMsgRef" minOccurs="0"/>
+			<xs:element name="idPassword" type="idType" minOccurs="0"/>
+			<xs:element name="idRejectReason" type="idType" minOccurs="0"/>
+			<xs:element name="idReceipt" type="idType" minOccurs="0"/>
+			<xs:element name="idAuthorization" type="idType" minOccurs="0"/>
+			<xs:element name="idOrderStatus" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Current status of the order in the provider system</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="idOrderTemplate" type="idType" minOccurs="0"/>
+			<xs:element name="idResponse" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Used together with infoResponse, typically cehecksum to validate sent information. May be used later in process to claim for instance a given fixed price.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="idOrderForward" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Used to inform all parties involved in a order forward about all information needed. If order forward is used all information in this tag is mandatory.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="idOrderForwarderClient" type="idType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>idOrder used by forwarding Client</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="orgClientForwarder" type="orgType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Organisational information about forwarding Client.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="idOrderForwardProvider" type="idType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>idOrder used by provider to whom the order is forwarded.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="orgForwardProvider" type="orgType" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Organisational information about the provider to whom the order is forwarded.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="order">
+		<xs:annotation>
+			<xs:documentation>Order information elements, the meaning is dependant on SUTI-message type</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idOrder" type="idType" minOccurs="0"/>
+			<xs:element name="orgProvider" type="orgType" minOccurs="0"/>
+			<xs:element name="agreement" type="agreement" minOccurs="0"/>
+			<xs:element name="process" type="process" minOccurs="0"/>
+			<xs:element name="economyOrder" type="economyType" minOccurs="0"/>
+			<xs:element name="resourceOrder" type="resourceType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Contains the total or maximum amount of demands neededed to complete this order.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="route" type="route" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="product">
+		<xs:annotation>
+			<xs:documentation>Refers to a procuct description/definition within the agreement</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idProduct" type="idType"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="agreement">
+		<xs:annotation>
+			<xs:documentation>Refers to an agreement between client and provider</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idAgreement" type="idType"/>
+			<xs:element name="product" type="product" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="process">
+		<xs:annotation>
+			<xs:documentation>When order is sent this element describes how the client and provider will process order. Required only in first order.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="multiDispatch" type="multiDispatch" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="manualDispatch" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>True indicates that this order have to be manualy handled before dispatch.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="dispatch" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>True indicates that dispatch message shall be sent. False indicates that no dispatch message shall be sent, i.e. Client dont need to know about the result of the dispatch.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="dispatchResponsible" use="required">
+			<xs:annotation>
+				<xs:documentation>Client indicates that the client shall approve of the suggested vehicle before dispatch can be completed. Provider indicates that the provider completes dispatch without the client having to approve it the dispatched vehicle.  If attribute "dispatch" is true the client shall be informed about the result of the dispatch.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="client"/>
+					<xs:enumeration value="provider"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="trafficControl" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>True indicates the the client will handle traffic control and that messages in block 4 shall be used.
+</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="report" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>True indicates that report shall be sent and messages in block 6 shall be used.
+</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="preorderedVehicle" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>True indicates that a specific vehicle shall be used in a repetetive order. Dispatch will be simplified and contains only a confirmation that the specific vehicle is available.  
+</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="allowRouting" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>True indicates that this order can be routed with another order.
+</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="automaticStatus" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>True indicates that an agreement has been made that the provider automatically shall report the status of the vehicle executing this order at a certain distance from next node.
+</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="statusDistance" type="xs:nonNegativeInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>Distance to next node in meter. Used together with automaticStatus.
+                </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="orderAlteration" type="xs:boolean" use="optional" default="0">
+			<xs:annotation>
+				<xs:documentation>FALSE indicates thar the Provider must not make any changes to the order. TRUE indicates the possibility for the Provider to reroute the order. Default value is FALSE</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="deliveryNote" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>True indicates that the client requests a deliveryNote msg 6500 upon completion of order.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="pickupconfirmation" use="optional">
+			<xs:annotation>
+				<xs:documentation>Notrequested=pickupconfirmaction not used in this order. 
+standard = only actualtime used for all types.
+extended = actualtime used used for all types and estimated time used in vehicleatnode.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="notrequested"/>
+					<xs:enumeration value="standard"/>
+					<xs:enumeration value="extended"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="preeOrder" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Possibility to set different options for preeOrders (pree booked oreders or pree planded orders). Values:  
+
+PROVIDER= the Provder may transform a preeOrder into an order by sending MSG  2050 to confirm that the preeOrder from that moment will be treated as an Order.
+
+CLIENTCONFIRM=The Client shall confirm with Msg 2000 or delete the preeOrder with MSG 2010. If the Client hasn't confirmed the preeOrder will be transformed into an order and will be sent ot on dispatch.
+
+NOTE! If this tag has been set the Client can at any moment change the order by using MSG 2071 Order Change.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="allowForward" type="xs:boolean" use="optional" default="0">
+			<xs:annotation>
+				<xs:documentation>Used to indicate if it's allowed to forward an order to another provider. If TRUE it's allowed to forward.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="nodeprocess">
+		<xs:annotation>
+			<xs:documentation>When order is sent this element describes how the client and provider will process order. Required only in first order.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="sendinformationContent" type="contactInfo" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>If this element is not used the contact info to use shall be the contactinfo supplied in Content. It's the Clients responsibility to confirm that both  the contactType and the contactIfo are valid.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="sendinformationDisptch">
+			<xs:annotation>
+				<xs:documentation>Send information about dispatch. Allowsend is the default value if not used or nothing else agreed upon.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="allowsend"/>
+					<xs:enumeration value="neversend"/>
+					<xs:enumeration value="alwayssend"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="sendinformationDelay">
+			<xs:annotation>
+				<xs:documentation>Send information about delay. Allowsend is the default value if not used or nothing else agreed upon.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="allowsend"/>
+					<xs:enumeration value="neversend"/>
+					<xs:enumeration value="alwayssend"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="sendinformationArrival">
+			<xs:annotation>
+				<xs:documentation>Send information about estimated arrival. Allowsend is the default value if not used or nothing else agreed upon.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="alwayssend"/>
+					<xs:enumeration value="neversend"/>
+					<xs:enumeration value="allowsend"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="multiDispatch">
+		<xs:annotation>
+			<xs:documentation>Presence of this element in order indicates that the order may have been sent to more than one provider</xs:documentation>
+		</xs:annotation>
+	</xs:complexType>
+	<xs:complexType name="economyType">
+		<xs:annotation>
+			<xs:documentation>Describes all aspects of economy for a order, traveller etc</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="price" type="price" minOccurs="0"/>
+			<xs:element name="formOfPayment" type="formOfPayment" minOccurs="0"/>
+			<xs:element name="exchangeRates" type="exchangeRates" minOccurs="0"/>
+			<xs:element name="manualDescriptionEconomy" type="manualDescriptionType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="taxiMeter">
+		<xs:annotation>
+			<xs:documentation>Potential ordering or use of taxiMeter</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idTaxa" type="idType">
+				<xs:annotation>
+					<xs:documentation>Source (src) shall refer to the used tariff of the provider.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="activate" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>Indicates if taximeter shall be activated in vehicle. 
+TRUE = Activate
+FALSE = no activation</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="priceCalculation">
+		<xs:annotation>
+			<xs:documentation>Potential describtion of how taxa is constructed</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idCurrency" type="idType">
+				<xs:annotation>
+					<xs:documentation>Source (src) shall refer to ISO 4217.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="vatIncluded" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>If True VAT shall be included in calculated price.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="vatPercent" type="xs:float" use="optional">
+			<xs:annotation>
+				<xs:documentation>VAT percentage used in calculation.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="startFee" type="xs:float" use="required"/>
+		<xs:attribute name="kmFee" type="xs:float" use="required"/>
+		<xs:attribute name="minuteFee" type="xs:float" use="required"/>
+		<xs:attribute name="formula" use="required">
+			<xs:annotation>
+				<xs:documentation>Type of calculation. See enumerations.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1401"/>
+					<xs:enumeration value="breakpoint"/>
+					<xs:enumeration value="1402"/>
+					<xs:enumeration value="sumtariff"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="kmFeeDistance" type="xs:float" use="optional"/>
+		<xs:attribute name="minuteFeeTime" type="xs:float" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="price">
+		<xs:annotation>
+			<xs:documentation>Price elements</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="taxiMeter" type="taxiMeter" minOccurs="0"/>
+			<xs:element name="priceCalculation" type="priceCalculation" minOccurs="0"/>
+			<xs:element name="idCurrency" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Source (src) shall refer to ISO 4217.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="priceResponsible" use="required">
+			<xs:annotation>
+				<xs:documentation>Indicate if client or provider sets a price. See enumerations.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1411"/>
+					<xs:enumeration value="client"/>
+					<xs:enumeration value="1412"/>
+					<xs:enumeration value="provider"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="fixedPrice" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>True if price is fixed</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="vatIncluded" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>True if VAT is included in price</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="vatPercent" type="xs:float" use="optional">
+			<xs:annotation>
+				<xs:documentation>VAT percentage</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="price" type="xs:float" use="optional">
+			<xs:annotation>
+				<xs:documentation>Price as set by priceResponcible. If vatincluded are True this price include VAT</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="vat" type="xs:float" use="optional">
+			<xs:annotation>
+				<xs:documentation>Amount of VAT</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="formOfPayment">
+		<xs:annotation>
+			<xs:documentation>Describes how price is payed</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="payment" maxOccurs="unbounded">
+				<xs:complexType mixed="false">
+					<xs:complexContent>
+						<xs:extension base="payment"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="payment">
+		<xs:annotation>
+			<xs:documentation>Many payments form the formOfPayment. The types of payment can be Cash, Card, Account, Ticket, Document or SocialServiceFee</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idPayment" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Source (src) shall refer to the actual set of payment Identities used by the provider</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="idCurrency" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Source (src)  shall refer to ISO 4217.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="idEkInfo" type="idEkInfo" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Typ av Id. Example project,  ostcenter or invoicenumber.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vatAmountSpecification" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="vatAmountSpecificationType"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="amount" type="xs:float" use="optional"/>
+		<xs:attribute name="paymentType" use="required">
+			<xs:annotation>
+				<xs:documentation>Type of payment. See enumerations.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1301"/>
+					<xs:enumeration value="cash"/>
+					<xs:enumeration value="1302"/>
+					<xs:enumeration value="card"/>
+					<xs:enumeration value="1303"/>
+					<xs:enumeration value="account"/>
+					<xs:enumeration value="1304"/>
+					<xs:enumeration value="ticket"/>
+					<xs:enumeration value="1305"/>
+					<xs:enumeration value="document"/>
+					<xs:enumeration value="1306"/>
+					<xs:enumeration value="socialservicefee"/>
+					<xs:enumeration value="1307"/>
+					<xs:enumeration value="prepaidSocialfee"/>
+					<xs:enumeration value="prepaidsocialfee"/>
+					<xs:enumeration value="1308"/>
+					<xs:enumeration value="claim"/>
+					<xs:enumeration value=""/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="documentType" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Specifikation of what kind of document that are used</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="noOfDocuments" type="xs:nonNegativeInteger" use="optional"/>
+		<xs:attribute name="seqno" type="xs:positiveInteger" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="exchangeRates">
+		<xs:annotation>
+			<xs:documentation>Describes how transition beetween different currencies is handled</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="exchangeRate" type="exhangeRate" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="exhangeRate">
+		<xs:annotation>
+			<xs:documentation>Rate beetween two currencies</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idCurrencyFrom" type="idType">
+				<xs:annotation>
+					<xs:documentation>Source (src) shall refer to ISO 4217.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="idCurrencyTo" type="idType">
+				<xs:annotation>
+					<xs:documentation>Source (src) shall refer to ISO 4217.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="exchangeRate" type="xs:float" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="resourceType">
+		<xs:annotation>
+			<xs:documentation>Describes vehicle and driver</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vehicle" type="vehicle" minOccurs="0"/>
+			<xs:element name="manualDescriptionResource" type="manualDescriptionType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="idOrg" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Id of a organisation acting as sub provider to the provider. </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="driver" type="driver" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Describes the demands of the driver that vill perform this node</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="vehiclestartLocation" type="geographicLocation" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>client may order vehicle to be dispatched from this area</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="MethodDispatch" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="normal"/>
+					<xs:enumeration value="change"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="vehicle">
+		<xs:annotation>
+			<xs:documentation>Describes the vehicle used or to be used</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idVehicle" type="idType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Source (src) shall refer to the whole fleet of the provider or a uniquely defined group of the providers fleet.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="capacity" type="capacity" minOccurs="0"/>
+			<xs:element name="attributesVehicle" type="attributesType" minOccurs="0"/>
+			<xs:element name="vehicleCurrentLocation" type="geographicLocation" minOccurs="0"/>
+			<xs:element name="contactInfoVehicle" type="contactInfosType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="noOfVehicle" type="xs:positiveInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>Used if 2 or more vehicles are ordered in the same order</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="taximeterType" type="xs:string"/>
+		<xs:attribute name="taximeterSoftware" type="xs:string"/>
+	</xs:complexType>
+	<xs:complexType name="capacity">
+		<xs:annotation>
+			<xs:documentation>How many seats, the position of seats, luggage spac etc</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="seats" type="seats"/>
+			<xs:element name="luggage" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Luggage refer to international air transport agreement. 
+Cabin = 8 kg and 55 x 40 x 23 cm.
+Checked = 23 kg and max liner size 158 cm.
+Special = e. g. golf bags, ski equipment, musical instrument.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="luggageType">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="checked"/>
+								<xs:enumeration value="cabin"/>
+								<xs:enumeration value="special"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="pcs" type="xs:int"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="luggageArea" type="xs:float" use="optional"/>
+		<xs:attribute name="fullArea" type="xs:float" use="optional"/>
+		<xs:attribute name="stretcherArea" type="xs:float" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="seats">
+		<xs:annotation>
+			<xs:documentation>The seats, its position etc</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="position" type="position" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>position are used to dedicate a seat for a traveller. Further information in latest version of SUTI_ResourceDescription</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="noOfSeats" type="xs:nonNegativeInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>noOfSeats is used to indicate the total number of seats.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="noOfSeatsMax" type="xs:nonNegativeInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>noOfSeatsMax is used to indicate the max number of seats the vehicle can have according to the clients request.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="noOfItems" type="xs:nonNegativeInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>noOfItems is used to indicate the total number of people or parcels.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="position">
+		<xs:annotation>
+			<xs:documentation>The caracteristics of a seat position</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="row" type="xs:positiveInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>Row are counted from the front seat and back and numbered from 1 to n.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="seat" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Seat are counted from left to right, compare airline seating, and numbered A,B, c and so on</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="direction" use="optional">
+			<xs:annotation>
+				<xs:documentation>Indicates the travelling direction. See enumerations</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1201"/>
+					<xs:enumeration value="forward"/>
+					<xs:enumeration value="1202"/>
+					<xs:enumeration value="backward"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="legSpace" use="optional">
+			<xs:annotation>
+				<xs:documentation>Indicates the need of legspace of the traveller. See  enumerations</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1211"/>
+					<xs:enumeration value="comfort"/>
+					<xs:enumeration value="1212"/>
+					<xs:enumeration value="normal"/>
+					<xs:enumeration value="1213"/>
+					<xs:enumeration value="poor"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="access" type="xs:nonNegativeInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>Access means the amount of seats that traveller may pass over to reach his or her dedicated seat. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="attributesType">
+		<xs:annotation>
+			<xs:documentation>A sequence of attributes, where the presence of an attribute means that the existence of the attribute is true</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="attribute" type="attribute" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="attribute">
+		<xs:annotation>
+			<xs:documentation>There is or should be a presence of the attribute</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idAttribute" type="idType">
+				<xs:annotation>
+					<xs:documentation>Language: Reference to ISO 639-2
+Other: Reference to the latest version of SutiAttributeList</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="manualDescriptionType">
+		<xs:annotation>
+			<xs:documentation>Any text aimed for operators, drivers etc</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idActionText" type="idType" minOccurs="0"/>
+			<xs:element name="textTimestamp" type="timesType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="sendtoInvoice" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>True = message shall be sent to invoicing</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="sendtoVehicle" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>True = message shall be sent to vehicle</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="sendtoOperator" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>True = message shall be sent to operator</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="manualText" type="xs:string" use="required"/>
+		<xs:attribute name="vehicleConfirmation" type="xs:boolean" use="required">
+			<xs:annotation>
+				<xs:documentation>True = confirmation that the recipient has been notified shall be sent to client.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="sendingOperator">
+			<xs:annotation>
+				<xs:documentation>Attribute to send identity of the operator that has sent this manual text.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="driver">
+		<xs:annotation>
+			<xs:documentation>attributes for the driver</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="attributesDriver" type="attributesType" minOccurs="0"/>
+			<xs:element name="idDriver" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Source (src) shall refer to the providers staff of drivers och a uniquely defined group of the providers staff of drivers.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="contactInfoDriver" type="contactInfosType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="name" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="route">
+		<xs:annotation>
+			<xs:documentation>The nodes, the travellers or parcels in the order</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="node" maxOccurs="unbounded">
+				<xs:complexType mixed="false">
+					<xs:complexContent>
+						<xs:extension base="node"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="node">
+		<xs:annotation>
+			<xs:documentation>Description of the node. Point is a synonym for node. The node can be either of the types pickup, destination, navigation or action.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="addressNode">
+				<xs:complexType mixed="false">
+					<xs:complexContent>
+						<xs:extension base="addressType"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="timesNode" type="timesType" minOccurs="0"/>
+			<xs:element name="contents" type="contents" minOccurs="0"/>
+			<xs:element name="nodeprocess" minOccurs="0">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="nodeprocess"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="nodeSeqno" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Sequence number of included nodes. Sequence shall start with the lowest number and continue in rising order to the highest. </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="nodeType" use="required">
+			<xs:annotation>
+				<xs:documentation>Type of node. See enumerations.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1801"/>
+					<xs:enumeration value="action"/>
+					<xs:enumeration value="1802"/>
+					<xs:enumeration value="navigation"/>
+					<xs:enumeration value="1803"/>
+					<xs:enumeration value="pickup"/>
+					<xs:enumeration value="1804"/>
+					<xs:enumeration value="destination"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="subnodeType" use="optional">
+			<xs:annotation>
+				<xs:documentation>subnodeType are used to further define nodeType "action". See enumerations.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1901"/>
+					<xs:enumeration value="break"/>
+					<xs:enumeration value="1902"/>
+					<xs:enumeration value="driverassist"/>
+					<xs:enumeration value="1903"/>
+					<xs:enumeration value="mobaidpickup"/>
+					<xs:enumeration value="1904"/>
+					<xs:enumeration value="mobaiddropoff"/>
+					<xs:enumeration value="1905"/>
+					<xs:enumeration value="ferrydeparture"/>
+					<xs:enumeration value="1906"/>
+					<xs:enumeration value="ferryarrival"/>
+					<xs:enumeration value="1907"/>
+					<xs:enumeration value="waitforinstructions"/>
+					<xs:enumeration value="1908"/>
+					<xs:enumeration value="flagstop"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="timesType">
+		<xs:annotation>
+			<xs:documentation>Scheduled time and/or estimated time and/or actual time</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="time" maxOccurs="unbounded">
+				<xs:complexType mixed="false">
+					<xs:complexContent>
+						<xs:extension base="time"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="time">
+		<xs:annotation>
+			<xs:documentation>Should normally be the local time.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="timeAccuracy" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Used to indicate accepted deviation in attribute time</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="timeZone" type="xs:integer" use="optional">
+			<xs:annotation>
+				<xs:documentation>Timezone used in comunication. Default is local timezone. See ISO 8601 for more information.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="time" type="xs:dateTime" use="required" form="unqualified"/>
+		<xs:attribute name="dwellTime" type="xs:int" use="optional">
+			<xs:annotation>
+				<xs:documentation>Time used to finish this node</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="timeType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Type of time.  See enumerations</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="2101"/>
+					<xs:enumeration value="scheduledtime"/>
+					<xs:enumeration value="2102"/>
+					<xs:enumeration value="estimatedtime"/>
+					<xs:enumeration value="2103"/>
+					<xs:enumeration value="promisedtime"/>
+					<xs:enumeration value="2104"/>
+					<xs:enumeration value="actual"/>
+					<xs:enumeration value="2105"/>
+					<xs:enumeration value="scheduled"/>
+					<xs:enumeration value="2107"/>
+					<xs:enumeration value="estimated"/>
+					<xs:enumeration value="2106"/>
+					<xs:enumeration value="promised"/>
+					<xs:enumeration value="2108"/>
+					<xs:enumeration value="asap"/>
+					<xs:enumeration value=""/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="date">
+		<xs:annotation>
+			<xs:documentation>Should normally be the local time.</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="date" type="xs:date" use="required" form="unqualified"/>
+	</xs:complexType>
+	<xs:complexType name="addressType">
+		<xs:annotation>
+			<xs:documentation>The address known to receiving system</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="manualDescriptionAddress" type="manualDescriptionType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="geographicLocation" type="geographicLocation" minOccurs="0"/>
+			<xs:element name="idAddressName" type="idType" minOccurs="0"/>
+			<xs:element name="idStreet" minOccurs="0">
+				<xs:complexType mixed="false">
+					<xs:complexContent>
+						<xs:extension base="idType"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="idPostalCode" type="idType" minOccurs="0"/>
+			<xs:element name="idCommunity" type="idType" minOccurs="0"/>
+			<xs:element name="idCountry" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Id identifying Country. Source (src)  shall refer to ISO 3166-1</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="idZone" type="idType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Id of a used Zone or zoneset. Source (src)  shall refer to either a general zone defined between sender and receiver or to a zoneset used by one or both of the systems.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="idMap" type="idType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Used map. Source (src)  shall refer to used map.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="attributeAddress" type="attributesType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Attributes of addressNode. Mainly an attribute indicating a special need for a specific traveller at this specific address. But may be used in other type of contents such as parcel.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="addressName" type="xs:string" use="optional"/>
+		<xs:attribute name="street" type="xs:string" use="optional"/>
+		<xs:attribute name="streetNo" type="xs:positiveInteger" use="optional"/>
+		<xs:attribute name="streetNoLetter" type="xs:string" use="optional"/>
+		<xs:attribute name="location" type="xs:string" use="optional"/>
+		<xs:attribute name="community" type="xs:string" use="optional"/>
+		<xs:attribute name="postalNo" type="xs:string" use="optional"/>
+		<xs:attribute name="country" type="xs:string" use="optional"/>
+		<xs:attribute name="mapPage" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="geographicLocation">
+		<xs:annotation>
+			<xs:documentation>The coordinates for the address and potentially a known zone</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="vehicleDistance" type="vehicleDistance" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="zone" type="xs:string" use="optional"/>
+		<xs:attribute name="typeOfCoordinate" use="required">
+			<xs:annotation>
+				<xs:documentation>Shall be of type WGS84.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="WGS84"/>
+					<xs:enumeration value="WGS-84"/>
+					<xs:enumeration value="RT90"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="lat" type="xs:float" use="required">
+			<xs:annotation>
+				<xs:documentation>See documentation in Use Cases.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="long" type="xs:float" use="required">
+			<xs:annotation>
+				<xs:documentation>See documentation in Use Cases.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="precision" type="xs:integer" use="required">
+			<xs:annotation>
+				<xs:documentation>Precision skall be from GPS-unit in vehicle and measured in meter. This is the deviation in position measured by the >GPS-unit.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="speed" type="xs:float" use="optional">
+			<xs:annotation>
+				<xs:documentation>Speed shall be from GPS-unit in vehicle and measured in meter per second.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="speedSource" use="optional">
+			<xs:annotation>
+				<xs:documentation>Speed measured at GPS or VEHICLE.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="gpsunit"/>
+					<xs:enumeration value="taximeter"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="direction" type="xs:integer" use="optional">
+			<xs:annotation>
+				<xs:documentation>Direction shall be from GPS-unit in vehichle and measured in degrees (0 - 360 degrees).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="height" type="xs:float" use="optional">
+			<xs:annotation>
+				<xs:documentation>Height shall be from GPS-unit in vehichle and measured in meter. May be measured in meter with decimals.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="deviationSpeed" type="xs:float" use="optional">
+			<xs:annotation>
+				<xs:documentation>Deviation in speed.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="contents">
+		<xs:annotation>
+			<xs:documentation>Description of the contents for each node</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="content" type="content" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="content">
+		<xs:annotation>
+			<xs:documentation>Description for a single content</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idContent" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>personal id or corresponding parcelid</xs:documentation>
+				</xs:annotation>
+				<xs:complexType mixed="false">
+					<xs:complexContent>
+						<xs:extension base="idType"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="attributeContent" type="attributesType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Attributes of idContent. Mainly a traveller but may be used in other type of contents such as parcel.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="economyContent" type="economyType" minOccurs="0"/>
+			<xs:element name="resourceContent" type="resourceType" minOccurs="0"/>
+			<xs:element name="manualDescriptionContent" type="manualDescriptionType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="contactInfosContent" type="contactInfosType" minOccurs="0"/>
+			<xs:element name="connection" type="connection" minOccurs="0"/>
+			<xs:element name="subOrderContent" type="subOrderType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>in case one or several nodes is built from a subOrder in clients system these ordernumbers can be placed here. Observe that the same suborder number may occur in several nodes and the suborder therefore may consists of several nodes. The system of the provider can store these orders separately and can by using message 2040 tell the client its corresponding ordernumbers</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="productContent" type="product" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="contentType" use="required">
+			<xs:annotation>
+				<xs:documentation>Type of content. See enumerations</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1001"/>
+					<xs:enumeration value="traveller"/>
+					<xs:enumeration value="1002"/>
+					<xs:enumeration value="parcel"/>
+					<xs:enumeration value="1003"/>
+					<xs:enumeration value="action"/>
+					<xs:enumeration value="1004"/>
+					<xs:enumeration value="navigation"/>
+					<xs:enumeration value="1005"/>
+					<xs:enumeration value="companion"/>
+					<xs:enumeration value="1006"/>
+					<xs:enumeration value="coTraveller"/>
+					<xs:enumeration value="1007"/>
+					<xs:enumeration value="child"/>
+					<xs:enumeration value="1008"/>
+					<xs:enumeration value="animal"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+		<xs:attribute name="maxTravelDuration" use="optional">
+			<xs:annotation>
+				<xs:documentation>Indicates the maximum time in minutes the content can spend in the vehicle.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="gender" use="optional">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="female"/>
+					<xs:enumeration value="male"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="connection">
+		<xs:annotation>
+			<xs:documentation>Event related to the order</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="associatedReservation" type="associatedReservation" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="connectionType" use="required">
+			<xs:annotation>
+				<xs:documentation>type of connection. See enumerations</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1101"/>
+					<xs:enumeration value="flight"/>
+					<xs:enumeration value="1102"/>
+					<xs:enumeration value="train"/>
+					<xs:enumeration value="1103"/>
+					<xs:enumeration value="boat"/>
+					<xs:enumeration value="1104"/>
+					<xs:enumeration value="meeting"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="connectionName" type="xs:string" use="optional"/>
+		<xs:attribute name="connectionArrDep" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="A"/>
+					<xs:enumeration value="D"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="associatedReservation">
+		<xs:annotation>
+			<xs:documentation>If the related event has a reservation in another system</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="addressReservation" type="addressType"/>
+			<xs:element name="timesReservation" type="timesType"/>
+			<xs:element name="orgReservation" type="orgType" minOccurs="0"/>
+			<xs:element name="idReservation" type="idType" minOccurs="0"/>
+			<xs:element name="contactInfosReservation" type="contactInfosType"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="contactInfosType">
+		<xs:annotation>
+			<xs:documentation>Contains different kinds of contact elements like tel, mobile, email etc</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="contactInfo" type="contactInfo" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="contactInfo">
+		<xs:annotation>
+			<xs:documentation>The telno, mailaddress etc</xs:documentation>
+		</xs:annotation>
+		<xs:attribute name="contactType" use="required">
+			<xs:annotation>
+				<xs:documentation>type of contact. See enumerations</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="2201"/>
+					<xs:enumeration value="mail"/>
+					<xs:enumeration value="2202"/>
+					<xs:enumeration value="phone"/>
+					<xs:enumeration value="2203"/>
+					<xs:enumeration value="fax"/>
+					<xs:enumeration value="2204"/>
+					<xs:enumeration value="otherInfo"/>
+					<xs:enumeration value="2205"/>
+					<xs:enumeration value="sms"/>
+					<xs:enumeration value="2206"/>
+					<xs:enumeration value="bookingagent"/>
+					<xs:enumeration value="2207"/>
+					<xs:enumeration value="web"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="contactInfo" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Number or adress for contact</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="orderReject">
+		<xs:annotation>
+			<xs:documentation>Reject reasons, potential new provider etc</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="attributesReject" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Indicates which attributes that the rejection of this order are based upon.</xs:documentation>
+				</xs:annotation>
+				<xs:complexType mixed="false">
+					<xs:complexContent>
+						<xs:extension base="attributesType"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="orgNewProvider" type="orgType" minOccurs="0"/>
+			<xs:element name="resourceReject" type="resourceType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Indicates which resources that the rejection of this order are based upon.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="orderSentBefore" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="idMsg" type="idType"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="cancellationConsequence">
+		<xs:annotation>
+			<xs:documentation>Whether a cancellation is ok, not ok or their are consequences</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="economyCancellation" type="economyType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="cancellationAcceptance" type="xs:boolean" use="required"/>
+		<xs:attribute name="cancellationConsequence" type="xs:boolean" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="pickupConfirmation">
+		<xs:annotation>
+			<xs:documentation>Node and content</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="nodeConfirmed" type="node" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="eventType" use="optional">
+			<xs:annotation>
+				<xs:documentation>Used to indicate the type of confirmation</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1701"/>
+					<xs:enumeration value="passengerinvehicle"/>
+					<xs:enumeration value="1702"/>
+					<xs:enumeration value="passengerdropped"/>
+					<xs:enumeration value="1703"/>
+					<xs:enumeration value="noshow"/>
+					<xs:enumeration value="1704"/>
+					<xs:enumeration value="parcelinvehicle"/>
+					<xs:enumeration value="1705"/>
+					<xs:enumeration value="parceldropped"/>
+					<xs:enumeration value="1706"/>
+					<xs:enumeration value="actiondone"/>
+					<xs:enumeration value="1707"/>
+					<xs:enumeration value="navigationdone"/>
+					<xs:enumeration value="1708"/>
+					<xs:enumeration value="cancelatdoor"/>
+					<xs:enumeration value="1709"/>
+					<xs:enumeration value="vehicleatnode"/>
+					<xs:enumeration value="1710"/>
+					<xs:enumeration value="infotocontent"/>
+					<xs:enumeration value="1711"/>
+					<xs:enumeration value="dispatchconfirmationsent"/>
+					<xs:enumeration value="1712"/>
+					<xs:enumeration value="delayconfirmationsent"/>
+					<xs:enumeration value="1713"/>
+					<xs:enumeration value="arrivalconfirmationsent"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="subOrderType">
+		<xs:annotation>
+			<xs:documentation>Definitions of orders in a combined order</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idOrder" type="idType" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="eventType"/>
+	<xs:complexType name="orderReport">
+		<xs:sequence>
+			<xs:element name="eventReport" type="eventReport" minOccurs="0"/>
+			<xs:element name="summaryReport" type="summaryReport" maxOccurs="unbounded"/>
+			<xs:element name="economyReport" type="economyReport" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="eventReport">
+		<xs:sequence>
+			<xs:element name="event" type="event" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="event">
+		<xs:sequence>
+			<xs:element name="eventTime" type="time" minOccurs="0"/>
+			<xs:element name="subOrderEvent" type="subOrderType" minOccurs="0"/>
+			<xs:element name="eventAddress" type="addressType" minOccurs="0"/>
+			<xs:element name="eventContent" type="content" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="nodeSeqNo" type="xs:positiveInteger"/>
+		<xs:attribute name="eventType" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="1716"/>
+					<xs:enumeration value="acceptOrder"/>
+					<xs:enumeration value="1714"/>
+					<xs:enumeration value="start"/>
+					<xs:enumeration value="1715"/>
+					<xs:enumeration value="stop"/>
+					<xs:enumeration value="pickup"/>
+					<xs:enumeration value="destination"/>
+					<xs:enumeration value="navigation"/>
+					<xs:enumeration value="action"/>
+					<xs:enumeration value="1701"/>
+					<xs:enumeration value="passengerinvehicle"/>
+					<xs:enumeration value="1702"/>
+					<xs:enumeration value="passengerdropped"/>
+					<xs:enumeration value="1703"/>
+					<xs:enumeration value="noshow"/>
+					<xs:enumeration value="1704"/>
+					<xs:enumeration value="parcelinvehicle"/>
+					<xs:enumeration value="1705"/>
+					<xs:enumeration value="parceldropped"/>
+					<xs:enumeration value="1706"/>
+					<xs:enumeration value="actiondone"/>
+					<xs:enumeration value="1707"/>
+					<xs:enumeration value="navigationdone"/>
+					<xs:enumeration value="1708"/>
+					<xs:enumeration value="cancelatdoor"/>
+					<xs:enumeration value="1709"/>
+					<xs:enumeration value="vehicleatnode"/>
+					<xs:enumeration value="1710"/>
+					<xs:enumeration value="infotocontent"/>
+					<xs:enumeration value="1711"/>
+					<xs:enumeration value="dispatchconfirmationsent"/>
+					<xs:enumeration value="1712"/>
+					<xs:enumeration value="delayconfirmationsent"/>
+					<xs:enumeration value="1713"/>
+					<xs:enumeration value="arrivalconfirmationsent"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="summaryReport">
+		<xs:sequence>
+			<xs:element name="subOrderSummary" type="subOrderType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="vehicle" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Vehicle that has performed this order</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="durationStart" type="xs:integer">
+			<xs:annotation>
+				<xs:documentation>Duration from start of order measured in seconds</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="distanceStart" type="xs:integer">
+			<xs:annotation>
+				<xs:documentation>Distance from start of order measured in meters</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="orderEnded" type="xs:boolean" use="optional">
+			<xs:annotation>
+				<xs:documentation>Indicates that this order is finished.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="economyReport">
+		<xs:sequence>
+			<xs:element name="formOfPayment" type="formOfPayment"/>
+			<xs:element name="subOrderEconomy" type="subOrderType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Used if economyreport are sent for each suborder</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="nodeSeqno" type="xs:positiveInteger">
+			<xs:annotation>
+				<xs:documentation>Used if economyreport are sent for each node</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="orderLink">
+		<xs:sequence>
+			<xs:element name="idOrder" type="idType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>ids for the combined order</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="subOrderLink" type="subOrderType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>ids for all included suborders</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="locationRequest">
+		<xs:sequence>
+			<xs:element name="timeFrom" type="time" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Time to start sending positions to Client</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="timeTo" type="time" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Time to stop sending positions to Client</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="interval" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Interval between positions</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:attribute name="seconds" type="xs:integer" use="optional"/>
+					<xs:attribute name="meter" type="xs:integer" use="optional"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="authorizationAcceptType">
+		<xs:sequence>
+			<xs:element name="idAuthorization" type="idType"/>
+			<xs:element name="process" type="nodeprocess"/>
+			<xs:element name="restrictions" type="restrictionsType"/>
+			<xs:element name="contents" type="contents"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="amountType">
+		<xs:sequence>
+			<xs:element name="idAmount" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>To specify an ID for an account to use.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="amountInclVat" type="xs:float" use="required"/>
+		<xs:attribute name="amountExclVat" type="xs:float"/>
+		<xs:attribute name="amountVat" type="xs:float" use="required"/>
+		<xs:attribute name="distance" type="xs:integer">
+			<xs:annotation>
+				<xs:documentation>Distance in meter</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="duration" type="xs:integer">
+			<xs:annotation>
+				<xs:documentation>Duration in seconds</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="restrictionsType">
+		<xs:sequence>
+			<xs:element name="priceRestriction" type="price"/>
+			<xs:element name="adressRestrictions" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="addressRestriction" type="addressType" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="distance" type="xs:integer"/>
+	</xs:complexType>
+	<xs:complexType name="deliveryNote">
+		<xs:sequence>
+			<xs:element name="idReceipt" type="idType">
+				<xs:annotation>
+					<xs:documentation>Used to indicate receipt number generated by taximeter.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="agreementDeliveryNote" type="agreement" minOccurs="0"/>
+			<xs:element name="eventReportDeliveryNote" type="eventReport" minOccurs="0"/>
+			<xs:element name="summaryReportDeliveryNote" type="summaryReport"/>
+			<xs:element name="economyReportDeliveryNote" type="economyReport" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="deliveryNoteType">
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="debit"/>
+					<xs:enumeration value="credit"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="vatAmountSpecificationType">
+		<xs:sequence>
+			<xs:element name="totalVatAmount" type="amountType"/>
+			<xs:element name="detailedVatAmount" type="amountType" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Do not use until further notece!!</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="vatPercent" type="xs:float"/>
+	</xs:complexType>
+	<xs:complexType name="nodeCancelationType">
+		<xs:attribute name="nodeStart" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>The startnode that shall be cancelled. Often a pickup</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="nodeEnd" type="xs:positiveInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>The endnode that shall be cancelled. Often a destination</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="nodeCancellationType">
+		<xs:attribute name="nodeStart" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>The startnode that shall be cancelled. Often a pickup</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="nodeEnd" type="xs:positiveInteger" use="optional">
+			<xs:annotation>
+				<xs:documentation>The endnode that shall be cancelled. Often a destination</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="resourceReservation">
+		<xs:sequence>
+			<xs:element name="resourceRequest" type="resourceType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Requested resources</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="addressRequest" type="addressType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Requested address</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="missionbeginTime" type="timesType">
+				<xs:annotation>
+					<xs:documentation>The time the requested resource has to be att the startingpoint of the mission.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="missionendTime" type="timesType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The time that the mission is estimated to end.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="vehicleDistance">
+		<xs:sequence>
+			<xs:element name="startTime" type="timesType">
+				<xs:annotation>
+					<xs:documentation>The time period to propose car starts</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="stopTime" type="timesType">
+				<xs:annotation>
+					<xs:documentation>The time period to propose car stops</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="range" type="xs:int">
+			<xs:annotation>
+				<xs:documentation>The distance within which an unoccupied vehicle shall be proposed </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="rangeUnit" use="optional">
+			<xs:annotation>
+				<xs:documentation>Type of unit in range.</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:string">
+					<xs:enumeration value="meter"/>
+					<xs:enumeration value="seconds"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="calendarType">
+		<xs:sequence>
+			<xs:element name="validPeriod" minOccurs="0">
+				<xs:complexType>
+					<xs:attribute name="validFrom" type="xs:dateTime"/>
+					<xs:attribute name="validTo" type="xs:dateTime"/>
+					<xs:attribute name="weekType">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="all"/>
+								<xs:enumeration value="odd"/>
+								<xs:enumeration value="even"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="validWeekdays" type="weekdaysType" minOccurs="0"/>
+			<xs:element name="exceptionDates" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="exceptionDate" type="date" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="additionalDates" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="additionalDate" type="date" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="weekdaysType">
+		<xs:attribute name="monday" type="xs:boolean"/>
+		<xs:attribute name="tuesday" type="xs:boolean"/>
+		<xs:attribute name="wednesday" type="xs:boolean"/>
+		<xs:attribute name="thursday" type="xs:boolean"/>
+		<xs:attribute name="friday" type="xs:boolean"/>
+		<xs:attribute name="saturday" type="xs:boolean"/>
+		<xs:attribute name="sunday" type="xs:boolean"/>
+	</xs:complexType>
+	<xs:complexType name="requestContentType">
+		<xs:choice>
+			<xs:element name="requestContent" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>personal id or corresponding parcelid</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="requestVehicle" type="vehicle" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Source (src) shall refer to the whole fleet of the provider och a uniquely defined group of the providers fleet.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="requestPrice" type="order" minOccurs="0"/>
+			<xs:element name="requestCustomer" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>CustomerID for a specific customer or a 0 for All customers </xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="requestOrg" type="organizationType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The element describes identification and payment elements for one and only one organizational unit.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="suborderTourType">
+		<xs:sequence>
+			<xs:element name="eventSuborderTour" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:complexContent>
+						<xs:extension base="event"/>
+					</xs:complexContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="idSuborderClient" type="idType" minOccurs="0"/>
+			<xs:element name="idSuborderProvider" type="idType" minOccurs="0"/>
+			<xs:element name="summaryReportSuborder" type="summaryReport" minOccurs="0"/>
+			<xs:element name="economyReportSuborder" type="economyReport" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="calculationFareType">
+		<xs:sequence>
+			<xs:element name="calculationType" type="idType" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Identity of the used tariff</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:choice>
+				<xs:element name="fixedPriceAmount" type="xs:float" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Amount of a fixed price</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="taximeterAmount" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Amount from Taximeter</xs:documentation>
+					</xs:annotation>
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="startPrice" type="xs:float"/>
+							<xs:element name="distanceTotalPrice">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="distanceCount" type="xs:float"/>
+										<xs:element name="distanceUnitPrice" type="xs:float"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="durationTotalPrice">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="durationCount" type="xs:float"/>
+										<xs:element name="durationUnitPrice" type="xs:float"/>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="taximeterTotalPrice" type="xs:float"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="organizationType">
+		<xs:annotation>
+			<xs:documentation>The element describes identification and payment elements for one and only one organizational unit.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="idOrg" type="idType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>One or more of the folowing sourses shall be used:
+SE:idOrg, DK:idOrg, SF:idOrg etc for the national organisation number.
+EU:idVAT for the european VAT identification number.
+ínvoiceissuer:idCustomer
+invoicee:idSupplier</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="orgPayment" type="orgPaymentType" minOccurs="0"/>
+			<xs:element name="adressOrg" type="addressType" minOccurs="0"/>
+			<xs:element name="contactInfoOrg" type="contactInfosType" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="orgName" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>The legal name of the  company </xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="orgCity">
+			<xs:annotation>
+				<xs:documentation>The company's registered office</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="orgPaymentType">
+		<xs:sequence>
+			<xs:element name="IdPayment" type="idType" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Folowing sources should be used: 
+SE:Bgno in case of Swedish  BG number
+SE:PGno  in case of Swedish  PG number
+IBAN:Id in case of IBAN number
+SWIFT:Id in case of Swift number
+BIC:Id in case of BIC number
+SE:idBankAccount in case of Swedish bank account
+NO:idBankAccount in case of Norwegian bank account
+DK:idBankAccount in case of Danish bank account
+SF:idBankAccount in case of Finish bank account
+</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="nameofBank" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>Name of bank</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="ClearingNo">
+			<xs:annotation>
+				<xs:documentation>ClearingNo of the bank above</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="gpsType">
+		<xs:attribute name="speed">
+			<xs:annotation>
+				<xs:documentation>Speed shall be from GPS-unit in vehicle and measured in meter per second.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="speedSource">
+			<xs:annotation>
+				<xs:documentation>Speed measured at GPS or VEHICLE.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="direction">
+			<xs:annotation>
+				<xs:documentation>Direction shall be from GPS-unit in vehichle and measured in degrees (0 - 360 degrees).</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="height">
+			<xs:annotation>
+				<xs:documentation>Height shall be from GPS-unit in vehichle and measured in meter. May be measured in meter with decimals.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="deviationPosition">
+			<xs:annotation>
+				<xs:documentation>Deviation skall be from GPS-unit in vehicle and measured in meter. This is the deviation in position measured by the >GPS-unit.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="deviationSpeed">
+			<xs:annotation>
+				<xs:documentation>Deviation in speed.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="errorType">
+		<xs:sequence>
+			<xs:element name="idError" type="idType" minOccurs="0"/>
+			<xs:element name="manualDescriptionError" type="manualDescriptionType" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

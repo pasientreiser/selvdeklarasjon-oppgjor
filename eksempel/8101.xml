@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI xmlns:suti="http://www.suti.se/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SUTI_2016_Pasientreiser_Oppgjor_strict.xsd">
+	<orgSender name="Pasientreiser">
+		<idOrg src="SUTI:idLink" id="pasientreiser_ctrl"/>
+	</orgSender>
+	<orgReceiver name="Transportør123">
+		<idOrg src="SUTI:idLink" id="transporter_123"/>
+	</orgReceiver>
+	<msg msgType="8101">
+		<idMsg src="pasientreiser_ctrl:idMsg" id="2015103100000005"/>
+		<infoTimeStamp>
+			<time time="2015-10-31T23:10:00"/>
+		</infoTimeStamp>
+		<referencesTo>
+			<idMsg src="transporter_123:idMsg" id="2015103100000002"/>
+		</referencesTo>
+		<accounting>
+			<idAccounting src="pasientreiser:avtaleId" id="Avtale1"/>
+			<tour>
+				<referencesToTour>
+					<idOrder src="pasientreiser:turNr" id="22345678"/>
+				</referencesToTour>
+				<statusTour>
+					<idActivity src="SUTI:idActivity" id="accepted"/>
+				</statusTour>
+				<suborderTour>
+					<idSuborderClient src="pasientreiser:rekNr" id="18483143505"/>
+					<economyReportSuborder>
+						<formOfPayment>
+							<payment paymentType="socialservicefee" amount="-123.50"/>
+						</formOfPayment>
+					</economyReportSuborder>
+				</suborderTour>
+				<economyReportTour>
+					<formOfPayment>
+						<payment paymentType="account" amount="444">
+							<vatAmountSpecification vatPercent="6">
+								<totalVatAmount amountInclVat="444" amountExclVat="418.87" amountVat="25.13">
+								</totalVatAmount>
+							</vatAmountSpecification>
+						</payment>
+					</formOfPayment>
+				</economyReportTour>
+			</tour>
+			<tour>
+				<referencesToTour>
+					<idOrder src="pasientreiser:turNr" id="32345678"/>
+				</referencesToTour>
+				<statusTour>
+					<idActivity src="SUTI:idActivity" id="rejected"/>
+					<statusTourError>
+						<idError src="SUTI:idError" id="10101"/>
+						<manualDescriptionError manualText="Forklaring til feilkode" sendtoInvoice="false" sendtoVehicle="false" sendtoOperator="false" vehicleConfirmation="false">
+							<textTimestamp>
+								<time time="2015-03-06T23:10:00"/>
+							</textTimestamp>
+						</manualDescriptionError>
+					</statusTourError>
+					<manualDescriptionStatus manualText="Generell forklaring" sendingOperator="Navn Navnesen" sendtoInvoice="false" sendtoVehicle="false" sendtoOperator="false" vehicleConfirmation="false">
+						<textTimestamp>
+							<time time="2015-03-06T23:10:00"/>
+						</textTimestamp>
+					</manualDescriptionStatus>
+				</statusTour>
+			</tour>
+			<tour>
+				<referencesToTour>
+					<idOrder src="pasientreiser:turNr" id="42345678"/>
+				</referencesToTour>
+				<statusTour>
+					<idActivity src="SUTI:idActivity" id="validate"/>
+				</statusTour>
+			</tour>
+			<tour>
+				<referencesToTour>
+					<idOrder src="pasientreiser:turNr" id="423126578"/>
+				</referencesToTour>
+				<statusTour>
+					<idActivity src="SUTI:idActivity" id="accepted"/>
+				</statusTour>
+				<suborderTour>
+					<idSuborderClient src="pasientreiser:rekNr" id="183686748023"/>
+					<economyReportSuborder>
+						<formOfPayment>
+							<payment paymentType="socialservicefee" amount="-135"/>
+						</formOfPayment>
+					</economyReportSuborder>
+				</suborderTour>
+				<economyReportTour>
+					<formOfPayment>
+						<payment paymentType="account" amount="409">
+							<vatAmountSpecification vatPercent="12">
+								<totalVatAmount amountInclVat="409" amountExclVat="365.18" amountVat="43.82">
+								</totalVatAmount>
+							</vatAmountSpecification>
+						</payment>
+					</formOfPayment>
+				</economyReportTour>
+			</tour>
+			<tour>
+				<referencesToTour>
+					<idOrder src="pasientreiser:turNr" id="12930978"/>
+				</referencesToTour>
+				<statusTour>
+					<idActivity src="SUTI:idActivity" id="accepted"/>
+				</statusTour>
+				<suborderTour>
+					<idSuborderClient src="pasientreiser:rekNr" id="18483143505"/>
+					<economyReportSuborder>
+						<formOfPayment>
+							<payment paymentType="socialservicefee" amount="-110"/>
+						</formOfPayment>
+					</economyReportSuborder>
+				</suborderTour>
+				<economyReportTour>
+					<formOfPayment>
+						<payment paymentType="account" amount="472.50">
+							<vatAmountSpecification vatPercent="6">
+								<totalVatAmount amountInclVat="472.50" amountExclVat="445.75" amountVat="26.75">
+								</totalVatAmount>
+							</vatAmountSpecification>
+						</payment>
+					</formOfPayment>
+				</economyReportTour>
+			</tour>
+			<economyReportAccounting>
+				<formOfPayment>
+					<payment paymentType="account" amount="1330.50">
+						<idEkInfo src="pasientreiser:betalingNr" id="1123"/>
+						<vatAmountSpecification vatPercent="6">
+							<totalVatAmount amountInclVat="916.50" amountExclVat="863.62" amountVat="52.88">
+							</totalVatAmount>
+						</vatAmountSpecification>
+						<vatAmountSpecification vatPercent="12">
+							<totalVatAmount amountInclVat="409" amountExclVat="365.18" amountVat="43.82">
+							</totalVatAmount>
+						</vatAmountSpecification>
+					</payment>
+					<payment paymentType="socialservicefee" amount="-368.50">
+						<idEkInfo src="pasientreiser:betalingNr" id="1124"/>
+					</payment>
+				</formOfPayment>
+			</economyReportAccounting>
+			<orgClient orgName="Sykehuset HF">
+				<idOrg src="NO:idOrg" id="222222292"/>
+			</orgClient>
+			<orgProvider orgName="Transporter123">
+				<idOrg src="NO:idOrg" id="111111111"/>
+			</orgProvider>
+		</accounting>
+	</msg>
+</SUTI>

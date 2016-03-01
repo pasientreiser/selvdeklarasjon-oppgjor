@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI xmlns:suti="http://www.suti.se/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SUTI_2016_Pasientreiser_Oppgjor_strict.xsd">
+	<orgSender name="Pasientreiser">
+		<idOrg src="SUTI:idLink" id="pasientreiser_ctrl"/>
+	</orgSender>
+	<orgReceiver name="Transportør123">
+		<idOrg src="SUTI:idLink" id="transporter_123"/>
+	</orgReceiver>
+	<msg msgType="7030">
+		<idMsg src="pasientreiser_ctrl:idMsg" id="2015103100000001"/>
+		<infoTimeStamp>
+			<time time="2015-10-31T22:41:23"/>
+		</infoTimeStamp>
+		<referencesTo>
+			<idMsg src="transporter_123:idMsg" id="2015103100000001"/>
+		</referencesTo>
+	</msg>
+</SUTI>

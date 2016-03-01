@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI xmlns:suti="http://www.suti.se/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SUTI_2016_Pasientreiser_Oppgjor_strict.xsd">
+	<orgSender name="Transportør123">
+		<idOrg src="SUTI:idLink" id="transporter_123"/>
+	</orgSender>
+	<orgReceiver name="Pasientreiser">
+		<idOrg src="SUTI:idLink" id="pasientreiser_ctrl"/>
+	</orgReceiver>
+	<msg msgType="8000">
+		<idMsg src="transporter_123:idMsg" id="2015103100000002"/>
+		<infoTimeStamp>
+			<time time="2015-10-31T23:10:00"/>
+		</infoTimeStamp>
+		<accounting>
+			<idAccounting src="pasientreiser:avtaleId" id="Avtale1"/>
+			<tour>
+				<referencesToTour>
+					<idOrder src="pasientreiser:turNr" id="22345678"/>
+				</referencesToTour>
+				<statusTour>
+					<idActivity src="SUTI:idActivity" id="invoice"/>
+					<manualDescriptionStatus manualText="Merknad på tur" sendingOperator="Navn Navnesen" sendtoInvoice="false" sendtoVehicle="false" sendtoOperator="false" vehicleConfirmation="false">
+						<textTimestamp>
+							<time time="2015-03-06T23:10:00"/>
+						</textTimestamp>
+					</manualDescriptionStatus>
+				</statusTour>
+				<suborderTour>
+					<eventSuborderTour eventType="passengerinvehicle">
+						<eventTime time="2015-11-25T20:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<eventSuborderTour eventType="passengerdropped">
+						<eventTime time="2015-11-25T20:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23" country="Norway">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<idSuborderClient src="pasientreiser:rekNr" id="18483948502"/>
+					<economyReportSuborder>
+						<formOfPayment>
+							<payment paymentType="prepaidsocialfee" amount="-135"/>
+						</formOfPayment>
+					</economyReportSuborder>
+				</suborderTour>
+				<suborderTour>
+					<eventSuborderTour eventType="passengerinvehicle">
+						<eventTime time="2015-11-25T20:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<eventSuborderTour eventType="passengerdropped">
+						<eventTime time="2015-11-25T20:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<idSuborderClient src="pasientreiser:rekNr" id="18483143505"/>
+					<economyReportSuborder>
+						<formOfPayment>
+							<payment paymentType="socialservicefee" amount="-123.50"/>
+						</formOfPayment>
+					</economyReportSuborder>
+				</suborderTour>
+				<calculationsTour>
+					<calculationFare>
+						<calculationType src="pasientreiser:takstkode" id="11111"/>
+						<taximeterAmount>
+							<startPrice>0</startPrice>
+							<distanceTotalPrice>
+								<distanceCount>14750</distanceCount>
+								<distanceUnitPrice>0.024</distanceUnitPrice>
+							</distanceTotalPrice>
+							<durationTotalPrice>
+								<durationCount>0</durationCount>
+								<durationUnitPrice>0</durationUnitPrice>
+							</durationTotalPrice>
+							<taximeterTotalPrice>354</taximeterTotalPrice>
+						</taximeterAmount>
+					</calculationFare>
+					<calculationFare>
+						<calculationType src="pasientreiser:takstkode" id="41111"/>
+						<fixedPriceAmount>50</fixedPriceAmount>
+					</calculationFare>
+					<calculationFare>
+						<calculationType src="pasientreiser:takstkode" id="61000"/>
+						<fixedPriceAmount>40</fixedPriceAmount>
+					</calculationFare>
+				</calculationsTour>
+				<summaryReportTour distanceStart="14750" durationStart="30"/>
+				<economyReportTour>
+					<formOfPayment>
+						<payment paymentType="account" amount="444">
+							<vatAmountSpecification vatPercent="6">
+								<totalVatAmount amountInclVat="444" amountExclVat="418.87" amountVat="25.13">
+								</totalVatAmount>
+							</vatAmountSpecification>
+						</payment>
+					</formOfPayment>
+				</economyReportTour>
+				<resourceTour>
+					<vehicle>
+						<idVehicle src="NO:løyveNr" id="AAA-123"/>
+					</vehicle>
+					<driver>
+						<idDriver src="transporter_123:idDriver" id="123"/>
+					</driver>
+				</resourceTour>
+				<eventTour eventVehicle="start">
+					<eventTourTime time="2015-11-25T18:50:00"/>
+					<tourGeographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+				</eventTour>
+				<eventTour eventVehicle="stop">
+					<eventTourTime time="2015-11-25T18:50:00"/>
+					<tourGeographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+				</eventTour>
+			</tour>
+			<tour>
+				<referencesToTour>
+					<idOrder src="pasientreiser:turNr" id="32345678"/>
+				</referencesToTour>
+				<statusTour>
+					<idActivity src="SUTI:idActivity" id="invoice"/>
+				</statusTour>
+				<suborderTour>
+					<eventSuborderTour eventType="passengerinvehicle">
+						<eventTime time="2015-11-25T20:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<eventSuborderTour eventType="passengerdropped">
+						<eventTime time="2015-11-25T20:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<idSuborderClient src="pasientreiser:rekNr" id="21868413408"/>
+					<economyReportSuborder>
+						<formOfPayment>
+							<payment paymentType="prepaidsocialfee" amount="-135"/>
+						</formOfPayment>
+					</economyReportSuborder>
+				</suborderTour>
+				<calculationsTour>
+					<calculationFare>
+						<calculationType src="pasientreiser:takstkode" id="11212"/>
+						<taximeterAmount>
+							<startPrice>0</startPrice>
+							<distanceTotalPrice>
+								<distanceCount>0</distanceCount>
+								<distanceUnitPrice>0</distanceUnitPrice>
+							</distanceTotalPrice>
+							<durationTotalPrice>
+								<durationCount>30</durationCount>
+								<durationUnitPrice>6.5</durationUnitPrice>
+							</durationTotalPrice>
+							<taximeterTotalPrice>195</taximeterTotalPrice>
+						</taximeterAmount>
+					</calculationFare>
+					<calculationFare>
+						<calculationType src="pasientreiser:takstkode" id="11212"/>
+						<taximeterAmount>
+							<startPrice>0</startPrice>
+							<distanceTotalPrice>
+								<distanceCount>6625</distanceCount>
+								<distanceUnitPrice>0.024</distanceUnitPrice>
+							</distanceTotalPrice>
+							<durationTotalPrice>
+								<durationCount>0</durationCount>
+								<durationUnitPrice>0</durationUnitPrice>
+							</durationTotalPrice>
+							<taximeterTotalPrice>159</taximeterTotalPrice>
+						</taximeterAmount>
+					</calculationFare>
+					<calculationFare>
+						<calculationType src="pasientreiser:takstkode" id="82000"/>
+						<fixedPriceAmount>60</fixedPriceAmount>
+					</calculationFare>
+				</calculationsTour>
+				<summaryReportTour distanceStart="6625" durationStart="30"/>
+				<economyReportTour>
+					<formOfPayment>
+						<payment paymentType="account" amount="414">
+							<vatAmountSpecification vatPercent="6">
+								<totalVatAmount amountInclVat="414" amountExclVat="389" amountVat="25">
+								</totalVatAmount>
+							</vatAmountSpecification>
+						</payment>
+					</formOfPayment>
+				</economyReportTour>
+				<resourceTour>
+					<vehicle>
+						<idVehicle src="NO:regNr" id="AA12345"/>
+					</vehicle>
+					<driver>
+						<idDriver src="transporter_123:idDriver" id="123"/>
+					</driver>
+				</resourceTour>
+				<eventTour eventVehicle="start">
+					<eventTourTime time="2015-11-25T18:50:00"/>
+					<tourGeographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+				</eventTour>
+				<eventTour eventVehicle="stop">
+					<eventTourTime time="2015-11-25T18:50:00"/>
+					<tourGeographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+				</eventTour>
+			</tour>
+			<tour>
+				<referencesToTour>
+					<idOrder src="pasientreiser:turNr" id="42345678"/>
+				</referencesToTour>
+				<statusTour>
+					<idActivity src="SUTI:idActivity" id="invoice"/>
+				</statusTour>
+				<suborderTour>
+					<eventSuborderTour eventType="passengerinvehicle">
+						<eventTime time="2015-11-25T20:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<eventSuborderTour eventType="passengerdropped">
+						<eventTime time="2015-11-25T20:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<idSuborderClient src="pasientreiser:rekNr" id="182686748052"/>
+					<economyReportSuborder>
+						<formOfPayment>
+							<payment paymentType="socialservicefee" amount="-100"/>
+						</formOfPayment>
+					</economyReportSuborder>
+				</suborderTour>
+				<calculationsTour>
+					<calculationFare>
+						<calculationType src="pasientreiser:takstkode" id="11232"/>
+						<taximeterAmount>
+							<startPrice>0</startPrice>
+							<distanceTotalPrice>
+								<distanceCount>6000</distanceCount>
+								<distanceUnitPrice>0.059</distanceUnitPrice>
+							</distanceTotalPrice>
+							<durationTotalPrice>
+								<durationCount>0</durationCount>
+								<durationUnitPrice>0</durationUnitPrice>
+							</durationTotalPrice>
+							<taximeterTotalPrice>354</taximeterTotalPrice>
+						</taximeterAmount>
+					</calculationFare>
+					<calculationFare>
+						<calculationType src="pasientreiser:takstkode" id="44232"/>
+						<fixedPriceAmount>55</fixedPriceAmount>
+					</calculationFare>
+				</calculationsTour>
+				<summaryReportTour distanceStart="6000" durationStart="30"/>
+				<economyReportTour>
+					<formOfPayment>
+						<payment paymentType="account" amount="350">
+							<vatAmountSpecification vatPercent="12">
+								<totalVatAmount amountInclVat="350" amountExclVat="312.50" amountVat="37.50">
+								</totalVatAmount>
+							</vatAmountSpecification>
+						</payment>
+					</formOfPayment>
+				</economyReportTour>
+				<resourceTour>
+					<vehicle>
+						<idVehicle src="NO:regNr" id="AA12345"/>
+					</vehicle>
+					<driver>
+						<idDriver src="transporter_123" id="123"/>
+					</driver>
+				</resourceTour>
+				<eventTour eventVehicle="start">
+					<eventTourTime time="2015-11-25T18:50:00"/>
+					<tourGeographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+				</eventTour>
+			</tour>
+			<tour>
+				<referencesToTour>
+					<idOrder src="pasientreiser:turNr" id="423126578"/>
+				</referencesToTour>
+				<statusTour>
+					<idActivity src="SUTI:idActivity" id="invoice"/>
+				</statusTour>
+				<suborderTour>
+					<eventSuborderTour eventType="passengerinvehicle">
+						<eventTime time="2015-11-25T20:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<eventSuborderTour eventType="passengerdropped">
+						<eventTime time="2015-11-25T20:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<idSuborderClient src="pasientreiser:rekNr" id="183686748023"/>
+					<economyReportSuborder>
+						<formOfPayment>
+							<payment paymentType="socialservicefee" amount="-135"/>
+						</formOfPayment>
+					</economyReportSuborder>
+				</suborderTour>
+				<calculationsTour>
+					<calculationFare>
+						<calculationType src="pasientreiser:takstkode" id="11133"/>
+						<taximeterAmount>
+							<startPrice>0</startPrice>
+							<distanceTotalPrice>
+								<distanceCount>12000</distanceCount>
+								<distanceUnitPrice>0.0295</distanceUnitPrice>
+							</distanceTotalPrice>
+							<durationTotalPrice>
+								<durationCount>0</durationCount>
+								<durationUnitPrice>0</durationUnitPrice>
+							</durationTotalPrice>
+							<taximeterTotalPrice>354</taximeterTotalPrice>
+						</taximeterAmount>
+					</calculationFare>
+					<calculationFare>
+						<calculationType src="pasientreiser:takstkode" id="89000"/>
+						<fixedPriceAmount>55</fixedPriceAmount>
+					</calculationFare>
+				</calculationsTour>
+				<summaryReportTour distanceStart="3000" durationStart="30"/>
+				<economyReportTour>
+					<formOfPayment>
+						<payment paymentType="account" amount="409">
+							<vatAmountSpecification vatPercent="12">
+								<totalVatAmount amountInclVat="409" amountExclVat="365.18" amountVat="43.82">
+								</totalVatAmount>
+							</vatAmountSpecification>
+						</payment>
+					</formOfPayment>
+				</economyReportTour>
+				<resourceTour>
+					<vehicle>
+						<idVehicle src="NO:regNr" id="AA67891"/>
+					</vehicle>
+					<driver>
+						<idDriver src="transporter_123" id="567"/>
+					</driver>
+				</resourceTour>
+				<eventTour eventVehicle="start">
+					<eventTourTime time="2015-11-25T18:50:00"/>
+					<tourGeographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+				</eventTour>
+			</tour>
+			<tour>
+				<referencesToTour>
+					<idOrder src="pasientreiser:turNr" id="12930978"/>
+				</referencesToTour>
+				<statusTour>
+					<idActivity src="SUTI:idActivity" id="invoice"/>
+				</statusTour>
+				<suborderTour>
+					<eventSuborderTour eventType="passengerinvehicle">
+						<eventTime time="2015-11-25T18:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<eventSuborderTour eventType="passengerdropped">
+						<eventTime time="2015-11-25T19:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23" country="Norway">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<idSuborderClient src="pasientreiser:rekNr" id="17483909538"/>
+					<economyReportSuborder>
+						<formOfPayment>
+							<payment paymentType="prepaidsocialfee" amount="-130"/>
+						</formOfPayment>
+					</economyReportSuborder>
+				</suborderTour>
+				<suborderTour>
+					<eventSuborderTour eventType="passengerinvehicle">
+						<eventTime time="2015-11-25T20:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<eventSuborderTour eventType="passengerdropped">
+						<eventTime time="2015-11-25T21:15:45"/>
+						<eventAddress street="Leirvollen" streetNo="23">
+							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+						</eventAddress>
+					</eventSuborderTour>
+					<idSuborderClient src="pasientreiser:rekNr" id="18483143505"/>
+					<economyReportSuborder>
+						<formOfPayment>
+							<payment paymentType="socialservicefee" amount="-110"/>
+						</formOfPayment>
+					</economyReportSuborder>
+				</suborderTour>
+				<calculationsTour>
+					<calculationFare>
+						<calculationType src="pasientreiser:takstkode" id="11322"/>
+						<taximeterAmount>
+							<startPrice>0</startPrice>
+							<distanceTotalPrice>
+								<distanceCount>13500</distanceCount>
+								<distanceUnitPrice>0.035</distanceUnitPrice>
+							</distanceTotalPrice>
+							<durationTotalPrice>
+								<durationCount>0</durationCount>
+								<durationUnitPrice>0</durationUnitPrice>
+							</durationTotalPrice>
+							<taximeterTotalPrice>472.50</taximeterTotalPrice>
+						</taximeterAmount>
+					</calculationFare>
+				</calculationsTour>
+				<summaryReportTour distanceStart="13500" durationStart="45"/>
+				<economyReportTour>
+					<formOfPayment>
+						<payment paymentType="account" amount="472.50">
+							<vatAmountSpecification vatPercent="6">
+								<totalVatAmount amountInclVat="472.50" amountExclVat="445.75" amountVat="26.75">
+								</totalVatAmount>
+							</vatAmountSpecification>
+						</payment>
+					</formOfPayment>
+				</economyReportTour>
+				<resourceTour>
+					<vehicle>
+						<idVehicle src="NO:løyveNr" id="AAA-123"/>
+					</vehicle>
+					<driver>
+						<idDriver src="transporter_123:idDriver" id="123"/>
+					</driver>
+				</resourceTour>
+				<eventTour eventVehicle="start">
+					<eventTourTime time="2015-11-25T19:50:00"/>
+					<tourGeographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+				</eventTour>
+				<eventTour eventVehicle="stop">
+					<eventTourTime time="2015-11-25T20:50:00"/>
+					<tourGeographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+				</eventTour>
+			</tour>
+			<economyReportAccounting>
+				<formOfPayment>
+					<payment paymentType="account" amount="2153.5">
+						<vatAmountSpecification vatPercent="6">
+							<totalVatAmount amountInclVat="1330.50" amountExclVat="1253.62" amountVat="76.88">
+							</totalVatAmount>
+						</vatAmountSpecification>
+						<vatAmountSpecification vatPercent="12">
+							<totalVatAmount amountInclVat="818" amountExclVat="730.36" amountVat="87.64">
+							</totalVatAmount>
+						</vatAmountSpecification>
+					</payment>
+					<payment paymentType="socialservicefee" amount="-468.5"/>
+				</formOfPayment>
+			</economyReportAccounting>
+			<orgClient orgName="Sykehuset HF">
+				<idOrg src="NO:idOrg" id="222222292"/>
+			</orgClient>
+			<orgProvider orgName="Transporter123">
+				<idOrg src="NO:idOrg" id="111111111"/>
+			</orgProvider>
+		</accounting>
+	</msg>
+</SUTI>

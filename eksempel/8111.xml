@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI xmlns:suti="http://www.suti.se/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SUTI_2016_Pasientreiser_Oppgjor_strict.xsd">
+	<orgSender name="Pasientreiser">
+		<idOrg src="SUTI:idLink" id="pasientreiser_ctrl"/>
+	</orgSender>
+	<orgReceiver name="Transportør123">
+		<idOrg src="SUTI:idLink" id="transporter_123"/>
+	</orgReceiver>
+	<msg msgType="8111">
+		<idMsg src="pasientreiser_ctrl:idMsg" id="2015103100000006"/>
+		<infoTimeStamp>
+			<time time="2015-10-31T23:10:00"/>
+		</infoTimeStamp>
+		<accounting>
+			<idAccounting src="pasientreiser:avtaleId" id="Avtale1"/>
+			<tour>
+				<referencesToTour>
+					<idOrder src="pasientreiser:turNr" id="42345678"/>
+				</referencesToTour>
+				<statusTour>
+					<idActivity src="SUTI:idActivity" id="invoice"/>
+				</statusTour>
+				<suborderTour>
+					<idSuborderClient src="pasientreiser:rekNr" id="182686748052"/>
+					<economyReportSuborder>
+						<formOfPayment>
+							<payment paymentType="socialservicefee" amount="-100"/>
+						</formOfPayment>
+					</economyReportSuborder>
+				</suborderTour>
+				<economyReportTour>
+					<formOfPayment>
+						<payment paymentType="account" amount="350">
+							<vatAmountSpecification vatPercent="12">
+								<totalVatAmount amountInclVat="350" amountExclVat="312.50" amountVat="37.50">
+								</totalVatAmount>
+							</vatAmountSpecification>
+						</payment>
+					</formOfPayment>
+				</economyReportTour>
+			</tour>
+			<economyReportAccounting>
+				<formOfPayment>
+					<payment paymentType="account" amount="350">
+						<idEkInfo src="pasientreiser:betalingNr" id="1131"/>
+						<vatAmountSpecification vatPercent="12">
+							<totalVatAmount amountInclVat="350" amountExclVat="312.50" amountVat="37.50">
+							</totalVatAmount>
+						</vatAmountSpecification>
+					</payment>
+					<payment paymentType="socialservicefee" amount="-100">
+						<idEkInfo src="pasientreiser:betalingNr" id="1132"/>
+					</payment>
+				</formOfPayment>
+			</economyReportAccounting>
+			<orgClient orgName="Sykehuset HF">
+				<idOrg src="NO:idOrg" id="222222292"/>
+			</orgClient>
+			<orgProvider orgName="Transporter123">
+				<idOrg src="NO:idOrg" id="111111111"/>
+			</orgProvider>
+		</accounting>
+	</msg>
+</SUTI>

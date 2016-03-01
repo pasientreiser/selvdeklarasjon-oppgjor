@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SUTI xmlns:suti="http://www.suti.se/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SUTI_2016_Pasientreiser_Oppgjor_strict.xsd">
+	<orgSender name="Pasientreiser">
+		<idOrg src="SUTI:idLink" id="pasientreiser_ctrl"/>
+	</orgSender>
+	<orgReceiver name="Transportør123">
+		<idOrg src="SUTI:idLink" id="transporter_123"/>
+	</orgReceiver>
+	<msg msgType="8199">
+		<idMsg src="pasientreiser_ctrl:idMsg" id="2015103100000015"/>
+		<infoTimeStamp>
+			<time time="2015-10-31T23:10:00"/>
+		</infoTimeStamp>
+		<accounting>
+			<idAccounting src="pasientreiser:avtaleId" id="Avtale1"/>
+			<economyReportAccounting>
+				<formOfPayment>
+					<payment paymentType="account" amount="768">
+						<idPayment src="pasientreiser:ordreNr" id="345"/>
+						<idEkInfo src="pasientreiser:betalingNr" id="1123"/>
+						<idEkInfo src="pasientreiser:betalingNr" id="1124"/>
+						<idEkInfo src="pasientreiser:betalingNr" id="1131"/>
+						<idEkInfo src="pasientreiser:betalingNr" id="1132"/>
+						<vatAmountSpecification vatPercent="6">
+							<totalVatAmount amountInclVat="472.50" amountExclVat="444.75" amountVat="27.75">
+							</totalVatAmount>
+						</vatAmountSpecification>
+						<vatAmountSpecification vatPercent="12">
+							<totalVatAmount amountInclVat="759" amountExclVat="676.68" amountVat="81.32">
+							</totalVatAmount>
+						</vatAmountSpecification>
+					</payment>
+				</formOfPayment>
+			</economyReportAccounting>
+			<orgClient orgName="Sykehuset HF">
+				<idOrg src="NO:idOrg" id="222222292"/>
+			</orgClient>
+			<orgProvider orgName="Transporter123">
+				<idOrg src="NO:idOrg" id="111111111"/>
+			</orgProvider>
+		</accounting>
+	</msg>
+</SUTI>

@@ -1,0 +1,1795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML id="SUTI_AttributeList">
+	<Import>
+		<Row>
+			<AttributeId>1001</AttributeId>
+			<Attribute>traveller</Attribute>
+			<Usedin>content/contentType</Usedin>
+			<Explanation>Attribute in contentType</Explanation>
+			<Dan>rejsende</Dan>
+			<Fin>matkustaja</Fin>
+			<Nor>reisende</Nor>
+			<Swe>resenär</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1002</AttributeId>
+			<Attribute>parcel</Attribute>
+			<Usedin>content/contentType</Usedin>
+			<Explanation>Attribute in contentType</Explanation>
+			<Dan>pakke</Dan>
+			<Fin>paketti</Fin>
+			<Nor>pakke</Nor>
+			<Swe>paket</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1003</AttributeId>
+			<Attribute>action</Attribute>
+			<Usedin>content/contentType</Usedin>
+			<Explanation>Attribute in contentType</Explanation>
+			<Dan>aktivitet</Dan>
+			<Fin>toiminta</Fin>
+			<Nor>aktivitet</Nor>
+			<Swe>aktivitet</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1004</AttributeId>
+			<Attribute>navigation</Attribute>
+			<Usedin>content/contentType</Usedin>
+			<Explanation>Attribute in contentType</Explanation>
+			<Dan>navigation</Dan>
+			<Fin>-</Fin>
+			<Nor>navigasjon</Nor>
+			<Swe>navigering</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1005</AttributeId>
+			<Attribute>companion</Attribute>
+			<Usedin>content/contentType</Usedin>
+			<Explanation>Attribute in contentType</Explanation>
+			<Dan>-</Dan>
+			<Fin>saattaja</Fin>
+			<Nor>-</Nor>
+			<Swe>ledsagare</Swe>
+		</Row>¨
+	<Row>
+			<AttributeId>1006</AttributeId>
+			<Attribute>cotraveller</Attribute>
+			<Usedin>content/contentType</Usedin>
+			<Explanation>Attribute in contentType</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>medresenär</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1007</AttributeId>
+			<Attribute>child</Attribute>
+			<Usedin>content/contentType</Usedin>
+			<Explanation>Attribute in contentType</Explanation>
+			<Dan>barn</Dan>
+			<Fin>lapsi</Fin>
+			<Nor>barn</Nor>
+			<Swe>barn</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1008</AttributeId>
+			<Attribute>animal</Attribute>
+			<Usedin>content/contentType</Usedin>
+			<Explanation>Attribute in contentType</Explanation>
+			<Dan>dyr</Dan>
+			<Fin>eläin</Fin>
+			<Nor>dyr</Nor>
+			<Swe>djur</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1101</AttributeId>
+			<Attribute>flight</Attribute>
+			<Usedin>content/connection/connectionType</Usedin>
+			<Explanation>Attribute in conectionType</Explanation>
+			<Dan>fly</Dan>
+			<Fin>ilmailu</Fin>
+			<Nor>fly</Nor>
+			<Swe>flyg</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1102</AttributeId>
+			<Attribute>train</Attribute>
+			<Usedin>content/connection/connectionType</Usedin>
+			<Explanation>Attribute in conectionType</Explanation>
+			<Dan>tog</Dan>
+			<Fin>juna</Fin>
+			<Nor>tog</Nor>
+			<Swe>tåg</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1103</AttributeId>
+			<Attribute>boat</Attribute>
+			<Usedin>content/connection/connectionType</Usedin>
+			<Explanation>Attribute in conectionType</Explanation>
+			<Dan>båd</Dan>
+			<Fin>vene</Fin>
+			<Nor>båt</Nor>
+			<Swe>båt</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1104</AttributeId>
+			<Attribute>meeting</Attribute>
+			<Usedin>content/connection/connectionType</Usedin>
+			<Explanation>Attribute in conectionType</Explanation>
+			<Dan>møde</Dan>
+			<Fin>kokous</Fin>
+			<Nor>møte</Nor>
+			<Swe>möte</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1201</AttributeId>
+			<Attribute>forward</Attribute>
+			<Usedin>vehicle/capacity/seats/position/direction</Usedin>
+			<Explanation>Forward</Explanation>
+			<Dan/>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>f</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1202</AttributeId>
+			<Attribute>backward</Attribute>
+			<Usedin>vehicle/capacity/seats/position/direction</Usedin>
+			<Explanation>Backward</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>b</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1211</AttributeId>
+			<Attribute>comfort</Attribute>
+			<Usedin>vehicle/capacity/seats/position/legspace</Usedin>
+			<Explanation>Comfort</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>c</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1212</AttributeId>
+			<Attribute>normal</Attribute>
+			<Usedin>vehicle/capacity/seats/position/legspace</Usedin>
+			<Explanation>Normal</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>n</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1213</AttributeId>
+			<Attribute>poor</Attribute>
+			<Usedin>vehicle/capacity/seats/position/legspace</Usedin>
+			<Explanation>Poor</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>p</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1301</AttributeId>
+			<Attribute>cash</Attribute>
+			<Usedin>payment/paymentType</Usedin>
+			<Explanation>Cash payment</Explanation>
+			<Dan>kontant</Dan>
+			<Fin>käteinen</Fin>
+			<Nor>kontant</Nor>
+			<Swe>kontant</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1302</AttributeId>
+			<Attribute>card</Attribute>
+			<Usedin>payment/paymentType</Usedin>
+			<Explanation>Payment by card</Explanation>
+			<Dan>kort</Dan>
+			<Fin>kortti</Fin>
+			<Nor>kort</Nor>
+			<Swe>kort</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1303</AttributeId>
+			<Attribute>account</Attribute>
+			<Usedin>payment/paymentType</Usedin>
+			<Explanation>Account or invoice</Explanation>
+			<Dan>faktura</Dan>
+			<Fin>lasku</Fin>
+			<Nor>faktura</Nor>
+			<Swe>faktura</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1304</AttributeId>
+			<Attribute>ticket</Attribute>
+			<Usedin>payment/paymentType</Usedin>
+			<Explanation>Ticket</Explanation>
+			<Dan>billet</Dan>
+			<Fin>lippu</Fin>
+			<Nor>billett</Nor>
+			<Swe>biljett</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1305</AttributeId>
+			<Attribute>document</Attribute>
+			<Usedin>payment/paymentType</Usedin>
+			<Explanation>Travelling document. </Explanation>
+			<Dan>rejsedokument</Dan>
+			<Fin>matkustusasiakirja</Fin>
+			<Nor>reisebevis</Nor>
+			<Swe>resehandling</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1306</AttributeId>
+			<Attribute>socialservicefee</Attribute>
+			<Usedin>payment/paymentType</Usedin>
+			<Explanation>Amount that the traveller pay of the total fare. The remaining fare are paid by account or invoice.</Explanation>
+			<Dan>egenandel</Dan>
+			<Fin>omamaksu</Fin>
+			<Nor>egenandel</Nor>
+			<Swe>egenavgift</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1307</AttributeId>
+			<Attribute>prepaidSocialfee</Attribute>
+			<Usedin>payment/paymentType</Usedin>
+			<Explanation>A card or document that indicates that traveller do notneed to pay socialservicefee.</Explanation>
+			<Dan>frikort</Dan>
+			<Fin>vapaakortti</Fin>
+			<Nor>frikort</Nor>
+			<Swe>frikort</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1308</AttributeId>
+			<Attribute>claim</Attribute>
+			<Usedin>payment/paymentType</Usedin>
+			<Explanation>Claim is a negative amount. Tis indicates that a part of the amount from an account payment will not be paid.</Explanation>
+			<Dan>fordring</Dan>
+			<Fin>vaatimus</Fin>
+			<Nor>krav</Nor>
+			<Swe>fordran</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1401</AttributeId>
+			<Attribute>breakpoint</Attribute>
+			<Usedin>priceCalculation/formula</Usedin>
+			<Explanation>Use breakpoint calculation</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>brytpunktstariff</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1402</AttributeId>
+			<Attribute>sumtariff</Attribute>
+			<Usedin>priceCalculation/formula</Usedin>
+			<Explanation>Use sumtariff calculation</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>summatariff</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1411</AttributeId>
+			<Attribute>client</Attribute>
+			<Usedin>price/priceResoncible</Usedin>
+			<Explanation>The Client are responcible for setting the price</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>beställare</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1412</AttributeId>
+			<Attribute>provider</Attribute>
+			<Usedin>price/priceResoncible</Usedin>
+			<Explanation>The Provider are responcible for setting the price</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>utförare</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1501</AttributeId>
+			<Attribute>attributesDriver carrypass</Attribute>
+			<Usedin>attributesDriver/attribute/idAttribute</Usedin>
+			<Explanation>Driver can help carry a passenger </Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>bär passagerare</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1502</AttributeId>
+			<Attribute>attributesDriver liftpass</Attribute>
+			<Usedin>attributesDriver/attribute/idAttribute</Usedin>
+			<Explanation>Driver can help lift a passenger</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>lyfter passagerare</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1503</AttributeId>
+			<Attribute>attributesDriver carrylugg</Attribute>
+			<Usedin>attributesDriver/attribute/idAttribute</Usedin>
+			<Explanation>Driver can help carry luggage</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>bär bagage</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1504</AttributeId>
+			<Attribute>attributesDriver animal</Attribute>
+			<Usedin>attributesDriver/attribute/idAttribute</Usedin>
+			<Explanation>Driver can take animals in car. No allergy</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>kör djur</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1505</AttributeId>
+			<Attribute>attributesDriver guide</Attribute>
+			<Usedin>attributesDriver/attribute/idAttribute</Usedin>
+			<Explanation>Driver is qualified as Tour Guide</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>guide</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1506</AttributeId>
+			<Attribute>attributesDriver female</Attribute>
+			<Usedin>attributesDriver/attribute/idAttribute</Usedin>
+			<Explanation>Driver is female</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>kvinnlig</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1507</AttributeId>
+			<Attribute>attributesDriver male</Attribute>
+			<Usedin>attributesDriver/attribute/idAttribute</Usedin>
+			<Explanation>Driver is male</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>manlig</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1508</AttributeId>
+			<Attribute>attributesDriver badge swlfv</Attribute>
+			<Usedin>attributesDriver/attribute/idAttribute</Usedin>
+			<Explanation>Driver has been security screened to get luggage from retricted areas on Swedish airports.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>säkerhetskontrollerad lfv</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1509</AttributeId>
+			<Attribute>attributesDriver no smoking</Attribute>
+			<Usedin>attributesDriver/attribute/idAttribute</Usedin>
+			<Explanation>Non smoking driver</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>icke rökare</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1510</AttributeId>
+			<Attribute>attributesDriver assisttraveller</Attribute>
+			<Usedin>attributesDriver/attribute/idAttribute</Usedin>
+			<Explanation>Driver is qualified to assist traveller to door</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>assisterar resenär</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1601</AttributeId>
+			<Attribute>attributesVehicle estate</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Combi</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>kombi</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1602</AttributeId>
+			<Attribute>attributesVehicle volvo</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Volvo</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>volvo</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1603</AttributeId>
+			<Attribute>attributesVehicle mercedes</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Mercedes</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>mercedes</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1604</AttributeId>
+			<Attribute>attributesVehicle environmental</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>environmentally friendly vehicle</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>miljöfordon</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1605</AttributeId>
+			<Attribute>attributesVehicle child booster seat</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Cushion specially made for children to big to use Child seat and to smal to use safety belt in an normal vay like an adult.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>bilbarnkudde</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1606</AttributeId>
+			<Attribute>attributesVehicle child seat</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Detachable seat used for smal children</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>bilbarnstol</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1607</AttributeId>
+			<Attribute>attributesVehicle limousin</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>??</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>limosin</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1608</AttributeId>
+			<Attribute>attributesVehicle bike rack</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Rack used to transport bikes.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>cykelställ</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1609</AttributeId>
+			<Attribute>attributesVehicle tow bar</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Device to attach a trailer</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>dragkrok</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1610</AttributeId>
+			<Attribute>attributesVehicle school sign</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Sign placed on the roof of a vehicle used to indicate that the vehicle transports children to and from school</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>skolskylt</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1611</AttributeId>
+			<Attribute>attributesVehicle wheelchair</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>The vehicle can carry a wheelchair or can be easily converted to carry a wheelchair</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>rullstol</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1612</AttributeId>
+			<Attribute>attributesVehicle low rider</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Low rider</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>låggolv</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1613</AttributeId>
+			<Attribute>attributesVehicle stretcher</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>The vehicle has a strecher or can be easily fitted with a stretcher</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>bår</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1614</AttributeId>
+			<Attribute>attributesVehicle ramp</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Ramp for wheelchairs</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>ramp</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1615</AttributeId>
+			<Attribute>attributesVehicle lift</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Lift for wheelchairs</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>lift </Swe>
+		</Row>
+		<Row>
+			<AttributeId>1616</AttributeId>
+			<Attribute>attributesVehicle stair climber</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Vehicle equipped with stair climber</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>trappklättrare</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1617</AttributeId>
+			<Attribute>attributesVehicle allergy safe</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Vehicle allergy decontaminated</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>allegisanerad</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1618</AttributeId>
+			<Attribute>attributesVehicle saloon</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Sedan</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>sedan</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1619</AttributeId>
+			<Attribute>attributesVehicle bus</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Bus</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>buss</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1620</AttributeId>
+			<Attribute>attributesVehicle roof box</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Roof box</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>takbox</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1621</AttributeId>
+			<Attribute>attributesVehicle no smoking</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Non smoking vehicle</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>rökfritt fordon</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1622</AttributeId>
+			<Attribute>attributesVehicle perambulator</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Perambulator</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>barnvagn</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1623</AttributeId>
+			<Attribute>attributesVehicle rollator</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Rollator</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>rullator</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1624</AttributeId>
+			<Attribute>attributesVehicle walker</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Walker or Walking frame</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>gåstol</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1625</AttributeId>
+			<Attribute>attributesVehicle blind persons cane</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Blind persons cane</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>blindkäpp</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1626</AttributeId>
+			<Attribute>attributesVehicle commodechair</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Commode Chair</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>toalettstol</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1627</AttributeId>
+			<Attribute>attributesVehicle powered wheelchair</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Big powered wheelchair</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>permobil</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1628</AttributeId>
+			<Attribute> attributesVehicle frontseat</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that the vehicle shall have a front seat</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>sitte foran</Nor>
+			<Swe>framsäte</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1629</AttributeId>
+			<Attribute> attributesVehicle lay in backseat</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that the vehicle shall be able to have a passenger laying in back seat</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor/>
+			<Swe>ligga bak</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1630</AttributeId>
+			<Attribute> attributesVehicle lay in frontseat</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that the vehicle shall be able to have a passenger laying in front seat</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor/>
+			<Swe>ligga fram</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1631</AttributeId>
+			<Attribute> attributesVehicle  single vehicle</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that the vehicle shall take only thios passenger</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>alene bil</Nor>
+			<Swe>egen bil</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1632</AttributeId>
+			<Attribute> attributesVehicle  multiple wheelchairs</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that the vehicle shall take multiple wheelchairs</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor/>
+			<Swe>flera rullstolar</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1633</AttributeId>
+			<Attribute>attributesVehicle child seat 0 - 9 month</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Detachable seat used for smal children up to 9 month</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>bilbarnstol 0-9 månader</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1634</AttributeId>
+			<Attribute>attributesVehicle child seat 1-3 year</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Detachable seat used for smal children between 10 months and 3 years</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>bilbarnstol 10 månader-3 år</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1635</AttributeId>
+			<Attribute>attributesVehicle child seat 4+ year</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Detachable seat used for smal children from 4 years and up</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>bilbarnstol 4+ år</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1636</AttributeId>
+			<Attribute>attributesVehicle folding wheelchair</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Folded wheelchair</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>Vikbar rullstol</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1637</AttributeId>
+			<Attribute>attributesVehicle mobility scooter</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Mobility scooter</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>-</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1638</AttributeId>
+			<Attribute>attributesVehicle standard car</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Standard car used for commercial  transportation of passengers</Explanation>
+			<Dan>Standard bil anvendes til erhvervsmæssig transport af passagerer</Dan>
+			<Fin>-</Fin>
+			<Nor>Standard bilen brukes til kommersiell transport av passasjerer</Nor>
+			<Swe>Standard bil som används för kommersiell transport av passagerare</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1639</AttributeId>
+			<Attribute>attributesVehicle special vehicle</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Special vehicles used for commercial carriage of passengers with special needs</Explanation>
+			<Dan>Særlige køretøjer, der anvendes til erhvervsmæssig personbefordring med særlige behov</Dan>
+			<Fin>-</Fin>
+			<Nor>Spesielle kjøretøyer som brukes til kommersiell transport av passasjerer med spesielle behov</Nor>
+			<Swe>Specialfordon använt för yrkesmässig transport av resenär med speciella behov</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1640</AttributeId>
+			<Attribute>attributeVehicle  foldableseat</Attribute>
+			<Usedin>attributesVehicle/attribute/idAttribute</Usedin>
+			<Explanation>Foldable seat</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>Fällbart säte</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1701</AttributeId>
+			<Attribute>passengerinvehicle</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>Passenger picked up. the value "pickup" was initially used.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>resenär hämtad</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1702</AttributeId>
+			<Attribute>passengerdropped </Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>Passenger dropped of. the value "destination" was initially used.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>resenär avlämnad</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1703</AttributeId>
+			<Attribute>noshow</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>No show at pickup of passenger</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>bom</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1704</AttributeId>
+			<Attribute>parcelinvehicle</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>Parcel picked up</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>paket hämtat</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1705</AttributeId>
+			<Attribute>parceldropped</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>Parcel dropped of</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>paket avlämnat</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1706</AttributeId>
+			<Attribute>actiondone</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>The demanded action has been done. the value "action" was initially used.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>aktivitet utförd</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1707</AttributeId>
+			<Attribute>navigationdone</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>The demanded navigation has been done. the value "navigation" was initially used.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>navigering utförd</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1708</AttributeId>
+			<Attribute>canceledatdoor</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>The pickup has been canceled at the door</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>avbest vid dörren</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1709</AttributeId>
+			<Attribute>vehicleatnode</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>The vehicle har arrived at the node</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>på noden</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1710</AttributeId>
+			<Attribute>infotocontent</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>Information to content.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>-</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1711</AttributeId>
+			<Attribute>dispatchconfirmationsent</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>Dispatch confirmation has been sent.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>-</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1712</AttributeId>
+			<Attribute>delayconfirmationsent</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>Delay confirmation has been sent.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>-</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1713</AttributeId>
+			<Attribute>arrivalconfirmationsent</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>Arrival confirmation has been sent.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>-</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1714</AttributeId>
+			<Attribute>start</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>This indicates that the taximeter in vehicle is set in tarif mode.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>start</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1715</AttributeId>
+			<Attribute>stop</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>This indicates that the taximeter in vehicle is set off tarif mode.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>stop</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1716</AttributeId>
+			<Attribute>acceptOrder</Attribute>
+			<Usedin>pickupConfirmation/eventType</Usedin>
+			<Explanation>This acceptance of an order.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>accept</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1801</AttributeId>
+			<Attribute>action</Attribute>
+			<Usedin>node/nodeType</Usedin>
+			<Explanation>Take a sopecified action</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>aktivitet</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1802</AttributeId>
+			<Attribute>navigation</Attribute>
+			<Usedin>node/nodeType</Usedin>
+			<Explanation>Navigate through this point</Explanation>
+			<Dan>navigation</Dan>
+			<Fin>-</Fin>
+			<Nor>navigasjon</Nor>
+			<Swe>navigering</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1803</AttributeId>
+			<Attribute>pickup</Attribute>
+			<Usedin>node/nodeType</Usedin>
+			<Explanation>Pickup a passenger or a parcel</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>hämtning</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1804</AttributeId>
+			<Attribute>destination</Attribute>
+			<Usedin>node/nodeType</Usedin>
+			<Explanation>Destination of travel</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>destination</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1901</AttributeId>
+			<Attribute>break</Attribute>
+			<Usedin>node/nodeType/subnodeType/action</Usedin>
+			<Explanation>Driver expected to take a break. Not used to indicate a request for a break from the driver.</Explanation>
+			<Dan>raste</Dan>
+			<Fin>tauko</Fin>
+			<Nor>frikvarter</Nor>
+			<Swe>rast</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1902</AttributeId>
+			<Attribute>driverassist</Attribute>
+			<Usedin>node/nodeType/subnodeType/action</Usedin>
+			<Explanation>Driver ordered to meet up with another driver to help loading a traveller. Both drivers should have attribute LiftPass.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>assistera förare</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1903</AttributeId>
+			<Attribute>mobaidpickup</Attribute>
+			<Usedin>node/nodeType/subnodeType/action</Usedin>
+			<Explanation>Pick up a mobility aid for further transportation</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>hämta hjälpmedel</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1904</AttributeId>
+			<Attribute>mobaiddropoff</Attribute>
+			<Usedin>node/nodeType/subnodeType/action</Usedin>
+			<Explanation>Drop off a mobility aid that has been picked up earlier.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>lämna hjälpmedel</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1905</AttributeId>
+			<Attribute>ferrydeparture</Attribute>
+			<Usedin>node/nodeType/subnodeType/action</Usedin>
+			<Explanation>Vehicle shall be in time to catch the ferry at ordered time and place.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>färjeavgång</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1906</AttributeId>
+			<Attribute>ferryarrival</Attribute>
+			<Usedin>node/nodeType/subnodeType/action</Usedin>
+			<Explanation>Arrival of ferry with vehicle at ordered time and place</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>färjeankomst</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1907</AttributeId>
+			<Attribute>waitforinstructions</Attribute>
+			<Usedin>node/nodeType/subnodeType/action</Usedin>
+			<Explanation>Used to order a vehicle to wait for further instructions or new node</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>vänta på instruktioner</Swe>
+		</Row>
+		<Row>
+			<AttributeId>1908</AttributeId>
+			<Attribute>flagstop</Attribute>
+			<Usedin>node/nodeType/subnodeType/action</Usedin>
+			<Explanation>Indicates a Flagstop</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>Instruktion om Flagstop</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2001</AttributeId>
+			<Attribute> adressContent  wheelchair</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will be using wheeelchair</Explanation>
+			<Dan>kørestol</Dan>
+			<Fin>pyörätuoli</Fin>
+			<Nor>rullestol</Nor>
+			<Swe>rullstol</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2002</AttributeId>
+			<Attribute> adressContent  oxygen</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will be using oxygen</Explanation>
+			<Dan>oxygen</Dan>
+			<Fin>happi</Fin>
+			<Nor>oksygen</Nor>
+			<Swe>syre</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2003</AttributeId>
+			<Attribute> adressContent  dog</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will be accompanied by a dog</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>ledarhund</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2004</AttributeId>
+			<Attribute> adressContent  respirator</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will need a respirator</Explanation>
+			<Dan>respirator</Dan>
+			<Fin>hengityslaite</Fin>
+			<Nor>respirator</Nor>
+			<Swe>respirator</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2005</AttributeId>
+			<Attribute> adressContent  lift</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will need to go by lift</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>lift </Swe>
+		</Row>
+		<Row>
+			<AttributeId>2006</AttributeId>
+			<Attribute> adressContent  stair climber</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will need cruthches</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>trappklättrare</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2007</AttributeId>
+			<Attribute> adressContent  crutch</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will need a stair climber</Explanation>
+			<Dan>krykke</Dan>
+			<Fin>kainalosauva</Fin>
+			<Nor>krykke</Nor>
+			<Swe>krycka</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2008</AttributeId>
+			<Attribute> adressContent  perambulator</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will have a perambulator</Explanation>
+			<Dan>barnevogn</Dan>
+			<Fin>lastenvaunut</Fin>
+			<Nor>barnevogn</Nor>
+			<Swe>barnvagn</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2009</AttributeId>
+			<Attribute> adressContent  rollator</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point need a rollator</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>rullator</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2010</AttributeId>
+			<Attribute> adressContent  walker</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point need a Walker or Walking frame</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>gåstol</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2011</AttributeId>
+			<Attribute> adressContent  blind persons cane</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point need a blind persons cane</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>blindkäpp</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2012</AttributeId>
+			<Attribute> adressContent  commodechair</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point need a Commode Chair</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>toalettstol</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2013</AttributeId>
+			<Attribute> adressContent  do not leave unattended</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller may not be left unattended. Driver may not leave until responcible person arrives.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>överlämning</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2014</AttributeId>
+			<Attribute> adressContent  compulsory companion</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller always need a companion</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>obligatorisk ledsagare</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2015</AttributeId>
+			<Attribute> adressContent  treatmentCentre</Attribute>
+			<Usedin>attributeAdress/attribute/idAttribute</Usedin>
+			<Explanation>indicates that this point is a institution of treatment</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>behandlingssted</Nor>
+			<Swe>behandlingsställe</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2101</AttributeId>
+			<Attribute>scheduledtime</Attribute>
+			<Usedin>timesNode/time/timeType</Usedin>
+			<Explanation>Scheduled time</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>planerad tid</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2102</AttributeId>
+			<Attribute>estimatedtime</Attribute>
+			<Usedin>timesNode/time/timeType</Usedin>
+			<Explanation>Estimated time</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>uppskattad tid</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2103</AttributeId>
+			<Attribute>promisedtime</Attribute>
+			<Usedin>timesNode/time/timeType</Usedin>
+			<Explanation>Promised time</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>lovad tid</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2104</AttributeId>
+			<Attribute>actual</Attribute>
+			<Usedin>timesNode/time/timeType</Usedin>
+			<Explanation>Actual time</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>faktisk tid</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2105</AttributeId>
+			<Attribute>scheduled</Attribute>
+			<Usedin>timesNode/time/timeType</Usedin>
+			<Explanation>Sceduled time</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>planerad tid</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2106</AttributeId>
+			<Attribute>promised</Attribute>
+			<Usedin>timesNode/time/timeType</Usedin>
+			<Explanation>Promised time</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>lovad tid</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2107</AttributeId>
+			<Attribute>estimated</Attribute>
+			<Usedin>timesNode/time/timeType</Usedin>
+			<Explanation>Estimated time</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>uppskattad tid</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2108</AttributeId>
+			<Attribute>asap</Attribute>
+			<Usedin>timesNode/time/timeType</Usedin>
+			<Explanation>As soon as possible</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>så snart som möjligt</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2201</AttributeId>
+			<Attribute>mail</Attribute>
+			<Usedin>contactInfosReservation/contactInfo/contactType</Usedin>
+			<Explanation>Way of comunication with provider of connecting transportation. Address/number are given in contactInfo.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>email</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2202</AttributeId>
+			<Attribute>phone</Attribute>
+			<Usedin>contactInfosReservation/contactInfo/contactType</Usedin>
+			<Explanation>Way of comunication with provider of connecting transportation. Address/number are given in contactInfo.</Explanation>
+			<Dan>telefon</Dan>
+			<Fin>puhelin</Fin>
+			<Nor>telefon</Nor>
+			<Swe>telefon</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2203</AttributeId>
+			<Attribute>fax</Attribute>
+			<Usedin>contactInfosReservation/contactInfo/contactType</Usedin>
+			<Explanation>Way of comunication with provider of connecting transportation. Address/number are given in contactInfo.</Explanation>
+			<Dan>fax</Dan>
+			<Fin>telekopiointi</Fin>
+			<Nor>faks</Nor>
+			<Swe>fax</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2204</AttributeId>
+			<Attribute>otherinfo</Attribute>
+			<Usedin>contactInfosReservation/contactInfo/contactType</Usedin>
+			<Explanation>Other contactinformation such as operator or place.</Explanation>
+			<Dan>fax</Dan>
+			<Fin/>
+			<Nor/>
+			<Swe>annan kontaktinfo</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2301</AttributeId>
+			<Attribute> attributeContent wheelchair</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will be using wheeelchair</Explanation>
+			<Dan>kørestol</Dan>
+			<Fin>pyörätuoli</Fin>
+			<Nor>rullestol</Nor>
+			<Swe>rullstol</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2302</AttributeId>
+			<Attribute> attributeContent oxygen</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will be using oxygen</Explanation>
+			<Dan>oxygen</Dan>
+			<Fin>happi</Fin>
+			<Nor>oksygen</Nor>
+			<Swe>syre</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2303</AttributeId>
+			<Attribute> attributeContent dog</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will be accompanied by a dog</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>ledarhund</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2304</AttributeId>
+			<Attribute> attributeContent respirator</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will need a respirator</Explanation>
+			<Dan>respirator</Dan>
+			<Fin>hengityslaite</Fin>
+			<Nor>respirator</Nor>
+			<Swe>respirator</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2305</AttributeId>
+			<Attribute> attributeContent lift</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will need to go by lift</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>lift </Swe>
+		</Row>
+		<Row>
+			<AttributeId>2306</AttributeId>
+			<Attribute> attributeContent stair climber</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will need a stair climber</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>trappklättrare</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2307</AttributeId>
+			<Attribute> attributeContent crutch</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will need cruthches</Explanation>
+			<Dan>krykke</Dan>
+			<Fin>kainalosauva</Fin>
+			<Nor>krykke</Nor>
+			<Swe>krycka</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2308</AttributeId>
+			<Attribute> attributeContent perambulator</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point will have a perambulator</Explanation>
+			<Dan>barnevogn</Dan>
+			<Fin>lastenvaunut</Fin>
+			<Nor>barnevogn</Nor>
+			<Swe>barnvagn</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2309</AttributeId>
+			<Attribute> attributeContent rollator</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point need a rollator</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>rullator</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2310</AttributeId>
+			<Attribute> attributeContent walker</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point need a Walker or Walking frame</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>gåstol</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2311</AttributeId>
+			<Attribute> attributeContent blind persons cane</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point need a blind persons cane</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>blindkäpp</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2312</AttributeId>
+			<Attribute> attributeContent commodechair</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller at this point need a Commode Chair</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>toalettstol</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2313</AttributeId>
+			<Attribute> attributeContent do not leave unattended</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller may not be left unattended. Driver may not leave until responcible person arrives.</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>överlämning</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2314</AttributeId>
+			<Attribute> attributeContent compulsory companion</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller always need a companion</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>obligatorisk ledsagare</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2315</AttributeId>
+			<Attribute> attributeContent frontseat</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller always need to be placed in front seat</Explanation>
+			<Dan>fors&#230;te</Dan>
+			<Fin>etuistuin</Fin>
+			<Nor>forsete</Nor>
+			<Swe>framsäte</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2316</AttributeId>
+			<Attribute> attributeContent lay in backseat</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller always need to lay in back seat</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor/>
+			<Swe>ligga bak</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2316</AttributeId>
+			<Attribute> attributeContent lay in frontseat</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller always need to lay in front seat</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor/>
+			<Swe>ligga fram</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2317</AttributeId>
+			<Attribute> attributeContent single vehicle</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller always need to have a single car</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>alene bil</Nor>
+			<Swe>egen bil</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2318</AttributeId>
+			<Attribute> attributeContent traveller female</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller gender is female</Explanation>
+			<Dan>kvinde</Dan>
+			<Fin>nainen</Fin>
+			<Nor>kvinne</Nor>
+			<Swe>kvinna</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2319</AttributeId>
+			<Attribute> attributeContent traveller male</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller gender is male</Explanation>
+			<Dan>mand</Dan>
+			<Fin>mies</Fin>
+			<Nor>mann</Nor>
+			<Swe>man</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2320</AttributeId>
+			<Attribute> attributeContent traveller unknown gender</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Indicates that traveller gender is unknown</Explanation>
+			<Dan>ukendt</Dan>
+			<Fin>tuntematon</Fin>
+			<Nor>ukjent</Nor>
+			<Swe>okänd</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2321</AttributeId>
+			<Attribute>attributeContent powered wheelchair</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Big powered wheelchair</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>permobil</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2322</AttributeId>
+			<Attribute>attributeContent folding wheelchair</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Folded wheelchair</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>Vikbar rullstol</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2323</AttributeId>
+			<Attribute>attributeContent mobility scooter</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Mobility scooter</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>-</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2324</AttributeId>
+			<Attribute>attributeContent stretcher</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>The vehicle has a strecher or can be easily fitted with a stretcher</Explanation>
+			<Dan>båre</Dan>
+			<Fin>paarit</Fin>
+			<Nor>båre</Nor>
+			<Swe>bår</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2325</AttributeId>
+			<Attribute>attributeContent  standard car</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>The traveler needs to go in a standard car used for the commercial transport of passengers</Explanation>
+			<Dan>Den rejsende har brug for at gå i en standard bil, der anvendes til erhvervsmæssig transport af passagerer</Dan>
+			<Fin>-</Fin>
+			<Nor>Den reisende må gå i en vanlig bil som brukes til kommersiell transport av passasjerer</Nor>
+			<Swe>Resenären behöver åka i en standard bil som används för kommersiell transport av passagerare</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2326</AttributeId>
+			<Attribute>attributeContent  special vehicle</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>The passenger needs to travel in a special vehicle used for the commercial carriage of passengers with special needs</Explanation>
+			<Dan>Passageren har brug for at rejse i en særlig køretøj, der anvendes til erhvervsmæssig personbefordring med særlige behov</Dan>
+			<Fin>-</Fin>
+			<Nor>Passasjeren må reise i en spesiell bil som brukes til kommersiell transport av passasjerer med spesielle behov</Nor>
+			<Swe>Resenären behöver åka i ett specialfordon använt för yrkesmässig transport av resenär med speciella behov</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2327</AttributeId>
+			<Attribute>attributeContent  foldableseat</Attribute>
+			<Usedin>attributeContent/attribute/idAttribute</Usedin>
+			<Explanation>Foldable seat</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor>-</Nor>
+			<Swe>Fällbart säte</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2401</AttributeId>
+			<Attribute> costcenter</Attribute>
+			<Usedin>payment/idEkInfo</Usedin>
+			<Explanation>Indicates a costcenter used in this payment</Explanation>
+			<Dan>-</Dan>
+			<Fin>-</Fin>
+			<Nor/>
+			<Swe>kostnadsställe</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2402</AttributeId>
+			<Attribute> project</Attribute>
+			<Usedin>payment/idEkInfo</Usedin>
+			<Explanation>Indicates a project used in this payment</Explanation>
+			<Dan>projekt</Dan>
+			<Fin>projekti</Fin>
+			<Nor>prosjekt</Nor>
+			<Swe>projekt</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2501</AttributeId>
+			<Attribute>ordernotfound</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>order not found</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>order finns inte</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2501</AttributeId>
+			<Attribute>ordernotfound</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>order not found</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>order finns inte</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2502</AttributeId>
+			<Attribute>orderinprogress</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>content are already in vehicle</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>resenär/paket redan i bil </Swe>
+		</Row>
+		<Row>
+			<AttributeId>2503</AttributeId>
+			<Attribute>notaccordingtoagreement</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>order is not according to agreement</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>inte enligt avtal</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2504</AttributeId>
+			<Attribute>nocapacity</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>no capacity to complete order</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>ingen resurs att genomföra order med</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2505</AttributeId>
+			<Attribute>tolate</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>to late</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>för sent</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2506</AttributeId>
+			<Attribute>travelerrequest</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>traveler has requested that order shall not be completed</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>på begäran av resenär</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2507</AttributeId>
+			<Attribute>notallowed</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>not allowed</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>inte tillåtet</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2508</AttributeId>
+			<Attribute>ordermanuallyhandled</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>order is manually handled</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>order hanteras manuellt</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2509</AttributeId>
+			<Attribute>idnotfound</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>requested id not found</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>efterfrågat id hittas inte</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2510</AttributeId>
+			<Attribute>idblocked</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>requested id blocked</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>efterfrågat id spärrat</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2511</AttributeId>
+			<Attribute>limitexceeded</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>limit is exceeded</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>antal överskridet</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2512</AttributeId>
+			<Attribute>incorrectprice</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>an incorrect price has been used in report</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>felaktigt pris har inrapporterats</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2513</AttributeId>
+			<Attribute>addressinfonotknown</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>the address is not known</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>adressinfo finns inte hos Client/Provider</Swe>
+		</Row>
+		<Row>
+			<AttributeId>2514</AttributeId>
+			<Attribute>addressinfonotsufficient</Attribute>
+			<Usedin>idRejectreason</Usedin>
+			<Explanation>the address information is not sufficeint</Explanation>
+			<Dan/>
+			<Fin/>
+			<Nor/>
+			<Swe>otillräcklig adressinfo hos Client/Provider</Swe>
+		</Row>
+	</Import>
+</XML>

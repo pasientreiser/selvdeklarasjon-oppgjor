@@ -1,0 +1,874 @@
+\documentclass[a4paper,titlepage,norsk,11pt]{article}
+
+\usepackage[utf8x]{inputenc}
+\usepackage{fullpage}
+\usepackage{parskip}
+\usepackage{datetime}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage[norsk]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[osf,sc]{mathpazo}
+\usepackage{MnSymbol}
+\usepackage[babel=true]{microtype}
+\usepackage{marvosym}
+\usepackage[titletoc]{appendix}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage[all]{hypcap}
+\usepackage{xcolor}
+\usepackage{listingsutf8}
+\usepackage{tabularx}
+\usepackage{setspace}
+\usepackage{needspace}
+\usepackage{tabu}
+
+\lstset{basicstyle=\ttfamily\footnotesize}
+\lstset{tabsize=2}
+\lstset{backgroundcolor=\color{gray!5}}
+\lstset{frame=tbrl}
+\lstset{rulecolor=\color{gray!50}}
+\lstset{prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rhookswarrow}}}
+\lstset{postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\rcurvearrowse\space}}}
+\lstset{framexleftmargin=5pt}
+\lstset{xleftmargin=5pt}
+\lstset{breaklines=true, breakatwhitespace=true, breakindent=30pt}
+\lstset{numberstyle=\scriptsize}
+
+\setlist[description]{leftmargin=1cm,labelindent=1cm}
+
+\definecolor{gray}{rgb}{0.4,0.4,0.4}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
+\lstset{
+  columns=fullflexible,
+  showstringspaces=false
+}
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morecomment=[s]{<!--}{-->},
+  moredelim=[s][\bfseries\color{black}]{<}{\ },
+  moredelim=[s][\bfseries\color{black}]{</}{>},
+  moredelim=[l][\bfseries\color{black}]{/>},
+  moredelim=[l][\bfseries\color{black}]{>},
+  morecomment=[s]{<?}{?>},
+  commentstyle=\color{gray},
+  stringstyle=\color{blue},
+  identifierstyle=\color{red},
+  keywordstyle=\color{cyan}
+}
+
+\lstset{literate=
+  {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1
+  {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1
+  {à}{{\`a}}1 {è}{{\`e}}1 {ì}{{\`i}}1 {ò}{{\`o}}1 {ù}{{\`u}}1
+  {À}{{\`A}}1 {È}{{\'E}}1 {Ì}{{\`I}}1 {Ò}{{\`O}}1 {Ù}{{\`U}}1
+  {ä}{{\"a}}1 {ë}{{\"e}}1 {ï}{{\"i}}1 {ö}{{\"o}}1 {ü}{{\"u}}1
+  {Ä}{{\"A}}1 {Ë}{{\"E}}1 {Ï}{{\"I}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1
+  {â}{{\^a}}1 {ê}{{\^e}}1 {î}{{\^i}}1 {ô}{{\^o}}1 {û}{{\^u}}1
+  {Â}{{\^A}}1 {Ê}{{\^E}}1 {Î}{{\^I}}1 {Ô}{{\^O}}1 {Û}{{\^U}}1
+  {œ}{{\oe}}1 {Œ}{{\OE}}1 {æ}{{\ae}}1 {Æ}{{\AE}}1 {ß}{{\ss}}1
+  {ű}{{\H{u}}}1 {Ű}{{\H{U}}}1 {ő}{{\H{o}}}1 {Ő}{{\H{O}}}1
+  {ç}{{\c c}}1 {Ç}{{\c C}}1 {ø}{{\o}}1 {Ø}{{\O}}1 {å}{{\r a}}1 {Å}{{\r A}}1
+  {€}{{\EUR}}1 {£}{{\pounds}}1
+}
+
+\lstset{keepspaces}
+
+\lstset{language=XML}
+
+\renewcommand{\arraystretch}{1.2}
+
+
+\begin{document}
+
+\pagenumbering{Alph}
+
+\title{Standard for kommunikasjon av oppgjørsdata med Pasientreiser}
+
+\author{Nicolai Dybdahl}
+\renewcommand{\dateseparator}{.}
+\date{\ddmmyyyydate \today}
+
+\begin{titlepage}
+\vspace*{3cm}
+{\centering
+
+  \includegraphics[scale=1.2]{pasientreiser.pdf} \\
+  \vspace{5.5cm}
+  {\scshape\huge Standard for kommunikasjon av oppgjørsdata\par}
+  \vspace{2cm}
+  {\large 01.03.2016\par}
+  \vspace{1.5cm}
+  {\large Versjon 1.0\par}
+
+}
+
+\end{titlepage}
+
+\pagenumbering{gobble}
+\newpage
+
+\setcounter{tocdepth}{2}
+
+\newpage
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+
+\section{Innledning}
+
+\subsection{Formål}
+Dette dokumentet beskriver standarden for digital kommunikasjon av oppgjørsdata mellom transportører og Pasientreiser.
+
+Denne standarden bygger på SUTI-standarden. Iht. SUTI sin terminologi så beskriver dette dokumentet Pasientreisers selvdeklarasjon av SUTI-standarden for den delen som omhandler oppgjør. SUTI  er en nordisk, ideell organisasjon som jobber for å utvikle og opprettholde en standard for kommunikasjon av trafikkinformasjon mellom datasystemer.
+
+Dokumentasjon av standarden er i hovedsak delt i 3 kapitler. Først beskrives prosessen for oppgjørskontroll for enkeltturer i kapittel~\ref{sec:Oppgjorsprosess}. Deretter beskrives meldingene, og hvordan enkeltturer grupperes sammen i kapittel~\ref{sec:Meldingsflyt}. Til slutt beskrives meldingsinnholdet og syntaksen i detalj i kapittel~\ref{sec:Meldingsinnhold}. I tillegg~\ref{sec:Eksempler} finnes det eksempler på komplette meldinger.
+
+\subsection{Scope}
+Dette dokumentet beskriver prosess, meldingsflyt og innhold for kommunikasjon av oppgjørsdata mellom transportør og Pasientreiser.
+
+Det beskriver ikke avtaler, prismodeller, eller regler for fakturering. Det beskriver heller ikke frekvens for oversendelse av oppgjør fra transportør. Disse tingene må avtalepartene håndtere selv.
+
+Dokumentet beskriver ikke kommunikasjonsprotokoll, eller hvordan man foretar oppkobling, test og godkjenning. Se eget dokument for en beskrivelse av mulige oppkoblingsmuligheter mot Pasientreisers datasystemer.
+
+\subsection{Siste versjon}
+
+Siste versjon av dette dokumentet, med tilhørende dokumentasjon, publiseres på \href{http://www.github.com/pasientreiser}{\nolinkurl{www.github.com/pasientreiser}}.
+
+\subsection{Versjonering}
+
+Presiseringer i dokumentasjonen vil gjennomføres uten at det innføres nye versjoner av selvdeklarasjonen.
+
+Hvis det innføres en endring av selvdeklarasjonen vil versjonsnummeret endres. Versjonen er spesifisert i dette dokumentet, og i meldingsdefinisjonene.
+
+\needspace{3\baselineskip}
+\section{Referanser}
+
+\begin{description}
+
+  \item[SUTI-Standard 2016] \hfill \\
+  Pasientreiser selvdeklarasjon er basert på flyt som er beskrevet i <<SUTI Use Cases Basic Accounting>> og som er en del av SUTI-standarden <<SUTI 2016>>.
+
+  \item[Kommunikasjonsprotokoll for oppgjørskommunikasjon] \hfill \\
+  Dette dokumentet beskriver detaljer om hvordan oppkobling skjer mellom transportørsystemene og Pasientreisers datasystemer. Dokumentet er fortsatt under utarbeidelse.
+
+  \item[Meldingsdefinisjoner] \hfill \\
+  Det finnes XML Skjema definisjoner (XSD) som underlag til dette dokumentet som beskriver/definerer meldingsinnhold i teknisk detalj.
+
+\end{description}
+
+\section{Oppgjørsprosess}
+\label{sec:Oppgjorsprosess}
+
+Oppgjørsprosessen beskrives her for enkeltturer.
+
+Transportøren initierer alltid oppgjørsprosessen ved å sende informasjon om turer det søkes betalt for. Pasientreiser vil sende et svar på denne turen med en av følgende statuser.
+
+\begin{description}
+
+	\item[Godkjent (accepted)] \hfill \\
+	Turen godkjennes av Pasientreiser, med den informasjon som ble innsendt. Den vil senere inngå i en faktura og utbetales.
+
+	\item[Underkjent (rejected)] \hfill \\
+	Turen underkjennes av Pasientreiser. Årsaken til at turen er underkjent skal fremgå av feilkoden(e) i svarmeldingen. Pasientreiser gjør ingenting videre med underkjente turer. Transportøren må selv velge hvordan underkjente turer skal håndteres videre. Hvis transportøren ønsker å få behandlet en underkjent tur finnes det to metoder. Turen kan sendes inn på nytt med endringer for deretter å bli behandlet på vanlig måte på nytt. Eller, hvis transportøren mener turen er feilaktig avvist, så kan den sendes på nytt til vurdering.
+
+	\item[Vurderes (validate)] \hfill \\
+	Turen sendes til vurdering av Pasientreiser.  Vurderingsprosessen vil føre til en godkjennelse eller underkjennelse av turen på et senere tidspunkt.
+
+	Alternativt så kan transportør sende turen direkte til vurdering ved første gangs innsendelse, hvis det er forhold ved turen som tilsier at den må behandles manuelt.
+
+\end{description}
+
+Tilstandsdiagrammet i figur~\ref{sec:tilstandsdiagram} under viser hvilke statuser turer kan ha, og hvordan turer kan havne i disse statusene. Røde transisjoner (1,2,3,6,11,12) utføres av transportør. Blå transisjoner (4,5,7,8,9,10) utføres av Pasientreiser.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.9]{tilstandsdiagram}
+  \caption{Tilstandsdiagram for turer}
+  \label{sec:tilstandsdiagram}
+\end{figure}
+
+\subsection{Fakturering}
+Pasientreiser initierer faktureringsprosessen. Pasientreiser sender en melding til transportøren når en godkjent tur skal inngå i en faktura eller utbetales, iht. reglene for fakturering som er avtalt mellom partene.
+
+\section{Meldingsflyt}
+\label{sec:Meldingsflyt}
+
+Meldingsflyten definerer hvordan turer som inngår i oppgjørsprosessen skal sendes i oppgjørsmeldinger. De forskjellige meldingene er identifisert av en 4-sifret SUTI-kode.
+
+Flere turer bør samles og sendes i samme oppgjørsmelding.
+
+Meldinger som sendes til Pasientreiser som ikke inngår i meldingene beskrevet nedenfor, eller meldinger som sendes til Pasientreiser som transportøren ikke har mulighet til å sende iht. dokumentasjonen, vil bli ignorert av mottakende system.
+
+\subsection{Innsendelse av oppgjørsmelding fra transportør}
+
+Dette er meldinger som brukes for innsendelse av oppgjør til Pasientreiser. Disse meldingene kalles samlet for oppgjørsmeldinger.
+
+Alle turer som sendes inn i samme oppgjørsmelding skal være kjørt på samme avtale for samme kontor, og skal faktureres på samme måte.
+
+\begin{description}
+
+	\item[8000] \hfill \\
+	Transportøren vil som oftest initiere oppgjørsprosessen ved å sende en 8000-melding til Pasientreiser.
+
+	Turer som inngår i transisjon 1 eller 3 i figur~\ref{sec:tilstandsdiagram} skal inngå i 8000-meldingen.	Alle turer som sendes inn i denne meldingen skal derfor ha statusen innsendt.
+
+	Svar på denne meldingen kommer i form av en 8101-melding. Pasientreiser vil da sende tilbake ett svar som omhandler samtlige turer i oppgjørsmeldingen. Hver tur i oppgjøret vil få en av tre turstatuser; godkjent, underkjent eller vurderes. Merk at svar på denne meldingen ikke nødvendigvis vil komme med en gang.
+
+	\item[8010] \hfill \\
+	Denne meldingen er forbeholdt turer som skal til manuell vurdering hos Pasientreiser. Det vil si turer som inngår i transisjon 2 eller 6 i figur~\ref{sec:tilstandsdiagram}. 8010-meldingen bør bare brukes for spesielle tilfeller etter overenskomst mellom partene, siden turene i denne typen melding forventes være mer personalkrevende å håndtere.
+
+	Alle turer som sendes inn i denne meldingen skal ha status vurderes.
+
+	Hvis transportør sender oppgjør direkte til vurdering så vil det ikke sendes en samlet tilbakemelding på disse. Turer som inngår i meldingen vil svares opp i 8111-meldinger løpende.
+
+\end{description}
+
+\subsection{Tilbakemelding på oppgjør fra Pasientreiser}
+
+Meldinger som brukes for å svare opp oppgjørsmeldinger. Disse meldingene kalles samlet for svarmeldinger.
+
+\begin{description}
+
+	\item[8101] \hfill \\
+	Denne meldingen inneholder svar på alle turer som er innsendt i en 8000-melding. Dette tilsvarer transisjon 4, 7 og 8 i figur~\ref{sec:tilstandsdiagram}.
+
+	Alle turer som inngår i denne meldingen kan ha en av tre statuser; godkjent, underkjent, vurderes.
+
+	\item[8111] \hfill \\
+	Denne meldingen inneholder svar på turer som ligger til vurdering fra tidligere innsendte 8000- og 8010-meldinger. Dette tilsvarer transisjon 5 og 9 i figur~\ref{sec:tilstandsdiagram}.
+
+	Alle turer som inngår i denne meldingen kan ha en av to statuser; godkjent, underkjent.
+
+	For turer som ligger til vurdering hos Pasientreiser vil tilbakemelding bli gitt periodisk, og turer fra flere forskjellige opprinnelige oppgjørsmeldinger vil kunne sendes samlet i en slik tilbakemelding.
+
+\end{description}
+
+\subsection{Andre tilbakemeldinger på oppgjør}
+
+Meldingene under er ikke en del av 8000-serien, men kan også sendes som svar på oppgjørsmeldinger.
+
+\begin{description}
+
+	\item[7030] \hfill \\
+	Definerer en syntaksfeil i mottatt oppgjør. Kan også sendes hvis det er summeringsfeil i oppgjøret. Hvis denne meldingen sendes vil ikke oppgjøret prosesseres videre av Pasientreiser, og det må korrigeres og sendes på nytt fra transportør.
+
+\end{description}
+
+\subsection{Fakturering og utbetaling}
+
+Meldingene under brukes til fakturering og utbetaling. Disse meldingene kalles samlet for utbetalingsmeldinger.
+
+\begin{description}
+
+	\item[8199] \hfill \\
+	Pasientreiser sender denne meldingen til transportøren når det skal faktureres for turer. Betalinger fra flere opprinnelige oppgjør vil inngå i samme faktura.
+
+	Denne meldingen utgjør beløpene på godkjente turer i tidligere sendte svarmeldinger, samt fratrekk for egenandeler. Den inneholder også et referansenummer, som kan brukes videre for kontroll av faktura.
+
+\end{description}
+
+\section{Meldingsinnhold}
+\label{sec:Meldingsinnhold}
+
+\begin{lstlisting}
+<SUTI xmlns:suti="http://www.suti.se/schema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="SUTI_2016_Pasientreiser_Oppgjor_strict.xsd">
+  ...
+</SUTI>
+\end{lstlisting}
+
+SUTI-meldinger som sendes skal være basert på Pasientreiser's meldingsdefinisjon for oppgjørskommunikasjon. Det finnes to varianter av denne. En normal og en streng versjon. Den strenge versjonen bør brukes hvis mulig, men hvis systemet ikke kan støtte den av forskjellige årsaker så kan den normale versjonen brukes. Merk at flere av feltene som validerer og kan sendes inn basert på den normale versjonen ikke vil hensyntas av Pasientreiser sitt system. Den strenge versjonen tillatter ikke felter som ikke vil bli lest av mottakende system.
+
+\needspace{3\baselineskip}
+\subsection{Avsender og mottaker}
+
+\begin{lstlisting}
+  <orgSender name="Transportør123">
+    <idOrg src="SUTI:idLink" id="transporter_123"/>
+  </orgSender>
+  <orgReceiver name="Pasientreiser">
+    <idOrg src="SUTI:idLink" id="pasientreiser_ctrl"/>
+  </orgReceiver>
+\end{lstlisting}
+
+Alle meldinger skal inneholde avsender og mottaker av meldingen. ID'en bør bygges opp som en SUTI-ID iht. SUTI-standarden. Dvs. den skal bygges opp av 3 deler; ID'en til systemet/systemleverandøren, ID'en til brukeren/eieren av systemet, og et unikt nummer.
+
+SUTI-ID'en til Pasientreiser for oppgjørskommunikasjon er pasientreiser\_ctrl. Det er viktig at denne ID'en settes riktig for at oppgjørsmeldinger skal kunne rutes til riktig system.
+
+\subsection{Melding}
+
+\begin{lstlisting}
+  <msg msgType="8101">
+    <idMsg src="pasientreiser_ctrl:idMsg" id="2015103100000005"/>
+    <infoTimeStamp>
+      <time time="2015-10-31T23:10:00"/>
+    </infoTimeStamp>
+    <referencesTo>
+      <idMsg src="transporter_123:idMsg" id="2015103100000002"/>
+    </referencesTo>
+      ...
+  </msg>
+\end{lstlisting}
+
+Meldingstypen og ID'en til meldingen ligger i msg-elementet. Meldinger skal kun inneholde ett msg-element.
+
+\begin{description}
+
+	\item[ID] \hfill \\
+	idMsg utgjør meldingens identifikasjon. Src skal referere til SUTI-ID'en til aktøren som har opprettet meldingen, og være unik for denne aktøren og denne meldingen. ID'en skal være maksimalt 16 siffer langt. ID'en bør utformes iht. SUTI-standardens beste praksis som følger: YYYYMMDDnnnnnnnn
+
+	\item[Oversendelsestidspunkt] \hfill \\
+	infoTimeStamp skal inneholde meldingens oversendelsestidspunkt.
+
+	\item[Referanse til tidligere melding] \hfill \\
+	For 8101- og 7030-meldinger så vil referencesTo inneholde idMsg til meldingen som opprinnelig ble sendt.
+
+\end{description}
+
+\needspace{3\baselineskip}
+\subsection{Oppgjørsdata}
+
+\begin{lstlisting}
+    <accounting>
+      <idAccounting src="pasientreiser:avtaleId" id="Avtale1"/>
+      ...
+      <orgClient orgName="Sykehuset HF">
+        <idOrg src="NO:idOrg" id="222222292"/>
+      </orgClient>
+      <orgProvider orgName="Transporter123">
+        <idOrg src="NO:idOrg" id="111111111"/>
+      </orgProvider>
+    </accounting>
+\end{lstlisting}
+
+Oppgjørsdata spesifiseres i et accounting-element. Under dette elementet spesifiseres turer, samt et sammendrag for hele oppgjøret.
+
+\begin{description}
+
+  \item[Avtale] \hfill \\
+  Elementet \lstinline{<idAccounting>} skal inneholde navnet på avtalen turen er kjørt på, iht. bestillingen.
+
+	\item[Avtaleparter] \hfill \\
+	Elementene \lstinline{<orgProvider>} og \lstinline{<orgClient>} skal inneholde informasjon som kreves for å beskrive de juridiske partene for håndtering av faktura.
+
+	I \lstinline{<orgProvider>} skal navn og organisasjonsnummer til avtaleparten som selger transporttjenesten spesifiseres. I \lstinline{<orgClient>} skal navn og organisasjonsnummer til avtaleparten som kjøper transporttjenesten spesifiseres.
+
+\end{description}
+
+\subsection{Turer}
+
+\begin{lstlisting}
+      <tour>
+        ...
+      </tour>
+\end{lstlisting}
+
+Dette elementet skal inneholde detaljert informasjon om turer som inngår i oppgjørsmeldingene. Oppgjørsmeldingene vil vanligvis inneholde mange \lstinline{<tour>} elementer.
+
+Svarmeldingene vil kun inneholde \lstinline{<referenceToTour>}, \lstinline{<statusTour>}, \lstinline{<suborderTour>} (hvis nødvendig) og \lstinline{<economyReportTour>} i tour-elementet.
+
+Utbetalingsmeldinger vil ikke inneholde dette elementet.
+
+\subsubsection{Turidentifikator}
+
+\begin{lstlisting}
+        <referencesToTour>
+          <idOrder src="pasientreiser:turNr" id="22345678"/>
+        </referencesToTour>
+\end{lstlisting}
+
+Elementet \lstinline{<referencesToTour>} skal inneholde den unike ID'en som turen har i Pasientreisers bestillingssystem og som er sendt i bestillingen.
+
+Ved etterregistrering av turer må riktig ID etterspørres av Pasientreiser før turen kan sendes inn.
+
+\needspace{5\baselineskip}
+\subsubsection{Oppgjørsstatus på tur}
+
+\begin{lstlisting}
+        <statusTour>
+          <idActivity src="SUTI:idActivity" id="rejected"/>
+          <statusTourError>
+            <idError src="SUTI:idError" id="10101"/>
+            <manualDescriptionError manualText="Forklaring" sendtoInvoice="false" sendtoVehicle="false" sendtoOperator="false" vehicleConfirmation="false">
+              <textTimestamp>
+                <time time="2015-03-06T23:10:00"/>
+              </textTimestamp>
+            </manualDescriptionError>
+          </statusTourError>
+          <manualDescriptionStatus manualText="Forklaring" sendingOperator="Navn Navnesen" sendtoInvoice="false" sendtoVehicle="false" sendtoOperator="false" vehicleConfirmation="false">
+            <textTimestamp>
+              <time time="2015-03-06T23:10:00"/>
+            </textTimestamp>
+          </manualDescriptionStatus>
+        </statusTour>
+\end{lstlisting}
+
+Elementet \lstinline{<statusTour>} inneholder tre elementer
+
+\begin{description}
+
+	\item[idActivity] \hfill \\
+	Settes for å indikere status på turen iht. prosessflyten.
+
+	\lstinline{<idActivity>} er en ID der \lstinline{src="SUTI:idActivity"} og der \lstinline{id} er en av følgende verdier.
+
+	\begin{tabularx}{0.9\textwidth}{|l|l|X|}
+	\hline
+	\textbf{idActivity} & \textbf{Status} & \textbf{Beskrivelse} \\\hline
+	invoice & Innsendt & Settes av transportør på turer som Pasientreiser enda ikke har fattet en beslutning på. \\\hline
+	accepted & Godkjent & Settes av Pasientreiser når en tur godkjennes. \\\hline
+	rejected & Underkjent & Settes av Pasientreiser når en tur underkjennes. Elementet idError skal da også finnes. \\\hline
+  validate & Vurderes & Settes av Pasientreiser eller transportør når en tur sendes til vurdering. \\\hline
+	\end{tabularx}
+
+  \needspace{3\baselineskip}
+	\item[idError] \hfill \\
+	Settes av Pasientreiser for å beskrive hvorfor en tur er blitt rejected. Dette er en ID der \lstinline{src="SUTI:idError"} og \lstinline{id} er en av de verdiene som beskrives i SUTI attributelist under errorCode.
+	En tur kan inneholde flere \lstinline{<idError>}.
+
+	\item[manualDescriptionStatus] \hfill \\
+	Fritekstfelt som er tenkt brukt for manuell behandling av turer, både hos transportør og hos Pasientreiser. 	Hvis transportør sender tekst i dette elementet, er det er kun hvis turen går til vurdering at innholdet vil kunne behandles av Pasientreiser. Fra Pasientreiser kan dette elementet forekomme som en presisering av en feilkode.
+
+	Dette elementet skal inneholde en infoTimeStamp som viser når teksten ble opprettet.
+
+	En tur kan inneholde flere \lstinline{<manualDescriptionStatus>}.
+
+  Attributtet \lstinline{sendingOperator} kan brukes for å angi navnet til personen som har utarbeidet kommentaren.
+
+  Attributtene \lstinline{sendtoInvoice}, \lstinline{sendtoVehicle}, \lstinline{sendtoOperator} og  \lstinline{vehicleConfirmation} hensyntas ikke og antas å være satt til \lstinline{"false"}.
+
+  Det er kun meldinger som opprettes med meldingen som sendes, som skal inngå. Man skal ikke sende samme melding på nytt i senere meldinger. Historikk over meldinger må håndteres av systemene som sender meldingene. På bakgrunn av dette så vet man om det er transportør eller Pasientreiser som har opprettet meldingen, basert på avsender av meldingen.
+
+\end{description}
+
+\needspace{5\baselineskip}
+\subsubsection{Rekvisisjonsinformasjon}
+
+\begin{lstlisting}
+        <suborderTour>
+          <eventSuborderTour eventType="passengerinvehicle">
+            <eventTime time="2015-11-25T20:15:45"/>
+            <eventAddress street="Leirvollen" streetNo="23">
+              <geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+            </eventAddress>
+          </eventSuborderTour>
+          <eventSuborderTour eventType="passengerdropped">
+            <eventTime time="2015-11-25T20:15:45"/>
+            <eventAddress street="Leirvollen" streetNo="23" country="Norway">
+              <geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+            </eventAddress>
+          </eventSuborderTour>
+          <idSuborderClient src="pasientreiser:rekNr" id="18483948502"/>
+          <economyReportSuborder>
+            <formOfPayment>
+              <payment paymentType="prepaidsocialfee" amount="-135"/>
+            </formOfPayment>
+          </economyReportSuborder>
+        </suborderTour>
+\end{lstlisting}
+
+I dette elementet spesifiseres informasjon om rekvisisjonen og pasienten. Dette inkluderer rekvisisjonsnummer, egenandelsbeløp, adresser, posisjoner og tidspunkter.
+
+De adresser, posisjoner og tider som angis skal være de reelle verdiene som finnes i transportørsystemet (og ikke de verdiene som ble sendt i bestillingen). For samtlige events skal bilens GPS-posisjon angis.
+
+Følgende hendelser skal sendes med i oppgjøret
+
+\begin{description}
+
+	\item[passengerinvehicle] \hfill \\
+	Denne hendelsen markerer at passasjeren er hentet.
+
+	\item[passengerdropped] \hfill \\
+	Denne hendelsen markerer at passasjeren er levert.
+
+	\item[noshow] \hfill \\
+	Denne hendelsen markerer at passasjer ikke ble funnet på hentestedet.
+
+\end{description}
+
+Rekvisisjonsnummeret skal spesifiseres i \lstinline{<idSuborderClient>}. Ved etterregistreringer må riktige ID etterspørres av Pasientreiser før turen kan sendes inn.
+
+Det skal finnes en \lstinline{<payment>} tilknyttet hver rekvisisjon. Denne skal inneholde beløpet som pasienten betalte i egenandel, eller egenandelsbeløpet som ville ha blitt krevet dersom pasienten skulle betalt egenandel. \lstinline{paymentType} skal være \lstinline{"socialservicefee"} hvis pasienten har betalt egenandelen, og \lstinline{"prepaidsocialfee"} hvis pasienten ikke har betalt egenandelen. Beløp av typen \lstinline{"socialservicefee"} skal angis med negativt fortegn, siden disse skal gå til fratrekk på bruttobeløpet.
+
+\needspace{5\baselineskip}
+\subsubsection{Kjøretøyinformasjon}
+
+\begin{lstlisting}
+        <resourceTour>
+          <vehicle>
+            <idVehicle src="NO:løyveNr" id="AAA-123"/>
+          </vehicle>
+          <driver>
+            <idDriver src="transporter_123:idDriver" id="123"/>
+          </driver>
+        </resourceTour>
+\end{lstlisting}
+
+Elementet resourceTour brukes for å spesifisere informasjon om kjøretøyet.
+
+\begin{description}
+
+	\item[idVechicle] \hfill \\
+	I dette elementet skal bilens løyvenummer eller registreringsnummer spesifiseres.
+
+	Hvis bilen har et løyvenummer skal dette sendes og \lstinline{src} skal refere til \lstinline{"NO:Løyvenummer"}. Løyvenummeret skal formatteres med en enkelt bindestrek, uten mellomrom.
+
+	Hvis registreringsnummer oversendes så skal \lstinline{src} referere til \lstinline{"NO:Registreringsnummer"}. Registreringsnummer skal formatteres uten mellomrom.
+
+	\item[idDriver] \hfill \\
+	I dette elementet skal ID'en til sjåføren som kjørte turen oversendes. ID'en til sjåføren må være unik iht. den kilden som er spesifisert.
+
+\end{description}
+
+\subsubsection{Turhendelse}
+
+\begin{lstlisting}
+        <eventTour eventVehicle="start">
+          <eventTourTime time="2015-11-25T18:50:00"/>
+          <tourGeographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
+        </eventTour>
+\end{lstlisting}
+
+I dette elementet angis tid og posisjon for hendelser på turen. Posisjonen og tiden som angis skal være de reelle verdiene som finnes i transportørsystemet (og ikke de verdiene som ble sendt i bestillingen). For samtlige events skal bilens GPS-posisjon angis.
+
+Følgende hendelser skal sendes med i oppgjøret
+
+\begin{description}
+
+  \item[start] \hfill \\
+  Denne hendelsen beskriver hvor og når turen startet.
+
+  \item[stop] \hfill \\
+  Denne hendelsen beskriver hvor og når turen ble avsluttet.
+
+	\item[navigation] \hfill \\
+	Denne hendelsen finnes om ordren spesifiserer at turen skal ha kjørt via et punkt uten å hente eller levere en passasjer der.
+
+\end{description}
+
+\needspace{5\baselineskip}
+\subsubsection{Kostnadskalkulasjon for tur}
+
+\begin{lstlisting}
+        <calculationsTour>
+          <calculationFare>
+            <calculationType src="pasientreiser:takstkode" id="11232"/>
+            <taximeterAmount>
+              <startPrice>0</startPrice>
+              <distanceTotalPrice>
+                <distanceCount>6000</distanceCount>
+                <distanceUnitPrice>0.059</distanceUnitPrice>
+              </distanceTotalPrice>
+              <durationTotalPrice>
+                <durationCount>0</durationCount>
+                <durationUnitPrice>0</durationUnitPrice>
+              </durationTotalPrice>
+              <taximeterTotalPrice>354</taximeterTotalPrice>
+            </taximeterAmount>
+          </calculationFare>
+          <calculationFare>
+            <calculationType src="pasientreiser:takstkode" id="44232"/>
+            <fixedPriceAmount>55</fixedPriceAmount>
+          </calculationFare>
+        </calculationsTour>
+\end{lstlisting}
+
+Elementet \lstinline{<calculationsTour>} brukes for å formidle kostnadsinformasjon om turen. Elementet kan inneholde en eller flere \lstinline{<calculationFare>}, som kan dele turkostnaden i flere beløp og takster. Summen av alle beløpene i \lstinline{<calculationsTour>} må summere opp til totalbeløpet for turen.
+
+Hver \lstinline{<calculationsTour>} har en egen \lstinline{<calculationType>}, som refererer til takstkodene i kapittel~\ref{sec:Takstkoder}.
+
+For hver calculationFare finnes enten et \lstinline{<fixedPriceAmount>} eller et \lstinline{<taximeterAmount>}.
+
+På bakgrunn av hvordan takstkodene er definert så vil et \lstinline{<taximeterAmount>} kun inneholde én beregning. Det skal derfor kun legges verdier i enten startpris, distanse eller tid. Øvrige verdier må settes til 0.
+
+\subsubsection{Tursammendrag}
+
+\begin{lstlisting}
+        <summaryReportTour distanceStart="3000" durationStart="30"/>
+\end{lstlisting}
+
+Element summaryReportTour skal inneholde den totale tiden og totale lengden for turen i durationStart og distanceStart.
+
+Lengde spesifiseres i meter og tid spesifiseres i sekunder.
+
+\subsubsection{Betalingsinformasjon for tur}
+
+\begin{lstlisting}
+        <economyReportTour>
+          <formOfPayment>
+            <payment paymentType="account" amount="414">
+              <vatAmountSpecification vatPercent="6">
+                <totalVatAmount amountInclVat="414" amountExclVat="389" amountVat="25">
+                </totalVatAmount>
+              </vatAmountSpecification>
+            </payment>
+          </formOfPayment>
+        </economyReportTour>
+\end{lstlisting}
+
+I elementet economyReportTour samles de økonomiske kravene for turen.
+
+For beløp som transportøren søker om å kunne fakturere eller få utbetalt skal ha attributten \lstinline{paymentType} være \lstinline{"account"}. Evt. egenandel som er trukket på rekvisisjonene skal ikke trekkes fra disse beløpene.
+
+\subsection{Samlet økonomisk informasjon}
+
+\begin{lstlisting}
+      <economyReportAccounting>
+        <formOfPayment>
+          <payment paymentType="account" amount="1681">
+            <vatAmountSpecification vatPercent="6">
+              <totalVatAmount amountInclVat="858" amountExclVat="807.87" amountVat="50.13">
+              </totalVatAmount>
+            </vatAmountSpecification>
+            <vatAmountSpecification vatPercent="12">
+              <totalVatAmount amountInclVat="818" amountExclVat="730.36" amountVat="87.64">
+              </totalVatAmount>
+            </vatAmountSpecification>
+          </payment>
+          <payment paymentType="socialservicefee" amount="-358.50"/>
+        </formOfPayment>
+      </economyReportAccounting>
+\end{lstlisting}
+
+Elementet economyReportAccounting inneholder samlet økonomisk informasjon for hele meldingen. Dette elementet skal inneholde en formOfPayment, som igjen kan inneholde mange payment iht. følgende regler.
+
+\begin{description}
+
+  \item[Oppgjørsmelding] \hfill \\
+  8000 og 8010 meldinger fra transportør inneholder 1 eller 2 payment. Et payment utgjør totalen for det beløpet som kreves betalt for, med \lstinline{paymentType="account"}. Hvis transportøren har fått forhåndsbetalt i form av egenandeler fra pasient skal disse spesifiseres som et negativt beløp av type \lstinline{"socialservicefee"}.
+
+  Totalen skal være en eksakt sum av de payment som finnes i hver tur. Er den ikke det så vil meldingen avvises med en 7030-melding.
+
+  \item[Svarmelding] \hfill \\
+  Svarmeldinger fra Pasientreiser vil inneholde opptil to payment, som gjelder for alle godkjente turer i meldingen. Et beløp av typen \lstinline{"account"}, og et beløp av typen \lstinline{"socialservicefee"} som gjelder forhåndsbetalte egenandeler fra pasient.
+
+  Dersom det ikke er noen godkjente beløp i svarmeldingen sendes det kun et payment med verdi 0; \lstinline{<payment paymentType="account" amount="0"/>}.
+
+  Hver \lstinline{<payment>} i svarmeldingen (som ikke er et 0-beløp) knyttes til et betalingsnummer; \lstinline{<idEkInfo src="pasientreiser:betalingNr" id="1123"/>}. Fakturameldingene vil referere til disse betalingsnummerne.
+
+	\item[Fakturamelding] \hfill \\
+	8199-meldingen inneholder et \lstinline{<payment>} som utgjør totalsummen for alle betalinger som er inkludert i meldingen. Det knyttes et ordrenummer til dette beløpet, som skal brukes for kontroll av evt. faktura. Dette beløpet skal så faktureres eller utbetales. Ordrenummeret beskrives i elementet \lstinline{<idPayment>}; \lstinline{<idPayment src="pasientreiser:ordreNr" id="345"/>}.
+
+\end{description}
+
+\needspace{10\baselineskip}
+\section{Feilkoder}
+
+Feilkodene definerer hvorfor en tur har blitt underkjent. Avvikskodene er femsifret, hvor 3. siffer angir gruppering.
+
+\begin{description}
+  \item[101xx] Informasjon kan ikke matches til bestillingen
+  \item[102xx] Feil i takster opp mot avtale eller bestilling
+  \item[103xx] Avvik på priser/distanser/tider
+  \item[109xx] Øvrig
+\end{description}
+
+\begin{longtabu}to \textwidth {|l|X<{\strut}|}
+\tabucline{-}
+\textbf{Kode} & \textbf{Feil knyttet til} \\
+\tabucline{-}
+\endfirsthead
+\tabucline{-}
+\textbf{Kode} & \textbf{Feil knyttet til} \\
+\tabucline{-}
+\endhead
+\multicolumn{2}{r}{\scriptsize\itshape fortsetter på neste side} \\
+\endfoot
+\endlastfoot
+
+\everyrow{\tabucline{-}}
+10101 & Rekvisisjoner på turen \\
+10102 & Avtalespesifisering \\
+10103 & Egenandel \\
+10104 & Henteadresse eller posisjon \\
+10105 & Leveringsadresse eller posisjon \\
+10201 & Takstkoder \\
+10202 & Minstepris \\
+10203 & Tillegg \\
+10204 & Utlegg \\
+10205 & Fastpris \\
+10301 & Strekning fra første pasient på til siste pasient av \\
+10302 & Strekning frem til første pasient \\
+10303 & Strekning for fri retur \\
+10304 & Strekning fra siste avstigning og tilbake til kjøretøyets stasjoneringssted \\
+10305 & Avstikkere på opprinnelig reiserute ved fastpris \\
+10306 & Strekning kjørt av dagbil \\
+10307 & Pålagt ventetid \\
+10308 & Ventetid \\
+10309 & Kjøretid \\
+10310 & Pasient ikke levert til tiden \\
+10311 & Pasient ikke hentet i tide \\
+10312 & Tidsbruk utenom forhåndsdefinert avtale for dagbiler og timesbiler \\
+10313 & Forbrukt tid på distanse \\
+10314 & Totalpris \\
+10901 & Rekvisisjon er tidligere innsendt \\
+10902 & Tur er tidligere innsendt \\
+10903 & Tur er foreldet \\
+10904 & Løyve er utestengt fra pasientreisekjøring \\
+10905 & Sjåfør er utestengt fra pasientreisekjøring \\
+10906 & Turstatus \\
+
+\end{longtabu}
+
+\needspace{15\baselineskip}
+\section{Takstkoder}
+\label{sec:Takstkoder}
+
+Alle priskomponenter som sendes til Pasientreiser skal knyttes til takstkoder. Takstkodene er utarbeidet for å kunne oversette fra transportørsystemenes interne takstkoder, til et felles kodeverk som Pasientreiser kan forstå.
+
+Takstkodene er...
+\begin{itemize}
+\item primært tenkt brukt som en oversettelsestabell fra taksameternes egne takstkoder, og data som oversendes skal ikke manipuleres for å passe bedre overens med takstkodene.
+\item nasjonale og gjelder for alle, men innholdet i den enkelte avtale vil være førende for hvilke takstkoder som kan benyttes for avtalen.
+\item utarbeidet for å kunne dekke alle takster som benyttes i transportøravtalene.
+\end{itemize}
+
+Takstkodene består av 5 siffer og baseres på en logisk oppbygging. 1. og 2. siffer angir taksten, 3. siffer angir biltypen, 4. og 5. siffer angir tid på døgnet. Takster som begynner på 1-5 kan angi biltype og tid på døgnet. Takster som begynner på 6-9 skal ikke angi biltype eller tid på døgnet (dvs. de skal avslutte med 000).
+
+Takster som er faste skal oversendes hver for seg. F.eks. hvis det finnes to rullestoltillegg på en tur, så skal det sendes over to beløp med hver sin tilhørende takst.
+
+\subsection{Takst}
+1. og 2. siffer angir taksten. Typen angir om det er en takst bygget opp av enheter ganget med en sats (S) eller om det er et fast beløp (F), som igjen bestemmer hvilken type priselement taksten skal spesifiseres i.
+
+\subsubsection{Takster som kan variere basert på tid og type bil}
+
+\begin{tabularx}{\textwidth}{|l|l|l|X|}
+\hline
+\textbf{Kode} & \textbf{Takst} & \textbf{Type} & \textbf{Beskrivelse} \\\hline
+\multicolumn{4}{|l|}{Kilometer} \\\hline
+11 & Kjørte kilometer & S & Kjørte kilometer etter tilkjøring \\\hline
+12 & Kjørte km utover 10 km & S & Kjørte kilometer etter tilkjøring og 10 kjørte kilometer (benyttes kun hvis satsen endres etter 10 km) \\\hline
+13 & Tilkjøring & S & Kjørte kilometer ved tilkjøring \\\hline
+14 & Tilkjøring utover 10 km & S & Kjørte kilometer ved tilkjøring etter 10 kjørte kilometer (benyttes kun hvis satsen endres etter 10 km) \\\hline
+15 & Samkjøringstillegg km & S & Kilometerbasert samkjøringstillegg \\\hline
+\multicolumn{4}{|l|}{Tid} \\\hline
+21 & Kjøretid & S & Kjøretid etter tilkjøring \\\hline
+\multicolumn{4}{|l|}{Ventetid} \\\hline
+31 & Ventetid & S & Pålagt vent under oppdrag \\\hline
+32 & Samkjøringstillegg ventetid & S & Ventetidsbasert samkjøringstillegg  \\\hline
+\multicolumn{4}{|l|}{Fastpris} \\\hline
+41 & Starttakst & F & Oppstarttakst \\\hline
+42 & Fastpris & F & Forhåndsavtalt fastpris \\\hline
+43 & Minstepris & F & Brukes for å oppjustere kostnadene på turen til minstepris. Beløpet skal være differansen mellom priskomponentene på turen og minstepris for turen. \\\hline
+44 & Bomtur & F & Fastpris for bomtur \\\hline
+\multicolumn{4}{|l|}{Tillegg} \\\hline
+51 & Forhåndsbestilling & F & Forhåndsbestillingsgebyr \\\hline
+52 & Desinfeksjon av bil & F & Kostnad for desinfeksjon av drosjebilen \\\hline
+\end{tabularx}
+
+\subsubsection{Øvrige takster}
+
+\begin{tabularx}{\textwidth}{|l|l|l|X|}
+\hline
+\textbf{Kode} & \textbf{Takst} & \textbf{Type} & \textbf{Beskrivelse} \\\hline
+\multicolumn{4}{|l|}{Tillegg} \\\hline
+61 & Rullestoltillegg & F & Rullestoltilegg pr. rekvisisjon/pasient \\\hline
+62 & Rengjøring & F &  \\\hline
+63 & Henting & F & Henting pr. rekvisisjon/pasient \\\hline
+64 & Bæring & F & Bæretillegg pr. rekvisisjon/pasient \\\hline
+65 & Trappeklatrer & F & Trappeklatrer pr. rekvisisjon/pasient \\\hline
+66 & Samkjøringstillegg & F & Samkjøringstillegg \\\hline
+67 & Persontillegg & F & Fast tillegg pr. person \\\hline
+69 & Andre tillegg & F & Tillegg som ikke dekkes av andre koder \\\hline
+\multicolumn{4}{|l|}{Utlegg} \\\hline
+81 & Parkering & F & Parkering pr. parkeringsbillett \\\hline
+82 & Bom & F & Bom pr. bompassering \\\hline
+83 & Ferge & F & Ferge pr. fergebillett \\\hline
+84 & Utgifter til kost og losji & F & Utgifter til kost og losji \\\hline
+89 & Andre utlegg & F & Utlegg som ikke dekkes av andre koder \\\hline
+\end{tabularx}
+
+\subsection{Biltype}
+3. siffer angir biltypen. Biltypen skal defineres ut i fra tariffen som det tas betalt for, og ikke bilens faktiske kapasitet.
+
+De enkelte avtalene styrer hva de forskjellige biltypene refererer til i praksis.
+
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\textbf{Kode} & \textbf{Biltype} \\\hline
+1 & Vanlig bil \\\hline
+2 & Stor bil/turvogn\\\hline
+3 & Mellomstor bil \\\hline
+4 & Rullestolbil \\\hline
+0 & Ikke relevant \\\hline
+\end{tabularx}
+
+\needspace{7\baselineskip}
+\subsection{Tidspunkt}
+4. og 5. siffer angir tidspunktet taksten gjelder for.
+
+Skifte fra en dag til en annen skjer ved overgang fra natt til dag, som vanligvis er kl. 06:00. For eksempel så vil tidspunktet mandag kl. 02:00 beskrives med takstkoden 34, som refererer til natttakst på en søndag.
+
+\begin{tabularx}{\textwidth}{|l|l|X|}
+\hline
+\textbf{Kode} & \textbf{Ukedag} & \textbf{Tid på døgnet} \\\hline
+11 & Virkedag & Dag \\\hline
+12 & Virkedag & Ettermiddag \\\hline
+13 & Virkedag & Kveld \\\hline
+14 & Virkedag & Natt \\\hline
+21 & Lørdag & Dag \\\hline
+22 & Lørdag & Ettermiddag \\\hline
+23 & Lørdag & Kveld \\\hline
+24 & Lørdag & Natt \\\hline
+31 & Søndag & Dag \\\hline
+32 & Søndag & Ettermiddag \\\hline
+33 & Søndag & Kveld \\\hline
+34 & Søndag & Natt \\\hline
+40 & Helligdag & Hele døgnet \\\hline
+00 & ikke relevant & \\\hline
+\end{tabularx}
+
+\section{Begreper og definisjoner}
+
+\begin{tabularx}{\textwidth}{|l|X|}
+\hline
+\textbf{Begrep} & \textbf{Definisjon} \\\hline
+SUTI Client & Pasientreiser \\\hline
+SUTI Service Provider & Transportøren \\\hline
+Subordertour & Rekvisisjon \\\hline
+Tour & En tur, som kan inneholde en eller flere rekvisisjoner \\\hline
+Oppgjør & Et oppgjør, som kan inneholde flere turer \\\hline
+Faktura & En faktura kan utbetale flere oppgjør \\\hline
+\end{tabularx}
+
+\section{Kontaktinformasjon}
+
+Spørsmål relatert til dette dokumentet kan rettes til
+
+Nicolai Dybdahl \\
+Løsningsarkitekt, Pasientreiser ANS \\
+\href{mailto:nicolai.dybdahl@pasientreiser.no}{nicolai.dybdahl@pasientreiser.no}
+
+\begin{appendices}
+
+\section{Eksempler}
+\label{sec:Eksempler}
+\lstset{basicstyle=\ttfamily\scriptsize}
+
+Her kommer eksempel på en oppgjørsmelding innsendt av en transportør, med tilhørende svarmeldinger og faktureringsmelding.
+
+\subsection{8000}
+\lstinputlisting{../eksempel/8000.xml}
+
+\needspace{5\baselineskip}
+\subsection{8101}
+\lstinputlisting{../eksempel/8101.xml}
+
+\needspace{5\baselineskip}
+\subsection{8111}
+\lstinputlisting{../eksempel/8111.xml}
+
+\needspace{5\baselineskip}
+\subsection{8199}
+\lstinputlisting{../eksempel/8199.xml}
+
+\end{appendices}
+
+\end{document}
