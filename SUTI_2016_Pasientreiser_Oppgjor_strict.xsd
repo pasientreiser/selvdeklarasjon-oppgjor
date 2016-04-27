@@ -536,7 +536,7 @@
 				<xs:documentation>Blir ikke hensyntatt</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="id" use="required"/>
+		<xs:attribute name="id" type="TakstkodeID" use="required"/>
 	</xs:complexType>
 	<xs:simpleType name="TakstkodeID">
 		<xs:restriction base="xs:string">
