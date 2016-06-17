@@ -71,14 +71,14 @@
 						<taximeterAmount>
 							<startPrice>0</startPrice>
 							<distanceTotalPrice>
-								<distanceCount>14750</distanceCount>
+								<distanceCount>14750.333</distanceCount>
 								<distanceUnitPrice>0.024</distanceUnitPrice>
 							</distanceTotalPrice>
 							<durationTotalPrice>
 								<durationCount>0</durationCount>
 								<durationUnitPrice>0</durationUnitPrice>
 							</durationTotalPrice>
-							<taximeterTotalPrice>354</taximeterTotalPrice>
+							<taximeterTotalPrice>354.007992</taximeterTotalPrice>
 						</taximeterAmount>
 					</calculationFare>
 					<calculationFare>
