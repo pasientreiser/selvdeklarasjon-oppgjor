@@ -103,9 +103,9 @@
   \vspace{5.5cm}
   {\scshape\huge Standard for kommunikasjon av oppgjørsdata\par}
   \vspace{2cm}
-  {\large 17.06.2016\par}
+  {\large 28.06.2016\par}
   \vspace{1.5cm}
-  {\large Versjon 1.1\par}
+  {\large Versjon 1.2\par}
 
 }
 
@@ -689,6 +689,8 @@ Feilkodene definerer hvorfor en tur har blitt underkjent. Avvikskodene er femsif
 10103 & Egenandel \\
 10104 & Henteadresse eller posisjon \\
 10105 & Leveringsadresse eller posisjon \\
+10106 & Tur finnes ikke \\
+10107 & Bomtur \\
 10201 & Takstkoder \\
 10202 & Minstepris \\
 10203 & Tillegg \\
@@ -714,7 +716,6 @@ Feilkodene definerer hvorfor en tur har blitt underkjent. Avvikskodene er femsif
 10904 & Løyve er utestengt fra pasientreisekjøring \\
 10905 & Sjåfør er utestengt fra pasientreisekjøring \\
 10906 & Turstatus \\
-
 \end{longtabu}
 
 \needspace{15\baselineskip}
@@ -744,9 +745,9 @@ Takster som er faste skal oversendes hver for seg. F.eks. hvis det finnes to rul
 \textbf{Kode} & \textbf{Takst} & \textbf{Type} & \textbf{Beskrivelse} \\\hline
 \multicolumn{4}{|l|}{Kilometer} \\\hline
 11 & Kjørte kilometer & S & Kjørte kilometer etter tilkjøring \\\hline
-12 & Kjørte km utover 10 km & S & Kjørte kilometer etter tilkjøring og 10 kjørte kilometer (benyttes kun hvis satsen endres etter 10 km) \\\hline
+12 & Kjørte km utover x\footnotemark[1] km & S & Kjørte kilometer etter tilkjøring og x kjørte kilometer (benyttes kun hvis satsen endres etter x km) \\\hline
 13 & Tilkjøring & S & Kjørte kilometer ved tilkjøring \\\hline
-14 & Tilkjøring utover 10 km & S & Kjørte kilometer ved tilkjøring etter 10 kjørte kilometer (benyttes kun hvis satsen endres etter 10 km) \\\hline
+14 & Tilkjøring utover x\footnotemark[1] km & S & Kjørte kilometer ved tilkjøring etter x kjørte kilometer (benyttes kun hvis satsen endres etter x km) \\\hline
 \multicolumn{4}{|l|}{Tid} \\\hline
 21 & Kjøretid & S & Kjøretid etter tilkjøring \\\hline
 \multicolumn{4}{|l|}{Ventetid} \\\hline
@@ -760,6 +761,8 @@ Takster som er faste skal oversendes hver for seg. F.eks. hvis det finnes to rul
 51 & Forhåndsbestilling & F & Forhåndsbestillingsgebyr \\\hline
 52 & Desinfeksjon av bil & F & Kostnad for desinfeksjon av drosjebilen \\\hline
 \end{tabularx}
+
+\footnotetext[1]{Verdien av x vil være definert i avtalen mellom transportør og Pasientreiser, og kan variere for forskjellige avtaler.}
 
 \subsubsection{Øvrige takster}
 
