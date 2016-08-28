@@ -103,9 +103,9 @@
   \vspace{5.5cm}
   {\scshape\huge Standard for kommunikasjon av oppgjørsdata\par}
   \vspace{2cm}
-  {\large 28.06.2016\par}
+  {\large 28.08.2016\par}
   \vspace{1.5cm}
-  {\large Versjon 1.2\par}
+  {\large Versjon 1.3\par}
 
 }
 
@@ -588,15 +588,15 @@ For hver calculationFare finnes enten et \lstinline{<fixedPriceAmount>} eller et
 
 På bakgrunn av hvordan takstkodene er definert så vil et \lstinline{<taximeterAmount>} kun inneholde én beregning. Det skal derfor kun legges verdier i enten startpris, distanse eller tid. Øvrige verdier må settes til 0.
 
+\lstinline{<distanceCount>} skal spesifiseres i meter, og \lstinline{<durationCount>} skal spesifiseres i minutter.
+
 \subsubsection{Tursammendrag}
 
 \begin{lstlisting}
         <summaryReportTour distanceStart="3000" durationStart="30"/>
 \end{lstlisting}
 
-Element summaryReportTour skal inneholde den totale tiden og totale lengden for turen i durationStart og distanceStart.
-
-Lengde spesifiseres i meter og tid spesifiseres i sekunder.
+Elementet \lstinline{<summaryReportTour>} skal inneholde den totale tiden og totale lengden for turen i durationStart og distanceStart. Lengde spesifiseres i meter og tid spesifiseres i sekunder.
 
 \subsubsection{Betalingsinformasjon for tur}
 
@@ -743,11 +743,11 @@ Takster som er faste skal oversendes hver for seg. F.eks. hvis det finnes to rul
 \begin{tabularx}{\textwidth}{|l|l|l|X|}
 \hline
 \textbf{Kode} & \textbf{Takst} & \textbf{Type} & \textbf{Beskrivelse} \\\hline
-\multicolumn{4}{|l|}{Kilometer} \\\hline
-11 & Kjørte kilometer & S & Kjørte kilometer etter tilkjøring \\\hline
-12 & Kjørte km utover x\footnotemark[1] km & S & Kjørte kilometer etter tilkjøring og x kjørte kilometer (benyttes kun hvis satsen endres etter x km) \\\hline
-13 & Tilkjøring & S & Kjørte kilometer ved tilkjøring \\\hline
-14 & Tilkjøring utover x\footnotemark[1] km & S & Kjørte kilometer ved tilkjøring etter x kjørte kilometer (benyttes kun hvis satsen endres etter x km) \\\hline
+\multicolumn{4}{|l|}{Distanse} \\\hline
+11 & Kjørelengde & S & Kjørt distanse etter tilkjøring \\\hline
+12 & Kjørelengde utover x\footnotemark[1] km & S & Kjørt distanse etter tilkjøring og x kjørte kilometer (benyttes kun hvis satsen endres etter x km) \\\hline
+13 & Tilkjøring & S & Kjørt distanse ved tilkjøring \\\hline
+14 & Tilkjøring utover x\footnotemark[1] km & S & Kjørt distanse ved tilkjøring etter x kjørte kilometer (benyttes kun hvis satsen endres etter x km) \\\hline
 \multicolumn{4}{|l|}{Tid} \\\hline
 21 & Kjøretid & S & Kjøretid etter tilkjøring \\\hline
 \multicolumn{4}{|l|}{Ventetid} \\\hline

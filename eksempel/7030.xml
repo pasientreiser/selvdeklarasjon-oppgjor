@@ -14,5 +14,6 @@
 		<referencesTo>
 			<idMsg src="transporter_123:idMsg" id="2015103100000001"/>
 		</referencesTo>
+		<manualDescriptionMsg sendtoInvoice="false" sendtoVehicle="false" sendtoOperator="false" manualText="Feilbeskrivelse" vehicleConfirmation="false" />
 	</msg>
 </SUTI>
