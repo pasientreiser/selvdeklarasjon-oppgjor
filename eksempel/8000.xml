@@ -71,14 +71,14 @@
 						<taximeterAmount>
 							<startPrice>0</startPrice>
 							<distanceTotalPrice>
-								<distanceCount>14750.333</distanceCount>
+								<distanceCount>14750</distanceCount>
 								<distanceUnitPrice>0.024</distanceUnitPrice>
 							</distanceTotalPrice>
 							<durationTotalPrice>
 								<durationCount>0</durationCount>
 								<durationUnitPrice>0</durationUnitPrice>
 							</durationTotalPrice>
-							<taximeterTotalPrice>354.007992</taximeterTotalPrice>
+							<taximeterTotalPrice>354.00</taximeterTotalPrice>
 						</taximeterAmount>
 					</calculationFare>
 					<calculationFare>
@@ -95,8 +95,10 @@
 					<formOfPayment>
 						<payment paymentType="account" amount="444">
 							<vatAmountSpecification vatPercent="6">
-								<totalVatAmount amountInclVat="444" amountExclVat="418.87" amountVat="25.13">
-								</totalVatAmount>
+								<totalVatAmount amountInclVat="404" amountExclVat="381.13" amountVat="22.87"/>
+							</vatAmountSpecification>
+							<vatAmountSpecification vatPercent="12">
+								<totalVatAmount amountInclVat="40" amountExclVat="35.71" amountVat="4.29"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -186,8 +188,7 @@
 					<formOfPayment>
 						<payment paymentType="account" amount="414">
 							<vatAmountSpecification vatPercent="6">
-								<totalVatAmount amountInclVat="414" amountExclVat="389" amountVat="25">
-								</totalVatAmount>
+								<totalVatAmount amountInclVat="414" amountExclVat="389" amountVat="25"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -262,8 +263,7 @@
 					<formOfPayment>
 						<payment paymentType="account" amount="350">
 							<vatAmountSpecification vatPercent="12">
-								<totalVatAmount amountInclVat="350" amountExclVat="312.50" amountVat="37.50">
-								</totalVatAmount>
+								<totalVatAmount amountInclVat="350" amountExclVat="312.50" amountVat="37.50"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -334,8 +334,7 @@
 					<formOfPayment>
 						<payment paymentType="account" amount="409">
 							<vatAmountSpecification vatPercent="12">
-								<totalVatAmount amountInclVat="409" amountExclVat="365.18" amountVat="43.82">
-								</totalVatAmount>
+								<totalVatAmount amountInclVat="409" amountExclVat="365.18" amountVat="43.82"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -422,8 +421,7 @@
 					<formOfPayment>
 						<payment paymentType="account" amount="472.50">
 							<vatAmountSpecification vatPercent="6">
-								<totalVatAmount amountInclVat="472.50" amountExclVat="445.75" amountVat="26.75">
-								</totalVatAmount>
+								<totalVatAmount amountInclVat="472.50" amountExclVat="445.75" amountVat="26.75"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -449,12 +447,10 @@
 				<formOfPayment>
 					<payment paymentType="account" amount="2153.5">
 						<vatAmountSpecification vatPercent="6">
-							<totalVatAmount amountInclVat="1330.50" amountExclVat="1253.62" amountVat="76.88">
-							</totalVatAmount>
+							<totalVatAmount amountInclVat="1290.50" amountExclVat="1253.62" amountVat="76.88"/>
 						</vatAmountSpecification>
 						<vatAmountSpecification vatPercent="12">
-							<totalVatAmount amountInclVat="818" amountExclVat="730.36" amountVat="87.64">
-							</totalVatAmount>
+							<totalVatAmount amountInclVat="818" amountExclVat="730.36" amountVat="87.64"/>
 						</vatAmountSpecification>
 					</payment>
 					<payment paymentType="socialservicefee" amount="-468.5"/>

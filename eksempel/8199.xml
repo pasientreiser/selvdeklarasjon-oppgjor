@@ -22,12 +22,10 @@
 						<idEkInfo src="pasientreiser:betalingNr" id="1131"/>
 						<idEkInfo src="pasientreiser:betalingNr" id="1132"/>
 						<vatAmountSpecification vatPercent="6">
-							<totalVatAmount amountInclVat="472.50" amountExclVat="444.75" amountVat="27.75">
-							</totalVatAmount>
+							<totalVatAmount amountInclVat="472.50" amountExclVat="444.75" amountVat="27.75"/>
 						</vatAmountSpecification>
 						<vatAmountSpecification vatPercent="12">
-							<totalVatAmount amountInclVat="759" amountExclVat="676.68" amountVat="81.32">
-							</totalVatAmount>
+							<totalVatAmount amountInclVat="759" amountExclVat="676.68" amountVat="81.32"/>
 						</vatAmountSpecification>
 					</payment>
 				</formOfPayment>

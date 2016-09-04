@@ -32,8 +32,7 @@
 					<formOfPayment>
 						<payment paymentType="account" amount="350">
 							<vatAmountSpecification vatPercent="12">
-								<totalVatAmount amountInclVat="350" amountExclVat="312.50" amountVat="37.50">
-								</totalVatAmount>
+								<totalVatAmount amountInclVat="350" amountExclVat="312.50" amountVat="37.50"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -44,8 +43,7 @@
 					<payment paymentType="account" amount="350">
 						<idEkInfo src="pasientreiser:betalingNr" id="1131"/>
 						<vatAmountSpecification vatPercent="12">
-							<totalVatAmount amountInclVat="350" amountExclVat="312.50" amountVat="37.50">
-							</totalVatAmount>
+							<totalVatAmount amountInclVat="350" amountExclVat="312.50" amountVat="37.50"/>
 						</vatAmountSpecification>
 					</payment>
 					<payment paymentType="socialservicefee" amount="-100">

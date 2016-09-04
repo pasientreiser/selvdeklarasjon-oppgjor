@@ -3,5 +3,3 @@
 [Selvdeklarasjon](selvdeklarasjon/selvdeklarasjon.pdf)
 
 [XSD (strict)](SUTI_2016_Pasientreiser_Oppgjor_strict.xsd)
-
-[XSD](SUTI_2016_Pasientreiser_Oppgjor.xsd)

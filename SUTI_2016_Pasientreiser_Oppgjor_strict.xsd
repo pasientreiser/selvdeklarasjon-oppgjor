@@ -78,7 +78,7 @@
 				<xs:restriction base="xs:string"/>
 			</xs:simpleType>
 		</xs:attribute>
-		<xs:attribute name="id" type="xs:string" use="required"/>
+		<xs:attribute name="id" type="xs:long" use="required"/>
 	</xs:complexType>
 	<xs:simpleType name="Betalingstype">
 		<xs:restriction base="xs:string">
@@ -89,7 +89,7 @@
 	</xs:simpleType>
 	<xs:complexType name="Distansekostnad">
 		<xs:sequence>
-			<xs:element name="distanceCount" type="xs:decimal"/>
+			<xs:element name="distanceCount" type="xs:int"/>
 			<xs:element name="distanceUnitPrice" type="xs:decimal"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -295,28 +295,13 @@
 		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="MomsBeløp">
-		<xs:sequence>
-			<xs:element name="idAmount" type="Momskode" minOccurs="0"/>
-		</xs:sequence>
 		<xs:attribute name="amountInclVat" type="Beløp" use="required"/>
 		<xs:attribute name="amountExclVat" type="Beløp"/>
 		<xs:attribute name="amountVat" type="Beløp" use="required"/>
 	</xs:complexType>
-	<xs:complexType name="Momskode">
-		<xs:attribute name="src" use="required">
-			<xs:simpleType>
-				<xs:restriction base="xs:string"/>
-			</xs:simpleType>
-		</xs:attribute>
-		<xs:attribute name="id" use="required">
-			<xs:simpleType>
-				<xs:restriction base="xs:string"/>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:complexType>
 	<xs:complexType name="MomsSpesifikasjon">
 		<xs:sequence>
-			<xs:element name="totalVatAmount" type="MomsBeløp"/>
+			<xs:element name="totalVatAmount" type="MomsBeløp" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 		<xs:attribute name="vatPercent" type="xs:decimal"/>
 	</xs:complexType>
@@ -334,7 +319,7 @@
 				<xs:documentation>YYYYMMDDnnnnnnnn</xs:documentation>
 			</xs:annotation>
 			<xs:simpleType>
-				<xs:restriction base="xs:string"/>
+				<xs:restriction base="xs:long"/>
 			</xs:simpleType>
 		</xs:attribute>
 	</xs:complexType>
@@ -388,7 +373,7 @@
 		</xs:attribute>
 		<xs:attribute name="id" use="required">
 			<xs:simpleType>
-				<xs:restriction base="xs:string"/>
+				<xs:restriction base="xs:long"/>
 			</xs:simpleType>
 		</xs:attribute>
 	</xs:complexType>
@@ -410,7 +395,7 @@
 		</xs:attribute>
 		<xs:attribute name="id" use="required">
 			<xs:simpleType>
-				<xs:restriction base="xs:string"/>
+				<xs:restriction base="xs:int"/>
 			</xs:simpleType>
 		</xs:attribute>
 	</xs:complexType>
@@ -479,7 +464,7 @@
 		</xs:attribute>
 		<xs:attribute name="id" use="required">
 			<xs:simpleType>
-				<xs:restriction base="xs:string"/>
+				<xs:restriction base="xs:long"/>
 			</xs:simpleType>
 		</xs:attribute>
 	</xs:complexType>
@@ -1411,7 +1396,7 @@
 	</xs:complexType>
 	<xs:complexType name="Tidskostnad">
 		<xs:sequence>
-			<xs:element name="durationCount" type="xs:decimal"/>
+			<xs:element name="durationCount" type="xs:int"/>
 			<xs:element name="durationUnitPrice" type="xs:decimal"/>
 		</xs:sequence>
 	</xs:complexType>
@@ -1483,13 +1468,13 @@
 		</xs:attribute>
 		<xs:attribute name="id" use="required">
 			<xs:simpleType>
-				<xs:restriction base="xs:string"/>
+				<xs:restriction base="xs:long"/>
 			</xs:simpleType>
 		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="TurIDListe">
 		<xs:sequence>
-			<xs:element name="idOrder" type="TurID" maxOccurs="unbounded"/>
+			<xs:element name="idOrder" type="TurID" minOccurs="1" maxOccurs="1"/>
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="TurStatus">
