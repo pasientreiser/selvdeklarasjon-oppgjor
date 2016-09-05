@@ -30,9 +30,9 @@
 				</suborderTour>
 				<economyReportTour>
 					<formOfPayment>
-						<payment paymentType="account" amount="350">
+						<payment paymentType="account" amount="409">
 							<vatAmountSpecification vatPercent="12">
-								<totalVatAmount amountInclVat="350" amountExclVat="312.50" amountVat="37.50"/>
+								<totalVatAmount amountInclVat="409" amountExclVat="365.18" amountVat="43.82"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -40,10 +40,10 @@
 			</tour>
 			<economyReportAccounting>
 				<formOfPayment>
-					<payment paymentType="account" amount="350">
+					<payment paymentType="account" amount="409">
 						<idEkInfo src="pasientreiser:betalingNr" id="1131"/>
 						<vatAmountSpecification vatPercent="12">
-							<totalVatAmount amountInclVat="350" amountExclVat="312.50" amountVat="37.50"/>
+							<totalVatAmount amountInclVat="409" amountExclVat="365.18" amountVat="43.82"/>
 						</vatAmountSpecification>
 					</payment>
 					<payment paymentType="socialservicefee" amount="-100">

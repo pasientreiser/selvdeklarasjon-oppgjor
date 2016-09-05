@@ -188,7 +188,7 @@
 					<formOfPayment>
 						<payment paymentType="account" amount="414">
 							<vatAmountSpecification vatPercent="6">
-								<totalVatAmount amountInclVat="414" amountExclVat="389" amountVat="25"/>
+								<totalVatAmount amountInclVat="414" amountExclVat="390.57" amountVat="23.43"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -261,9 +261,9 @@
 				<summaryReportTour distanceStart="6000" durationStart="30"/>
 				<economyReportTour>
 					<formOfPayment>
-						<payment paymentType="account" amount="350">
+						<payment paymentType="account" amount="409">
 							<vatAmountSpecification vatPercent="12">
-								<totalVatAmount amountInclVat="350" amountExclVat="312.50" amountVat="37.50"/>
+								<totalVatAmount amountInclVat="409" amountExclVat="365.18" amountVat="43.82"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -445,12 +445,12 @@
 			</tour>
 			<economyReportAccounting>
 				<formOfPayment>
-					<payment paymentType="account" amount="2153.5">
+					<payment paymentType="account" amount="2148.50">
 						<vatAmountSpecification vatPercent="6">
-							<totalVatAmount amountInclVat="1290.50" amountExclVat="1253.62" amountVat="76.88"/>
+							<totalVatAmount amountInclVat="1290.50" amountExclVat="1217.45" amountVat="73.05"/>
 						</vatAmountSpecification>
 						<vatAmountSpecification vatPercent="12">
-							<totalVatAmount amountInclVat="818" amountExclVat="730.36" amountVat="87.64"/>
+							<totalVatAmount amountInclVat="858" amountExclVat="809.43" amountVat="48.57"/>
 						</vatAmountSpecification>
 					</payment>
 					<payment paymentType="socialservicefee" amount="-468.5"/>

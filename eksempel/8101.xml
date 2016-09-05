@@ -122,13 +122,13 @@
 			</tour>
 			<economyReportAccounting>
 				<formOfPayment>
-					<payment paymentType="account" amount="1330.50">
+					<payment paymentType="account" amount="1325.50">
 						<idEkInfo src="pasientreiser:betalingNr" id="1123"/>
 						<vatAmountSpecification vatPercent="6">
-							<totalVatAmount amountInclVat="916.50" amountExclVat="863.62" amountVat="52.88"/>
+							<totalVatAmount amountInclVat="876.5" amountExclVat="826.89" amountVat="49.61"/>
 						</vatAmountSpecification>
 						<vatAmountSpecification vatPercent="12">
-							<totalVatAmount amountInclVat="409" amountExclVat="365.18" amountVat="43.82"/>
+							<totalVatAmount amountInclVat="449" amountExclVat="400.89" amountVat="48.11"/>
 						</vatAmountSpecification>
 					</payment>
 					<payment paymentType="socialservicefee" amount="-368.50">

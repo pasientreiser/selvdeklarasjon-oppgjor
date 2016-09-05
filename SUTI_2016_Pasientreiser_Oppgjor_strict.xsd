@@ -395,7 +395,7 @@
 		</xs:attribute>
 		<xs:attribute name="id" use="required">
 			<xs:simpleType>
-				<xs:restriction base="xs:int"/>
+				<xs:restriction base="xs:string"/>
 			</xs:simpleType>
 		</xs:attribute>
 	</xs:complexType>
