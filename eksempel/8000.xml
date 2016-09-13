@@ -149,7 +149,7 @@
 				</suborderTour>
 				<calculationsTour>
 					<calculationFare>
-						<calculationType src="pasientreiser:takstkode" id="11212"/>
+						<calculationType src="pasientreiser:takstkode" id="21212"/>
 						<taximeterAmount>
 							<startPrice>0</startPrice>
 							<distanceTotalPrice>
@@ -450,7 +450,7 @@
 							<totalVatAmount amountInclVat="1290.50" amountExclVat="1217.45" amountVat="73.05"/>
 						</vatAmountSpecification>
 						<vatAmountSpecification vatPercent="12">
-							<totalVatAmount amountInclVat="858" amountExclVat="809.43" amountVat="48.57"/>
+							<totalVatAmount amountInclVat="858" amountExclVat="766.07" amountVat="91.93"/>
 						</vatAmountSpecification>
 					</payment>
 					<payment paymentType="socialservicefee" amount="-468.5"/>
