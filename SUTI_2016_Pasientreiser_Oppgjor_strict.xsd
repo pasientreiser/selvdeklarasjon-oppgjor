@@ -14,6 +14,21 @@
 				<xs:documentation>ISO 3166</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
+		<xs:attribute name="addressName" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Blir ikke hensyntatt</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="location" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Blir ikke hensyntatt</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="community" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Blir ikke hensyntatt</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="AvtaleID">
 		<xs:attribute name="src" use="required">
@@ -252,6 +267,11 @@
 			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="msgType" type="Meldingstype" use="required"/>
+		<xs:attribute name="msgName" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Blir ikke hensyntatt</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:simpleType name="Meldingstype">
 		<xs:restriction base="xs:string">
@@ -446,6 +466,11 @@
 			<xs:element name="eventAddress" type="Adresse" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="eventType" type="RekvisisjonshendelseID" use="required"/>
+		<xs:attribute name="nodeSeqNo" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Blir ikke hensyntatt</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:simpleType name="RekvisisjonshendelseID">
 		<xs:restriction base="xs:string">
@@ -471,7 +496,7 @@
 	<xs:complexType name="Sammendrag">
 		<xs:attribute name="durationStart" type="xs:int">
 			<xs:annotation>
-				<xs:documentation>Duration from start of order measured in seconds</xs:documentation>
+				<xs:documentation>Duration from start of order measured in minutes</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="distanceStart" type="xs:int">
