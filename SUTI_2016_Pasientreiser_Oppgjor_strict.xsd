@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:suti="http://www.suti.se/schema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.3">
+<xs:schema xmlns:suti="http://www.suti.se/schema" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.4">
 	<xs:complexType name="Adresse">
 		<xs:sequence>
 			<xs:element name="manualDescriptionAddress" type="Merknad" minOccurs="0"/>
@@ -496,7 +496,7 @@
 	<xs:complexType name="Sammendrag">
 		<xs:attribute name="durationStart" type="xs:int">
 			<xs:annotation>
-				<xs:documentation>Duration from start of order measured in minutes</xs:documentation>
+				<xs:documentation>Duration from start of order measured in seconds</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
 		<xs:attribute name="distanceStart" type="xs:int">

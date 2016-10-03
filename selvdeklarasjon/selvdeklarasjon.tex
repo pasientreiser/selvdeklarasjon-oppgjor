@@ -105,7 +105,7 @@
   \vspace{2cm}
   {\large 28.08.2016\par}
   \vspace{1.5cm}
-  {\large Versjon 1.3\par}
+  {\large Versjon 1.4\par}
 
 }
 
@@ -284,7 +284,7 @@ Meldingene under brukes til fakturering og utbetaling. Disse meldingene kalles s
 </SUTI>
 \end{lstlisting}
 
-SUTI-meldinger som sendes skal være basert på Pasientreiser's meldingsdefinisjon for oppgjørskommunikasjon. Det finnes to varianter av denne. En normal og en streng versjon. Den strenge versjonen bør brukes hvis mulig, men hvis systemet ikke kan støtte den av forskjellige årsaker så kan den normale versjonen brukes. Merk at flere av feltene som validerer og kan sendes inn basert på den normale versjonen ikke vil hensyntas av Pasientreiser sitt system. Den strenge versjonen tillatter ikke felter som ikke vil bli lest av mottakende system.
+SUTI-meldinger som sendes skal være basert på Pasientreiser's meldingsdefinisjon for oppgjørskommunikasjon.
 
 \needspace{3\baselineskip}
 \subsection{Avsender og mottaker}
@@ -588,7 +588,7 @@ For hver calculationFare finnes enten et \lstinline{<fixedPriceAmount>} eller et
 
 På bakgrunn av hvordan takstkodene er definert så vil et \lstinline{<taximeterAmount>} kun inneholde én beregning. Det skal derfor kun legges verdier i enten startpris, distanse eller tid. Øvrige verdier må settes til 0.
 
-\lstinline{<distanceCount>} skal spesifiseres i meter, og \lstinline{<durationCount>} skal spesifiseres i minutter.
+\lstinline{<distanceCount>} skal spesifiseres i meter, og \lstinline{<durationCount>} skal spesifiseres i sekunder.
 
 \subsubsection{Tursammendrag}
 
