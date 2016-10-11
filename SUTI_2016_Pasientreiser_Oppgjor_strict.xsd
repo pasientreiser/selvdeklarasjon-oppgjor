@@ -38,7 +38,10 @@
 		</xs:attribute>
 		<xs:attribute name="id" use="required">
 			<xs:simpleType>
-				<xs:restriction base="xs:string"/>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
 		<xs:attribute name="unique" type="xs:boolean" use="optional" default="true">
@@ -466,7 +469,7 @@
 			<xs:element name="eventAddress" type="Adresse" minOccurs="0"/>
 		</xs:sequence>
 		<xs:attribute name="eventType" type="RekvisisjonshendelseID" use="required"/>
-		<xs:attribute name="nodeSeqNo" type="xs:string" use="optional">
+		<xs:attribute name="nodeSeqNo" type="xs:positiveInteger" use="optional">
 			<xs:annotation>
 				<xs:documentation>Blir ikke hensyntatt</xs:documentation>
 			</xs:annotation>
@@ -535,7 +538,10 @@
 		</xs:attribute>
 		<xs:attribute name="id" use="required">
 			<xs:simpleType>
-				<xs:restriction base="xs:string"/>
+				<xs:restriction base="xs:string">
+					<xs:minLength value="1"/>
+					<xs:whiteSpace value="collapse"/>
+				</xs:restriction>
 			</xs:simpleType>
 		</xs:attribute>
 	</xs:complexType>
