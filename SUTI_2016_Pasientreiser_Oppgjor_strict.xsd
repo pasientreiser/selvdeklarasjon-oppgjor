@@ -67,6 +67,12 @@
 			<xs:fractionDigits value="2"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="Egenandelsbeløp">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2"/>
+			<xs:maxInclusive value="0"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:complexType name="Betaling">
 		<xs:sequence>
 			<xs:element name="idPayment" type="Ordrenummer" minOccurs="0">
@@ -112,7 +118,7 @@
 		</xs:sequence>
 	</xs:complexType>
 	<xs:complexType name="Egenandel">
-		<xs:attribute name="amount" type="Beløp" use="required"/>
+		<xs:attribute name="amount" type="Egenandelsbeløp" use="required"/>
 		<xs:attribute name="paymentType" type="Egenandelstype" use="required"/>
 	</xs:complexType>
 	<xs:complexType name="Egenandeler">
