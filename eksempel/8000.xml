@@ -90,7 +90,7 @@
 						<fixedPriceAmount>40</fixedPriceAmount>
 					</calculationFare>
 				</calculationsTour>
-				<summaryReportTour distanceStart="14750" durationStart="30"/>
+				<summaryReportTour distanceStart="14750" durationStart="1800"/>
 				<economyReportTour>
 					<formOfPayment>
 						<payment paymentType="account" amount="444">
@@ -157,8 +157,8 @@
 								<distanceUnitPrice>0</distanceUnitPrice>
 							</distanceTotalPrice>
 							<durationTotalPrice>
-								<durationCount>30</durationCount>
-								<durationUnitPrice>6.5</durationUnitPrice>
+								<durationCount>1800</durationCount>
+								<durationUnitPrice>0.108333</durationUnitPrice>
 							</durationTotalPrice>
 							<taximeterTotalPrice>195</taximeterTotalPrice>
 						</taximeterAmount>
@@ -183,7 +183,7 @@
 						<fixedPriceAmount>60</fixedPriceAmount>
 					</calculationFare>
 				</calculationsTour>
-				<summaryReportTour distanceStart="6625" durationStart="30"/>
+				<summaryReportTour distanceStart="6625" durationStart="1800"/>
 				<economyReportTour>
 					<formOfPayment>
 						<payment paymentType="account" amount="414">
@@ -258,7 +258,7 @@
 						<fixedPriceAmount>55</fixedPriceAmount>
 					</calculationFare>
 				</calculationsTour>
-				<summaryReportTour distanceStart="6000" durationStart="30"/>
+				<summaryReportTour distanceStart="6000" durationStart="1800"/>
 				<economyReportTour>
 					<formOfPayment>
 						<payment paymentType="account" amount="409">
@@ -329,7 +329,7 @@
 						<fixedPriceAmount>55</fixedPriceAmount>
 					</calculationFare>
 				</calculationsTour>
-				<summaryReportTour distanceStart="3000" durationStart="30"/>
+				<summaryReportTour distanceStart="3000" durationStart="1800"/>
 				<economyReportTour>
 					<formOfPayment>
 						<payment paymentType="account" amount="409">
@@ -416,7 +416,7 @@
 						</taximeterAmount>
 					</calculationFare>
 				</calculationsTour>
-				<summaryReportTour distanceStart="13500" durationStart="45"/>
+				<summaryReportTour distanceStart="13500" durationStart="2700"/>
 				<economyReportTour>
 					<formOfPayment>
 						<payment paymentType="account" amount="472.50">
