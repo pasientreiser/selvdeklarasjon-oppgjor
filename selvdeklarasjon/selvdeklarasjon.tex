@@ -589,7 +589,7 @@ For hver calculationFare finnes enten et \lstinline{<fixedPriceAmount>} eller et
 
 På bakgrunn av hvordan takstkodene er definert så vil et \lstinline{<taximeterAmount>} kun inneholde én beregning. Det skal derfor kun legges verdier i enten startpris, distanse eller tid. Øvrige verdier må settes til 0.
 
-\lstinline{<distanceCount>} skal spesifiseres i meter, og \lstinline{<durationCount>} skal spesifiseres i sekunder.
+\lstinline{<distanceCount>} skal spesifiseres i meter, og \lstinline{<durationCount>} skal spesifiseres i sekunder. \lstinline{<distanceUnitPrice>} og \lstinline{<durationUnitPrice>} skal være prisen per enhet. Det vil si at produktet av \lstinline{<distanceCount>} og \lstinline{<distanceUnitPrice>} eller \lstinline{<durationCount>} og \lstinline{<durationUnitPrice>} skal bli resultatet definert av \lstinline{<taximeterTotalPrice>}.
 
 \subsubsection{Tursammendrag}
 
@@ -659,7 +659,6 @@ Elementet economyReportAccounting inneholder samlet økonomisk informasjon for h
 
 \end{description}
 
-\needspace{10\baselineskip}
 \section{Feilkoder}
 
 Feilkodene definerer hvorfor en tur har blitt underkjent. Avvikskodene er femsifret, hvor 3. siffer angir gruppering.
@@ -670,6 +669,8 @@ Feilkodene definerer hvorfor en tur har blitt underkjent. Avvikskodene er femsif
   \item[103xx] Avvik på priser/distanser/tider
   \item[109xx] Øvrig
 \end{description}
+
+\needspace{6\baselineskip}
 
 \begin{longtabu}to \textwidth {|l|X<{\strut}|}
 \tabucline{-}
