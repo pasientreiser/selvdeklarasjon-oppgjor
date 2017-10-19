@@ -103,9 +103,9 @@
   \vspace{5.5cm}
   {\scshape\huge Standard for kommunikasjon av oppgjørsdata\par}
   \vspace{2cm}
-  {\large 28.08.2016\par}
+  {\large 19.10.2017\par}
   \vspace{1.5cm}
-  {\large Versjon 1.4\par}
+  {\large Versjon 1.5\par}
 
 }
 
@@ -469,7 +469,7 @@ Elementet \lstinline{<statusTour>} inneholder tre elementer
           <idSuborderClient src="pasientreiser:rekNr" id="18483948502"/>
           <economyReportSuborder>
             <formOfPayment>
-              <payment paymentType="prepaidsocialfee" amount="-135"/>
+              <payment paymentType="socialservicefee" amount="-135"/>
             </formOfPayment>
           </economyReportSuborder>
         </suborderTour>
@@ -496,7 +496,7 @@ Følgende hendelser skal sendes med i oppgjøret
 
 Rekvisisjonsnummeret skal spesifiseres i \lstinline{<idSuborderClient>}. Ved etterregistreringer må riktige ID etterspørres av Pasientreiser før turen kan sendes inn.
 
-Det skal finnes en \lstinline{<payment>} tilknyttet hver rekvisisjon. Denne skal inneholde beløpet som pasienten betalte i egenandel, eller egenandelsbeløpet som ville ha blitt krevet dersom pasienten skulle betalt egenandel. \lstinline{paymentType} skal være \lstinline{"socialservicefee"} hvis pasienten har betalt egenandelen, og \lstinline{"prepaidsocialfee"} hvis pasienten ikke har betalt egenandelen. Beløp av typen \lstinline{"socialservicefee"} skal angis med negativt fortegn, siden disse skal gå til fratrekk på bruttobeløpet.
+Dersom pasient har betalt egenandel skal beløpet pasienten har betalt angis i \lstinline{<payment>} tilknyttet rekvisisjonen. Beløpet skal angis med negativt fortegn siden disse skal gå til fratrekk på bruttobeløpet. Typen skal være \lstinline{"socialservicefee"}.
 
 \needspace{5\baselineskip}
 \subsubsection{Kjøretøyinformasjon}

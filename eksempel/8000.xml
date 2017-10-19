@@ -39,11 +39,6 @@
 						</eventAddress>
 					</eventSuborderTour>
 					<idSuborderClient src="pasientreiser:rekNr" id="18483948502"/>
-					<economyReportSuborder>
-						<formOfPayment>
-							<payment paymentType="prepaidsocialfee" amount="-135"/>
-						</formOfPayment>
-					</economyReportSuborder>
 				</suborderTour>
 				<suborderTour>
 					<eventSuborderTour eventType="passengerinvehicle">
@@ -141,11 +136,6 @@
 						</eventAddress>
 					</eventSuborderTour>
 					<idSuborderClient src="pasientreiser:rekNr" id="21868413408"/>
-					<economyReportSuborder>
-						<formOfPayment>
-							<payment paymentType="prepaidsocialfee" amount="-135"/>
-						</formOfPayment>
-					</economyReportSuborder>
 				</suborderTour>
 				<calculationsTour>
 					<calculationFare>
@@ -373,11 +363,6 @@
 						</eventAddress>
 					</eventSuborderTour>
 					<idSuborderClient src="pasientreiser:rekNr" id="17483909538"/>
-					<economyReportSuborder>
-						<formOfPayment>
-							<payment paymentType="prepaidsocialfee" amount="-130"/>
-						</formOfPayment>
-					</economyReportSuborder>
 				</suborderTour>
 				<suborderTour>
 					<eventSuborderTour eventType="passengerinvehicle">
