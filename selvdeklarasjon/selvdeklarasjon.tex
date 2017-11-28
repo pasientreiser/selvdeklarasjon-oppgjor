@@ -103,9 +103,9 @@
   \vspace{5.5cm}
   {\scshape\huge Standard for kommunikasjon av oppgjørsdata\par}
   \vspace{2cm}
-  {\large 25.10.2017\par}
+  {\large 28.11.2017\par}
   \vspace{1.5cm}
-  {\large Versjon 1.5.1\par}
+  {\large Versjon 1.5.2\par}
 
 }
 
@@ -562,7 +562,7 @@ Følgende hendelser skal sendes med i oppgjøret
           <calculationFare>
             <calculationType src="pasientreiser:takstkode" id="11232"/>
             <taximeterAmount>
-              <startPrice>0</startPrice>
+              <startPrice>0.00</startPrice>
               <distanceTotalPrice>
                 <distanceCount>6000</distanceCount>
                 <distanceUnitPrice>0.059</distanceUnitPrice>
@@ -587,7 +587,7 @@ Hver \lstinline{<calculationsTour>} har en egen \lstinline{<calculationType>}, s
 
 For hver calculationFare finnes enten et \lstinline{<fixedPriceAmount>} eller et \lstinline{<taximeterAmount>}.
 
-På bakgrunn av hvordan takstkodene er definert så vil et \lstinline{<taximeterAmount>} kun inneholde én beregning. Det skal derfor kun legges verdier i enten startpris, distanse eller tid. Øvrige verdier må settes til 0.
+På bakgrunn av hvordan takstkodene er definert så vil et \lstinline{<taximeterAmount>} kun inneholde én beregning. Det skal kun legges verdier for enten distanse eller tid. Øvrige verdier må settes til 0. \lstinline{<startPrice>} skal derfor alltid være 0.
 
 \lstinline{<distanceCount>} skal spesifiseres i meter, og \lstinline{<durationCount>} skal spesifiseres i sekunder. \lstinline{<distanceUnitPrice>} og \lstinline{<durationUnitPrice>} skal være prisen per enhet. Det vil si at produktet av \lstinline{<distanceCount>} og \lstinline{<distanceUnitPrice>} eller \lstinline{<durationCount>} og \lstinline{<durationUnitPrice>} skal bli resultatet definert av \lstinline{<taximeterTotalPrice>}.
 

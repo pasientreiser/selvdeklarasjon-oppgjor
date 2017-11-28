@@ -231,7 +231,7 @@
 					<calculationFare>
 						<calculationType src="pasientreiser:takstkode" id="11232"/>
 						<taximeterAmount>
-							<startPrice>0</startPrice>
+							<startPrice>0.00</startPrice>
 							<distanceTotalPrice>
 								<distanceCount>6000</distanceCount>
 								<distanceUnitPrice>0.059</distanceUnitPrice>
