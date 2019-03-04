@@ -27,13 +27,13 @@
 				</statusTour>
 				<suborderTour>
 					<eventSuborderTour eventType="passengerinvehicle">
-						<eventTime time="2015-11-25T20:15:45"/>
+						<eventTime time="2015-11-25T19:10:00"/>
 						<eventAddress street="Leirvollen" streetNo="23">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
 					</eventSuborderTour>
 					<eventSuborderTour eventType="passengerdropped">
-						<eventTime time="2015-11-25T20:15:45"/>
+						<eventTime time="2015-11-25T19:45:00"/>
 						<eventAddress street="Leirvollen" streetNo="23" country="Norway">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
@@ -42,13 +42,13 @@
 				</suborderTour>
 				<suborderTour>
 					<eventSuborderTour eventType="passengerinvehicle">
-						<eventTime time="2015-11-25T20:15:45"/>
+						<eventTime time="2015-11-25T18:55:00"/>
 						<eventAddress street="Leirvollen" streetNo="23">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
 					</eventSuborderTour>
 					<eventSuborderTour eventType="passengerdropped">
-						<eventTime time="2015-11-25T20:15:45"/>
+						<eventTime time="2015-11-25T19:45:00"/>
 						<eventAddress street="Leirvollen" streetNo="23">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
@@ -111,7 +111,7 @@
 					<tourGeographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 				</eventTour>
 				<eventTour eventVehicle="stop">
-					<eventTourTime time="2015-11-25T18:50:00"/>
+					<eventTourTime time="2015-11-25T19:50:00"/>
 					<tourGeographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 				</eventTour>
 			</tour>
@@ -124,13 +124,13 @@
 				</statusTour>
 				<suborderTour>
 					<eventSuborderTour eventType="passengerinvehicle">
-						<eventTime time="2015-11-25T20:15:45"/>
+						<eventTime time="2015-11-25T19:00:00"/>
 						<eventAddress street="Leirvollen" streetNo="23">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
 					</eventSuborderTour>
 					<eventSuborderTour eventType="passengerdropped">
-						<eventTime time="2015-11-25T20:15:45"/>
+						<eventTime time="2015-11-25T19:45:00"/>
 						<eventAddress street="Leirvollen" streetNo="23">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
@@ -196,7 +196,7 @@
 					<tourGeographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 				</eventTour>
 				<eventTour eventVehicle="stop">
-					<eventTourTime time="2015-11-25T18:50:00"/>
+					<eventTourTime time="2015-11-25T19:50:00"/>
 					<tourGeographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 				</eventTour>
 			</tour>
@@ -209,13 +209,13 @@
 				</statusTour>
 				<suborderTour>
 					<eventSuborderTour eventType="passengerinvehicle">
-						<eventTime time="2015-11-25T20:15:45"/>
+						<eventTime time="2015-11-25T19:00:00"/>
 						<eventAddress street="Leirvollen" streetNo="23">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
 					</eventSuborderTour>
 					<eventSuborderTour eventType="passengerdropped">
-						<eventTime time="2015-11-25T20:15:45"/>
+						<eventTime time="2015-11-25T19:45:00"/>
 						<eventAddress street="Leirvollen" streetNo="23">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
@@ -280,13 +280,13 @@
 				</statusTour>
 				<suborderTour>
 					<eventSuborderTour eventType="passengerinvehicle">
-						<eventTime time="2015-11-25T20:15:45"/>
+						<eventTime time="2015-11-25T19:00:00"/>
 						<eventAddress street="Leirvollen" streetNo="23">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
 					</eventSuborderTour>
 					<eventSuborderTour eventType="passengerdropped">
-						<eventTime time="2015-11-25T20:15:45"/>
+						<eventTime time="2015-11-25T19:45:00"/>
 						<eventAddress street="Leirvollen" streetNo="23">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
@@ -351,13 +351,13 @@
 				</statusTour>
 				<suborderTour>
 					<eventSuborderTour eventType="passengerinvehicle">
-						<eventTime time="2015-11-25T18:15:45"/>
+						<eventTime time="2015-11-25T20:05:00"/>
 						<eventAddress street="Leirvollen" streetNo="23">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
 					</eventSuborderTour>
 					<eventSuborderTour eventType="passengerdropped">
-						<eventTime time="2015-11-25T19:15:45"/>
+						<eventTime time="2015-11-25T20:20:00"/>
 						<eventAddress street="Leirvollen" streetNo="23" country="Norway">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
@@ -366,13 +366,13 @@
 				</suborderTour>
 				<suborderTour>
 					<eventSuborderTour eventType="passengerinvehicle">
-						<eventTime time="2015-11-25T20:15:45"/>
+						<eventTime time="2015-11-25T20:15:00"/>
 						<eventAddress street="Leirvollen" streetNo="23">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
 					</eventSuborderTour>
 					<eventSuborderTour eventType="passengerdropped">
-						<eventTime time="2015-11-25T21:15:45"/>
+						<eventTime time="2015-11-25T20:45:00"/>
 						<eventAddress street="Leirvollen" streetNo="23">
 							<geographicLocation typeOfCoordinate="WGS-84" lat="59.16563" long="9.63479" precision="0"/>
 						</eventAddress>
