@@ -4,7 +4,7 @@
 
 | Forfatter       | Dato       | Versjon |
 | --------------- | ---------- | ------- |
-| Nicolai Dybdahl | 20.01.2025 | 1.5.4   |
+| Nicolai Dybdahl | 20.01.2025 | 1.5.5   |
 
 ## Innledning
 
@@ -287,11 +287,11 @@ Settes for å indikere status på turen iht. prosessflyten. `<idActivity>` er en
 | rejected   | Underkjent | Settes av Pasientreiser når en tur underkjennes. Elementet idError skal da også finnes. |
 | validate   | Vurderes   | Settes av Pasientreiser eller transportør når en tur sendes til vurdering.              |
 
-##### idError
+##### statusTourError
 
-Settes av Pasientreiser for å beskrive hvorfor en tur er blitt rejected. Dette er en ID der `src="SUTI:idError"` og `id` er en av de verdiene som beskrives i SUTI attributelist under errorCode.
+Settes av Pasientreiser for å beskrive hvorfor en tur er blitt rejected. `<idError>` er en ID der `src="SUTI:idError"` og `id` er en av de verdiene som beskrives i SUTI attributelist under errorCode.
 
-En tur kan inneholde flere `<idError>`.
+En tur kan inneholde flere `<statusTourError>`.
 
 ##### manualDescriptionStatus
 
