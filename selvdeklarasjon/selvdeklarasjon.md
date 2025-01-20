@@ -4,7 +4,7 @@
 
 | Forfatter       | Dato       | Versjon |
 | --------------- | ---------- | ------- |
-| Nicolai Dybdahl | 20.01.2025 | 1.5.5   |
+| Nicolai Dybdahl | 20.01.2025 | 1.6     |
 
 ## Innledning
 
@@ -557,9 +557,11 @@ Takstkodene består av 5 siffer og baseres på en logisk oppbygging. 1. og 2. si
 
 Takster som er faste skal oversendes hver for seg. F.eks. hvis det finnes to rullestoltillegg på en tur, så skal det sendes over to beløp med hver sin tilhørende takst.
 
+Takstene dekker et stort mulighetsrom, men det er kun takster som fører til et fakturerbart beløp som skal oversendes pr. tur.
+
 ### Takst
 
-Takstkoder er logisk fordelt iht. 1. siffer i takstkoden
+Takstkoder er logisk fordelt iht. 1. siffer i takstkoden.
 
 | Kode  | Takst    |
 | ----- | -------- |
@@ -580,6 +582,7 @@ Siffer 1 og 2 angir taksten. Typen angir om det er en takst bygget opp av enhete
 | 12   | Kjørelengde utover x km | S    | Kjørt distanse etter tilkjøring og x kjørte kilometer (benyttes kun hvis satsen endres etter x km)                                                  |
 | 13   | Tilkjøring              | S    | Kjørt distanse ved tilkjøring                                                                                                                       |
 | 14   | Tilkjøring utover x km  | S    | Kjørt distanse ved tilkjøring etter x kjørte kilometer (benyttes kun hvis satsen endres etter x km)                                                 |
+| 15   | Tilbakekjøring          | S    | Distanse etter avlevering av siste passasjer og tilbake til sentral, stasjoneringssted, depot, e.l.                                                 |
 | 21   | Kjøretid                | S    | Kjøretid etter tilkjøring                                                                                                                           |
 | 31   | Ventetid                | S    | Pålagt vent under oppdrag                                                                                                                           |
 | 41   | Starttakst              | F    | Oppstarttakst                                                                                                                                       |
