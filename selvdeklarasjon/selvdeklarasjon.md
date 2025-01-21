@@ -367,7 +367,7 @@ Elementet resourceTour brukes for å spesifisere informasjon om kjøretøyet.
 
 I dette elementet skal bilens løyvenummer eller registreringsnummer spesifiseres.
 
-Hvis bilen har et løyvenummer skal dette sendes og `src` skal refere til `"NO:Løyvenummer"`. Løyvenummeret skal formatteres med en enkelt bindestrek, uten mellomrom.
+Hvis bilen har et løyvenummer skal dette sendes og `src` skal refere til `"NO:løyveNr"`. Løyvenummeret skal formatteres med en enkelt bindestrek, uten mellomrom.
 
 Hvis registreringsnummer oversendes så skal `src` referere til `"NO:regNr"`. Registreringsnummer skal formatteres uten mellomrom.
 
