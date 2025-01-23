@@ -557,8 +557,6 @@ Takstkodene består av 5 siffer og baseres på en logisk oppbygging. 1. og 2. si
 
 Takster som er faste skal oversendes hver for seg. F.eks. hvis det finnes to rullestoltillegg på en tur, så skal det sendes over to beløp med hver sin tilhørende takst.
 
-Takstene dekker et stort mulighetsrom, men det er kun takster som fører til et fakturerbart beløp som skal oversendes pr. tur.
-
 ### Takst
 
 Takstkoder er logisk fordelt iht. 1. siffer i takstkoden.
