@@ -81,7 +81,11 @@
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="idEkInfo" type="Betalingsnummer" minOccurs="0" maxOccurs="unbounded"/>
-			<xs:element name="vatAmountSpecification" type="MomsSpesifikasjon" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="vatAmountSpecification" type="MomsSpesifikasjon" minOccurs="0" maxOccurs="1">
+				<xs:annotation>
+					<xs:documentation>Kun én momslinje tillates, med fast 12% MVA for pasienttransport.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="amount" type="Beløp" use="required"/>
 		<xs:attribute name="paymentType" type="Betalingstype" use="required"/>

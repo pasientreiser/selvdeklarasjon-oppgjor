@@ -4,7 +4,7 @@
 
 | Forfatter       | Dato       | Versjon |
 | --------------- | ---------- | ------- |
-| Nicolai Dybdahl | 20.01.2025 | 1.6     |
+| Nicolai Dybdahl | 08.01.2026 | 1.7     |
 
 ## Innledning
 
@@ -444,9 +444,8 @@ Elementet `<summaryReportTour>` skal inneholde den totale tiden og totale lengde
 <economyReportTour>
     <formOfPayment>
         <payment paymentType="account" amount="414">
-            <vatAmountSpecification vatPercent="6">
-                <totalVatAmount amountInclVat="414" amountExclVat="389" amountVat="25">
-                </totalVatAmount>
+            <vatAmountSpecification vatPercent="12">
+                <totalVatAmount amountInclVat="414" amountExclVat="369.64" amountVat="44.36"/>
             </vatAmountSpecification>
         </payment>
     </formOfPayment>
@@ -455,24 +454,33 @@ Elementet `<summaryReportTour>` skal inneholde den totale tiden og totale lengde
 
 I elementet economyReportTour samles de økonomiske kravene for turen.
 
-For beløp som transportøren søker om å kunne fakturere eller få utbetalt skal ha attributten `paymentType` være `"account"` Evt. egenandel som er trukket på rekvisisjonene skal ikke trekkes fra disse beløpene.
+For beløp som transportøren søker om å kunne fakturere eller få utbetalt skal ha attributten `paymentType` være `"account"` Evt. egenandel som er trukket på rekvisisjonene skal ikke trekkes fra disse beløpene. MVA beregnes på bruttobeløpet uavhengig av egenandel.
+
+### MVA-håndtering for pasientreiser
+
+All MVA for pasientkjøring er fast 12%. Det kan kun være 1 momslinje for alle betalinger.
+
+MVA gjelder for bruttobeløpet på turen (`paymentType="account"`). Egenandel (`paymentType="socialservicefee"`) har ikke MVA. Egenandel går til fratrekk på utbetalingsbeløpet, men ikke på MVA-beregningen.
+
+Formel for MVA-beregning:
+
+```
+MVA = Beløp inkl mva - (beløp inkl mva / 1.12)
+```
+
+Resultatet avrundes til nærmeste øre.
 
 ### Samlet økonomisk informasjon
 
 ```xml
 <economyReportAccounting>
     <formOfPayment>
-        <payment paymentType="account" amount="1681">
-            <vatAmountSpecification vatPercent="6">
-                <totalVatAmount amountInclVat="858" amountExclVat="807.87" amountVat="50.13">
-                </totalVatAmount>
-            </vatAmountSpecification>
+        <payment paymentType="account" amount="2148.50">
             <vatAmountSpecification vatPercent="12">
-                <totalVatAmount amountInclVat="818" amountExclVat="730.36" amountVat="87.64">
-                </totalVatAmount>
+                <totalVatAmount amountInclVat="2148.50" amountExclVat="1918.30" amountVat="230.20"/>
             </vatAmountSpecification>
         </payment>
-        <payment paymentType="socialservicefee" amount="-358.50"/>
+        <payment paymentType="socialservicefee" amount="-468.50"/>
     </formOfPayment>
 </economyReportAccounting>
 ```

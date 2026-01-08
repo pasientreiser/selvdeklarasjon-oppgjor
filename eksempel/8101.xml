@@ -34,8 +34,8 @@
 				<economyReportTour>
 					<formOfPayment>
 						<payment paymentType="account" amount="444">
-							<vatAmountSpecification vatPercent="6">
-								<totalVatAmount amountInclVat="444" amountExclVat="418.87" amountVat="25.13"/>
+							<vatAmountSpecification vatPercent="12">
+								<totalVatAmount amountInclVat="444" amountExclVat="396.43" amountVat="47.57"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -113,8 +113,8 @@
 				<economyReportTour>
 					<formOfPayment>
 						<payment paymentType="account" amount="472.50">
-							<vatAmountSpecification vatPercent="6">
-								<totalVatAmount amountInclVat="472.50" amountExclVat="445.75" amountVat="26.75"/>
+							<vatAmountSpecification vatPercent="12">
+								<totalVatAmount amountInclVat="472.50" amountExclVat="421.88" amountVat="50.62"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -124,11 +124,8 @@
 				<formOfPayment>
 					<payment paymentType="account" amount="1325.50">
 						<idEkInfo src="pasientreiser:betalingNr" id="1123"/>
-						<vatAmountSpecification vatPercent="6">
-							<totalVatAmount amountInclVat="876.5" amountExclVat="826.89" amountVat="49.61"/>
-						</vatAmountSpecification>
 						<vatAmountSpecification vatPercent="12">
-							<totalVatAmount amountInclVat="449" amountExclVat="400.89" amountVat="48.11"/>
+							<totalVatAmount amountInclVat="1325.50" amountExclVat="1183.48" amountVat="142.02"/>
 						</vatAmountSpecification>
 					</payment>
 					<payment paymentType="socialservicefee" amount="-368.50">

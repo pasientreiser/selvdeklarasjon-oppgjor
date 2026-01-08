@@ -89,11 +89,8 @@
 				<economyReportTour>
 					<formOfPayment>
 						<payment paymentType="account" amount="444">
-							<vatAmountSpecification vatPercent="6">
-								<totalVatAmount amountInclVat="404" amountExclVat="381.13" amountVat="22.87"/>
-							</vatAmountSpecification>
 							<vatAmountSpecification vatPercent="12">
-								<totalVatAmount amountInclVat="40" amountExclVat="35.71" amountVat="4.29"/>
+								<totalVatAmount amountInclVat="444" amountExclVat="396.43" amountVat="47.57"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -177,8 +174,8 @@
 				<economyReportTour>
 					<formOfPayment>
 						<payment paymentType="account" amount="414">
-							<vatAmountSpecification vatPercent="6">
-								<totalVatAmount amountInclVat="414" amountExclVat="390.57" amountVat="23.43"/>
+							<vatAmountSpecification vatPercent="12">
+								<totalVatAmount amountInclVat="414" amountExclVat="369.64" amountVat="44.36"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -405,8 +402,8 @@
 				<economyReportTour>
 					<formOfPayment>
 						<payment paymentType="account" amount="472.50">
-							<vatAmountSpecification vatPercent="6">
-								<totalVatAmount amountInclVat="472.50" amountExclVat="445.75" amountVat="26.75"/>
+							<vatAmountSpecification vatPercent="12">
+								<totalVatAmount amountInclVat="472.50" amountExclVat="421.88" amountVat="50.62"/>
 							</vatAmountSpecification>
 						</payment>
 					</formOfPayment>
@@ -431,11 +428,8 @@
 			<economyReportAccounting>
 				<formOfPayment>
 					<payment paymentType="account" amount="2148.50">
-						<vatAmountSpecification vatPercent="6">
-							<totalVatAmount amountInclVat="1290.50" amountExclVat="1217.45" amountVat="73.05"/>
-						</vatAmountSpecification>
 						<vatAmountSpecification vatPercent="12">
-							<totalVatAmount amountInclVat="858" amountExclVat="766.07" amountVat="91.93"/>
+							<totalVatAmount amountInclVat="2148.50" amountExclVat="1918.30" amountVat="230.20"/>
 						</vatAmountSpecification>
 					</payment>
 					<payment paymentType="socialservicefee" amount="-468.5"/>
